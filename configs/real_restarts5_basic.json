@@ -1,0 +1,29 @@
+{
+  "dataset": "real",
+  "experiment": {
+    "n_test": 6,
+    "n_initial": 6,
+    "budget": 8,
+    "repeats": 30,
+    "seed_start": 20261109,
+    "duw_base": 0.2,
+    "duw_decay": 0.6,
+    "penalty_mode": "weighted"
+  },
+  "gp": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "noise_initial": 0.001,
+    "noise_bounds": [0.000001, 0.1],
+    "length_bounds": [0.01, 10.0],
+    "constant_bounds": [0.001, 1000.0],
+    "restarts": 5,
+    "maxiter": 60,
+    "optimize": true
+  },
+  "notes": [
+    "Hyperparameter-initialization sensitivity: five additional optimizer restarts, matching the old project's restart count.",
+    "Run basic and optimization-readiness stages only; the main active-learning comparison remains the predeclared zero-extra-restart setting.",
+    "All models retain source-blocked outer evaluation and training-only normalization."
+  ]
+}

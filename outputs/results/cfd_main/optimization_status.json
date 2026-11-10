@@ -1,0 +1,4 @@
+{
+  "status": "not_targeted",
+  "reason": "CFD is a separate algorithm-validation task; it does not supply DRIE recipe recommendations."
+}

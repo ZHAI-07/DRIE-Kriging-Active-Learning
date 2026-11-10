@@ -1,0 +1,24 @@
+{
+  "dataset": "real",
+  "experiment": {
+    "n_test": 7,
+    "n_initial": 3,
+    "budget": 10,
+    "repeats": 30,
+    "seed_start": 20261109,
+    "duw_base": 0.2,
+    "duw_decay": 0.6,
+    "penalty_mode": "weighted"
+  },
+  "gp": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "restarts": 0,
+    "maxiter": 60
+  },
+  "notes": [
+    "Historical 7-test/3-initial/10-acquisition schedule; 30 paired seeds instead of legacy 20.",
+    "This remains the comprehensive shared-query 12-response adaptation, not a claim to numerically reproduce every old per-target run.",
+    "Source blocking and training-only input scaling intentionally replace riskier historical assumptions."
+  ]
+}

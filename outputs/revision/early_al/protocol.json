@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "design": "reviewer-triggered exploratory comparison, not independent confirmation",
+  "scenarios": {
+    "all24": [],
+    "without24": [
+      24
+    ]
+  },
+  "kernels": [
+    "ARD",
+    "isotropic"
+  ],
+  "budgets": [
+    2,
+    4
+  ],
+  "seeds": [
+    20261109,
+    20261110,
+    20261111,
+    20261112,
+    20261113,
+    20261114,
+    20261115,
+    20261116,
+    20261117,
+    20261118,
+    20261119,
+    20261120,
+    20261121,
+    20261122,
+    20261123,
+    20261124,
+    20261125,
+    20261126,
+    20261127,
+    20261128,
+    20261129,
+    20261130,
+    20261131,
+    20261132,
+    20261133,
+    20261134,
+    20261135,
+    20261136,
+    20261137,
+    20261138
+  ],
+  "n_test": 6,
+  "n_initial": 6,
+  "gp": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "noise_initial": 0.001,
+    "noise_bounds": [
+      1e-06,
+      0.1
+    ],
+    "length_bounds": [
+      0.01,
+      10.0
+    ],
+    "constant_bounds": [
+      0.001,
+      1000.0
+    ],
+    "restarts": 0,
+    "maxiter": 60,
+    "optimize": true
+  },
+  "source_sha256": {
+    "code\\revision\\early_budget_al.py": "22be916d9866e2cd0f0926a7ed4171bca9f0ac5e5b23d047f806b2f5f8b4fa51",
+    "code\\revision\\model_comparison.py": "75f29c8192f3734ade4142e681532d5bb60899b17c15005a2e511971dae5a257",
+    "code\\research\\core.py": "e3e20c309ffd58d6ab229c37b6a0e230e783998ebe4e963cc2957ccf273d360c",
+    "code\\research\\data.py": "3d9384e8b3b3e4a644885ab36b444dfea9628d35bab47809a28e1d5db4d7ce82",
+    "data\\raw\\user_confirmed_table_2026-11-09.json": "0f90c90551b4d2924ef3bb4117ce78784ce313daf369e7ba29c60244a59041d6"
+  },
+  "endpoints": {
+    "mean_CD": "unweighted mean of six CD losses (micrometres)",
+    "mean_AR": "unweighted mean of six nominal AR values (dimensionless)"
+  },
+  "aggregation_scope": "fixed exploratory endpoint, not an established engineering utility; not mean per-structure RMSE",
+  "UK_not_used": "5 trend coefficients with n_initial=6 gives at most one residual degree of freedom and occasional rank deficiency",
+  "scaling": "input and evaluation scales from initial labels only; target fitting scale from current revealed training labels",
+  "no_physical_experiments": true
+}

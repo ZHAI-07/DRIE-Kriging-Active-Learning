@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "independent_curve_records_reconstructed": 11520,
+  "independent_acquisitions_reconstructed": 2880,
+  "reconstructed_unique_training_sets": 1408,
+  "max_curve_difference": 7.105427357601002e-15,
+  "max_selection_score_difference": 2.6645352591003757e-15,
+  "configurations": 8,
+  "paired_seeds_each": 30,
+  "strategies_each": 4,
+  "strategy_replays": 960,
+  "checks": [
+    "Current source/code hashes match recorded execution",
+    "Endpoint truth reconstructed as means of six raw responses, not means of structural errors",
+    "All source-blocked splits, training-only scales, identical within-configuration initialization and exact budgets checked",
+    "Every frozen-theta GP prediction and acquisition reconstructed from only revealed training labels using direct Cholesky algebra",
+    "Budget 2 and budget 4 each use their own k/K schedule and fresh query state; shared cache depends only on permitted training IDs",
+    "All TestAUC and normalized TestAUC integrals independently recomputed",
+    "All summary, paired difference, conditional bootstrap and acquired-set Jaccard outputs recomputed"
+  ],
+  "hidden_labels_scope": "Static review confirms only scoring reads test labels; fitting reads LabelOracle.training and scoring outputs never feed selection. Independent replay never used pool/test labels for fitting or choice. This audits saved hyperparameter fits, not a proof against arbitrary future code changes.",
+  "limitations": [
+    "No new physical observations; intervals describe fixed-data randomization expectation only",
+    "No external validation after model/endpoint changes informed by v1 review",
+    "2/13 remain separate acquisition costs despite shared provenance; grouping prevents test-side leakage but does not establish independence"
+  ],
+  "code_sha256": "32294cea28c94fbd3e775d9383722c3344a6be18ddb897fddb6486058a8e38ab"
+}

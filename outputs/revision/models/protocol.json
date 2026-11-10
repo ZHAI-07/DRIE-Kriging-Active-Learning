@@ -1,0 +1,92 @@
+{
+  "declared_before_execution": "2026-11-09T11:10:41.211287+08:00",
+  "purpose": "Post-review exploratory model audit; not a confirmatory generalization claim or automatic AL model selection",
+  "scenarios": {
+    "real_all24": [
+      "real",
+      [],
+      "excel"
+    ],
+    "real_without24": [
+      "real",
+      [
+        24
+      ],
+      "excel"
+    ],
+    "real_without2_24": [
+      "real",
+      [
+        2,
+        24
+      ],
+      "excel"
+    ],
+    "real_without13_24": [
+      "real",
+      [
+        13,
+        24
+      ],
+      "excel"
+    ],
+    "cfd_excel": [
+      "cfd",
+      [],
+      "excel"
+    ],
+    "cfd_legacy": [
+      "cfd",
+      [],
+      "legacy_code"
+    ]
+  },
+  "original_gp_configuration": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "noise_initial": 0.001,
+    "noise_bounds": [
+      1e-06,
+      0.1
+    ],
+    "length_bounds": [
+      0.01,
+      10.0
+    ],
+    "constant_bounds": [
+      0.001,
+      1000.0
+    ],
+    "restarts": 0,
+    "maxiter": 60,
+    "optimize": true
+  },
+  "new_gp": "isotropic Matérn 5/2, same amplitude/noise/length bounds, alpha and optimizer settings as original GP",
+  "uk": "Linear trend [1,z1,z2,z3,z4], GLS beta, REML theta, full trend variance correction; no plug-in OLS residual shortcut",
+  "scaling": "X and Y standardized on each outer training fold only; quadratic features additionally standardized using training fold only",
+  "baselines": {
+    "Ridge_alpha": 1.0,
+    "Quadratic_Ridge_alpha": 1.0,
+    "SVR": {
+      "kernel": "rbf",
+      "C": 10.0,
+      "epsilon": 0.1,
+      "gamma": "scale"
+    }
+  },
+  "derived_endpoints": {
+    "mean_CD": "arithmetic mean of six CD Loss values, micrometres",
+    "mean_AR": "arithmetic mean of six nominal AR values, dimensionless",
+    "scope": "Fixed equal-weight exploratory endpoints after review; not RMSE macro average or engineering acceptance substitute"
+  },
+  "evaluation": "Same source-group leave-one-out folds for every model; source IDs 2/13 together if both retained",
+  "small_n_limit": "Initial AL n=6 with p=5 unrestricted trend coefficients leaves only n-p=1 if full rank; no UK active-learning claim or automatic deployment",
+  "primary_reference": {
+    "authors": "Carl Edward Rasmussen and Christopher K. I. Williams",
+    "title": "Gaussian Processes for Machine Learning",
+    "year": 2006,
+    "url": "https://gaussianprocess.org/gpml/chapters/RW2.pdf",
+    "basis": "Sections 2.7 and 2.7.1, equations 2.42 and 2.45, accessed 2026-11-09"
+  },
+  "inference": "Model-conditional GP likelihood noise is not an independently measured noise floor; without repeats it cannot separate process variability from measurement noise/model misspecification"
+}

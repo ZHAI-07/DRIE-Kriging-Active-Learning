@@ -1,0 +1,7 @@
+﻿scenario,model,target,structure,metric,n,rmse,mae,r2,coverage95
+cfd_excel,Mean,CFD response,CFD,simulated response,49,14.2643881035518,11.875238095238098,-0.04210069444444464,
+cfd_excel,OLS,CFD response,CFD,simulated response,49,14.906017889542298,12.34410071445931,-0.1379591400929021,
+cfd_excel,Ridge,CFD response,CFD,simulated response,49,14.889825049216828,12.3325959223983,-0.13548808685656888,
+cfd_excel,ARD_Matern52,CFD response,CFD,simulated response,49,4.61987893887946,3.5687015445518737,0.8906888199289742,0.9591836734693877
+cfd_excel,Quadratic_Ridge,CFD response,CFD,simulated response,49,6.125881765421975,4.9782240445392585,0.8078056515962864,
+cfd_excel,SVR_fixed,CFD response,CFD,simulated response,49,4.257561609850425,3.071499181722546,0.9071621071576187,

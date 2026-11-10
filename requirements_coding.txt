@@ -1,0 +1,15 @@
+# Scientific computation and tests. Document/presentation packages are not required.
+numpy==2.4.2
+scipy==1.17.0
+scikit-learn==1.8.0
+pandas==3.0.0
+joblib==1.6.0
+threadpoolctl==3.8.0
+python-dateutil==4.0.0
+tzdata==2026.6
+pytest==9.2.0
+iniconfig==2.3.1
+packaging==26.3
+pluggy==1.7.0
+Pygments==2.21.0
+colorama==0.4.6

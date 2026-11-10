@@ -1,0 +1,28 @@
+{
+  "status": "completed_descriptive_analysis_and_source_group_holdouts",
+  "responses": {
+    "mean_CD": "Arithmetic mean of six CD Loss values in micrometres",
+    "mean_AR": "Arithmetic mean of six nominal AR values, dimensionless"
+  },
+  "scope": "These fixed composites summarize this layout only. They are not independently justified engineering acceptance functions, and structure-level findings remain necessary.",
+  "models": {
+    "OLS": "Unpenalized linear regression with fitted intercept",
+    "Ridge_alpha1": "Ridge with alpha=1, fitted intercept; no outcome-based tuning"
+  },
+  "full_coefficients": "X and y standardized on the complete stated scenario, only to describe conditional associations. A coefficient is SD(y) per SD(X) conditional on the other included predictors.",
+  "heldout_coefficients": "Each fold standardizes X and y on its training subset. The min/median/max range describes deletion sensitivity and changes in training scale; it is not a confidence interval or uncertainty about a physical causal effect.",
+  "validation": "Leave one measurement-source group out; IDs 2 and 13 are kept together whenever both remain. All preprocessing is training-fold-only; R2 is computed from pooled original-unit held-out predictions, not averaged single-case R2.",
+  "design_diagnostics": "Rank and condition number of standardized X and [1, standardized X]; raw-X condition is included only to expose dependence on units. Input correlation is descriptive, not proof of causal identifiability.",
+  "limitations": [
+    "No randomized-treatment causal claim is established. Unrecorded cycle/time/batch factors can confound associations.",
+    "Removing records 24, 2 or 13 is a sensitivity scenario, not a declaration that the records are wrong.",
+    "Mean AR changes its implicit geometry weighting because AR already divides by different design openings; the arithmetic mean does not mean average etch depth.",
+    "Negative or near-zero held-out AR R2 prevents using coefficient signs as reliable mechanistic or engineering recommendations.",
+    "Repeated measurements are unavailable, so a physical measurement-noise floor is not empirically identified.",
+    "The record weights remain one per listed recipe, even where source independence of 2/13 is doubtful."
+  ],
+  "input_sha256": {
+    "data/raw/user_confirmed_table_2026-11-09.json": "0f90c90551b4d2924ef3bb4117ce78784ce313daf369e7ba29c60244a59041d6"
+  },
+  "script_sha256": "0260e61724ef1420d826439581025f1b8b924229fcecc3ecf1c57e0aec3d5f9a"
+}

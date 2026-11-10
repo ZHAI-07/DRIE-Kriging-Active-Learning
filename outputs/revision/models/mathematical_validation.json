@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "REML_analytic_gradient_finite_difference_error": 5.996977601818224e-07,
+  "checks": [
+    "Analytic REML gradient agrees with independent finite differences",
+    "Mean and observation variance agree with saddle-point universal-Kriging solve",
+    "Trend coefficient uncertainty correction is nonnegative",
+    "Affine trend equivariance at fixed covariance parameters",
+    "Rank-deficient initial trend design rejected instead of pseudo-inverse hiding nonidentifiability"
+  ]
+}

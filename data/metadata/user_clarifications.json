@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-09",
+  "source": "user_reply_to_clarification_questions",
+  "units": {
+    "coil_power": "W",
+    "platen_power": "W",
+    "sf6_flow": "sccm",
+    "passivation_pressure": "mTorr",
+    "design_opening": "micrometre",
+    "design_linewidth": "micrometre",
+    "CD Loss": "micrometre",
+    "AR": "dimensionless"
+  },
+  "duplicate_2_13_explanation": "unknown",
+  "experiment_24_time_cycles_batch": "unknown",
+  "measured_structure_type_user_confirmation": "unknown",
+  "reference_presentation_path": "Z:\\ZHAI\\Graduate\\AI赋能的芯片三维集成\\开题报告.pptx",
+  "analysis_contract": {
+    "process_inputs": 4,
+    "physical_experiment_records": 24,
+    "structures": 6,
+    "responses_per_structure": 2,
+    "response_columns": 12,
+    "numeric_authority": "data/raw/user_confirmed_table_2026-11-09.json",
+    "raw_snapshot_remains_unchanged": true,
+    "no_new_physical_experiments": true
+  }
+}

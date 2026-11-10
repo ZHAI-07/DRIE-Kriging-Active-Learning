@@ -1,0 +1,31 @@
+{
+  "dataset": "real",
+  "experiment": {
+    "n_test": 6,
+    "n_initial": 6,
+    "budget": 8,
+    "repeats": 30,
+    "seed_start": 20261109,
+    "duw_base": 0.2,
+    "duw_decay": 0.6,
+    "penalty_mode": "weighted"
+  },
+  "gp": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "noise_initial": 0.001,
+    "noise_bounds": [0.000001, 0.1],
+    "length_bounds": [0.01, 10.0],
+    "constant_bounds": [0.001, 1000.0],
+    "restarts": 0,
+    "maxiter": 60,
+    "optimize": true
+  },
+  "notes": [
+    "24 process experiments, four inputs, 12 scalar response GPs; one shared query reveals all 12 responses.",
+    "Source IDs 2/13 remain on the same side of evaluation splits.",
+    "Initial training scales fixed for input coordinates and evaluation NRMSE; output fitting transforms use current revealed training values.",
+    "Zero extra optimizer restarts is a predeclared compute choice, differing from the five restarts in the old project; maxiter and warnings are logged.",
+    "No outcome-driven selection of seeds, structure or strategy parameters."
+  ]
+}

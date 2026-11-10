@@ -1,0 +1,24 @@
+{
+  "dataset": "cfd",
+  "experiment": {
+    "n_test": 12,
+    "n_initial": 5,
+    "budget": 20,
+    "repeats": 30,
+    "seed_start": 20261109,
+    "duw_base": 0.2,
+    "duw_decay": 0.6,
+    "penalty_mode": "weighted"
+  },
+  "gp": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "restarts": 0,
+    "maxiter": 60
+  },
+  "notes": [
+    "Independent 49-row CFD exercise; Excel values retained in the provenance snapshot.",
+    "Historical hardcoded values differ at five rows and are not silently substituted.",
+    "30 paired seeds versus the legacy 20; scalar response and two inputs."
+  ]
+}

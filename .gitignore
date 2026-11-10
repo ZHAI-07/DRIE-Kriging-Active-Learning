@@ -1,0 +1,38 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local temporary work and common credential files
+_tmp/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated deliverables do not belong to the coding repository
+*.zip
+*.docx
+*.pptx
+*.pdf
+outputs/figures/
+outputs/revision/figures/
+outputs/logs/
+
+# Keep only the seven reference result suites in version control.
+# New --run-prefix computations and optimizer checkpoints stay local.
+/outputs/results/*
+!/outputs/results/real_main/
+!/outputs/results/real_drop2/
+!/outputs/results/real_drop13/
+!/outputs/results/real_drop24/
+!/outputs/results/real_historical_schedule/
+!/outputs/results/cfd_main/
+!/outputs/results/cfd_legacy_code/
+/outputs/results/*/checkpoints/
+/outputs/results/*/fit_diagnostics/
+/outputs/results/*/seed_*.json

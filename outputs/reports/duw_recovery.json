@@ -1,0 +1,1447 @@
+{
+  "date": "2026-11-09",
+  "read_only_legacy_access": true,
+  "source_hashes": {
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\acquisition.py": "d3fa81ec47dcc4a4ab0789064148610785cd72b40aba729759437491a64c7416",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\active_learning.py": "d9f2e751baf888f2e27139e1a10597fd7a22c69471d3df7100806faec60e0d5a",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\config.py": "028362e2dbc3b8408f57b02cc4d99fd71cf4ba5dd3a7f510455904b805c743a5",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\models.py": "007aa3b79e96bd510a4b0280436296a15a81cbfe20297763200c3d234b508eae",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\main.py": "2678bc216a834df3145898478fc79b43930c2a5af404f19e7a5b02d455db3200",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\main_cfd.py": "83a67e9635e93919d4771786f2881566a464d2fc7a0a208965294c9886ef303e",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\毕业论文\\毕业论文抽检版.docx": "5f85c0ef818ad0c9e49ce3937576758bfbeed8fec965b10ccbef7d05a3ab0631",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\开题报告\\全因子设计仿真数据.xlsx": "d6daf98ffda76b9de50cfeb220edf9b72dc80dfe8b4a82a59c88266bf4c93000",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\【资料提交】本科毕设-姓名-题目\\【资料提交】本科毕设-姓名-题目\\附件\\1.数据及代码\\data\\readme.txt": "36f01d81f288a91a9b769a6186cd3fee0a48872b06fc6c4b28581c0cb813e66d"
+  },
+  "config_literal_assignments": {
+    "FEATURES": [
+      "刻蚀Coil功率",
+      "刻蚀13.56Platen功率",
+      "刻蚀SF6流量",
+      "钝化压力"
+    ],
+    "FEATURE_NAMES": [
+      "Coil Power (W)",
+      "Platen Power (W)",
+      "SF6 Flow (sccm)",
+      "Pressure (mT)"
+    ],
+    "CD_TARGETS": {
+      "3-3 CD loss": "3-3CD loss",
+      "3-5 CD loss": "3-5CD loss",
+      "5-5 CD loss": "5-5CD loss",
+      "7-7 CD loss": "7-7CD loss",
+      "8-12 CD loss": "8-12CD loss",
+      "9-9 CD loss": "9-9CD loss"
+    },
+    "AR_TARGETS": {
+      "3-3 AR": "3-3深宽比",
+      "3-5 AR": "3-5深宽比",
+      "5-5 AR": "5-5深宽比",
+      "7-7 AR": "7-7深宽比",
+      "8-12 AR": "8-12深宽比",
+      "9-9 AR": "9-9深宽比"
+    },
+    "DEPTH_TARGETS": {
+      "3-3 Depth": "3-3\n刻蚀深度",
+      "3-5 Depth": "3-5\n刻蚀深度",
+      "5-5 Depth": "5-5\n刻蚀深度",
+      "7-7 Depth": "7-7\n刻蚀深度",
+      "8-12 Depth": "8-12\n刻蚀深度",
+      "9-9 Depth": "9-9\n刻蚀深度"
+    },
+    "DESIGNED_SAMPLE_COUNT": 25,
+    "MAX_SAMPLE_ID": 25,
+    "OUTLIER_IDS": [],
+    "N_TEST": 7,
+    "N_INITIAL": 3,
+    "N_ITER": 10,
+    "N_REPEAT": 20,
+    "EXCLUSION_BASE_RATIO": 0.2,
+    "EXCLUSION_DECAY": 0.6,
+    "PENALTY_INSIDE": 0.001,
+    "PENALTY_OUTSIDE": 1.0,
+    "PENALTY_MODE": "weighted",
+    "SCALING_MODE": "design_space",
+    "MAIN_MODEL": "gpr_ard",
+    "GA_POP_SIZE": 80,
+    "GA_N_GENERATIONS": 80,
+    "GA_ELITE_FRAC": 0.15,
+    "GA_MUTATION_RATE": 0.25,
+    "GA_MUTATION_SCALE": 0.12,
+    "TARGET_DIRECTIONS": {
+      "CD loss": "minimize",
+      "AR": "maximize"
+    },
+    "GPR_KERNEL_NU": 2.5,
+    "GPR_N_RESTARTS": 5,
+    "GPR_ALPHA": 0.001,
+    "GPR_LENGTH_SCALE_BOUNDS": [
+      0.01,
+      10.0
+    ],
+    "GPR_CONSTANT_BOUNDS": [
+      0.001,
+      1000.0
+    ],
+    "COLORS": {
+      "improved": "#E84040",
+      "uncertainty": "#2E86AB",
+      "qbc": "#48C774",
+      "random": "#9B59B6",
+      "loocv": "#F4A261"
+    },
+    "LABELS_CN": {
+      "improved": "DUW-ALK（距离-不确定性加权）",
+      "uncertainty": "不确定性采样",
+      "qbc": "查询委员会采样（QBC）",
+      "random": "随机采样（基线）"
+    },
+    "LABELS_EN": {
+      "improved": "DUW-ALK (Distance-Uncertainty Weighted)",
+      "uncertainty": "Uncertainty Sampling",
+      "qbc": "Query-by-Committee (QBC)",
+      "random": "Random Sampling (Baseline)"
+    },
+    "PLT_PARAMS": {
+      "font.family": "SimSun",
+      "axes.unicode_minus": false,
+      "font.size": 10.5,
+      "axes.spines.top": false,
+      "axes.spines.right": false,
+      "axes.grid": true,
+      "grid.alpha": 0.3,
+      "grid.linestyle": "--",
+      "figure.dpi": 150,
+      "savefig.dpi": 300,
+      "savefig.bbox": "tight"
+    }
+  },
+  "cfd_literal_assignments": {
+    "N_TEST": 12,
+    "N_INITIAL": 5,
+    "N_ITER": 20,
+    "N_REPEAT": 20
+  },
+  "duw_implementation": {
+    "default_mode": "weighted",
+    "distance": "minimum Euclidean distance to current training set in fixed design-space standardized coordinates",
+    "normalization": "candidate-pool min-max independently for predictive std and distance; span <= 1e-10 -> all ones",
+    "weight": "w_k = 0.20 * max(1 - 0.6*k/K, 0.05); k=0,...,K-1",
+    "score": "(std_norm+0.01)^(1-w_k) * (distance_norm+0.01)^w_k",
+    "selection": "numpy.argmax, earliest candidate index breaks ties",
+    "weighted_reference_scale_used": false,
+    "hard_mode": "r_k=0.20*max(1-0.6*k/K,0.1)*D_ref; score=std*(0.001 if d<r_k else 1)",
+    "soft_mode": "same radius; score=std*(1-exp(-d^2/(2*r_k^2+1e-10)))",
+    "kernel": "ConstantKernel * ARD Matern(nu=2.5) + WhiteKernel",
+    "noise": "learned WhiteKernel plus fixed alpha=1e-3; normalize_y=True",
+    "optimizer_restarts": 5,
+    "legacy_response_selection": "one target at a time; all 12 targets run separately, not a shared experimental selection policy"
+  },
+  "cfd_comparison": {
+    "count": 49,
+    "differing_cells": [
+      {
+        "excel_row": 46,
+        "excel_column": 4,
+        "workbook_value": 115.2,
+        "code_value": 101.57,
+        "difference": 13.63000000000001
+      },
+      {
+        "excel_row": 47,
+        "excel_column": 4,
+        "workbook_value": 111.03,
+        "code_value": 105.61,
+        "difference": 5.420000000000002
+      },
+      {
+        "excel_row": 48,
+        "excel_column": 4,
+        "workbook_value": 105.51,
+        "code_value": 102.77,
+        "difference": 2.740000000000009
+      },
+      {
+        "excel_row": 49,
+        "excel_column": 4,
+        "workbook_value": 87.88,
+        "code_value": 98.93,
+        "difference": -11.050000000000011
+      },
+      {
+        "excel_row": 50,
+        "excel_column": 4,
+        "workbook_value": 68.09,
+        "code_value": 95.09,
+        "difference": -27.0
+      }
+    ],
+    "headers": [
+      "序号",
+      "气压(mT)",
+      "功率(W)",
+      "真实值"
+    ]
+  },
+  "acquisition_formula_fixtures": [
+    {
+      "name": "ordinary_start",
+      "candidate_x": [
+        [
+          0.4,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.8,
+          0
+        ]
+      ],
+      "train_x": [
+        [
+          0,
+          0
+        ]
+      ],
+      "predictive_std": [
+        0.1,
+        0.3,
+        0.2
+      ],
+      "iteration": 0,
+      "budget": 10,
+      "distance_weight": 0.2,
+      "scores": [
+        0.021301396047429377,
+        0.4012888557303687,
+        0.5846829313126113
+      ],
+      "expected_selected_index": 2,
+      "legacy_function_selected_index": 2,
+      "weighted_ref_scale_invariance": true
+    },
+    {
+      "name": "ordinary_last",
+      "candidate_x": [
+        [
+          0.4,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.8,
+          0
+        ]
+      ],
+      "train_x": [
+        [
+          0,
+          0
+        ]
+      ],
+      "predictive_std": [
+        0.1,
+        0.3,
+        0.2
+      ],
+      "iteration": 9,
+      "budget": 10,
+      "distance_weight": 0.09200000000000003,
+      "scores": [
+        0.014160145336060472,
+        0.6605775461444956,
+        0.5430893499222931
+      ],
+      "expected_selected_index": 1,
+      "legacy_function_selected_index": 1,
+      "weighted_ref_scale_invariance": true
+    },
+    {
+      "name": "constant_std",
+      "candidate_x": [
+        [
+          0.4,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.8,
+          0
+        ]
+      ],
+      "train_x": [
+        [
+          0,
+          0
+        ]
+      ],
+      "predictive_std": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "iteration": 0,
+      "budget": 10,
+      "distance_weight": 0.2,
+      "scores": [
+        0.8548012845332335,
+        0.4012888557303687,
+        1.01
+      ],
+      "expected_selected_index": 2,
+      "legacy_function_selected_index": 2,
+      "weighted_ref_scale_invariance": true
+    },
+    {
+      "name": "constant_distance",
+      "candidate_x": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "train_x": [
+        [
+          0,
+          0
+        ]
+      ],
+      "predictive_std": [
+        0.1,
+        0.3,
+        0.2
+      ],
+      "iteration": 0,
+      "budget": 10,
+      "distance_weight": 0.2,
+      "scores": [
+        0.025168902290140654,
+        1.01,
+        0.5846829313126113
+      ],
+      "expected_selected_index": 1,
+      "legacy_function_selected_index": 1,
+      "weighted_ref_scale_invariance": true
+    },
+    {
+      "name": "all_tied",
+      "candidate_x": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "train_x": [
+        [
+          0,
+          0
+        ]
+      ],
+      "predictive_std": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "iteration": 0,
+      "budget": 10,
+      "distance_weight": 0.2,
+      "scores": [
+        1.01,
+        1.01,
+        1.01
+      ],
+      "expected_selected_index": 0,
+      "legacy_function_selected_index": 0,
+      "weighted_ref_scale_invariance": true
+    }
+  ],
+  "thesis_source": "Z:\\ZHAI\\Undergraduate\\毕业设计\\毕业论文\\毕业论文抽检版.docx",
+  "thesis_paragraph_index_note": "1-based python-docx top-level paragraph sequence; not page numbers. Text includes OMML tokens but preserves no spatial superscript/subscript formatting.",
+  "thesis_relevant_paragraphs": [
+    {
+      "paragraph_1based": 17,
+      "text_with_math": "半导体晶圆制造过程包含光刻、刻蚀、离子注入、薄膜沉积和化学机械抛光等多个关键工艺环节，是典型的多参数、多工序、强耦合制造过程。随着器件特征尺寸不断缩小和结构复杂度持续提高，工艺参数与响应指标之间呈现出更加复杂的非线性映射关系，传统经验模型和单因素分析方法难以满足工艺响应准确预测与参数快速优化的需求。同时，半导体工艺实验成本高、周期长、样本获取困难，依赖大量实验试错的参数优化方法效率较低。因此，在有限样本条件下建立工艺参数与响应指标之间的代理模型，并进一步开展工艺参数优化，对提高晶圆制造过程建模能力和工艺开发效率具有重要意义。"
+    },
+    {
+      "paragraph_1based": 18,
+      "text_with_math": "针对上述问题，本文以深反应离子刻蚀（Deep Reactive Ion Etching, DRIE）工艺为研究对象，建立了基于克里金代理模型、主动学习和遗传算法的工艺响应预测与参数优化框架。首先，分别构建计算流体力学（Computational Fluid Dynamics, CFD）刻蚀仿真数据集和真实 DRIE 刻蚀实验数据集，采用带自动相关确定机制的 ARD-Matérn 克里金模型建立工艺参数与刻蚀响应之间的预测模型，并通过留一法交叉验证、均方根误差、平均绝对误差、平均绝对百分比误差和决定系数等指标评价模型的基础预测性能。在此基础上，提出距离—不确定性加权主动学习克里金模型（Distance-Uncertainty Weighted Active Learning Kriging, DUW-ALK），利用模型预测不确定性和候选样本空间距离信息共同指导样本选择，并与随机采样、不确定性采样和查询委员会采样进行对比分析。最后，将训练后的代理模型与遗传算法相结合，在实验设计空间内搜索候选工艺参数组合，为后续局部实验验证和工艺窗口探索提供参考。"
+    },
+    {
+      "paragraph_1based": 19,
+      "text_with_math": "实验结果表明，在样本覆盖相对充分、输入维度较低的 CFD 仿真数据上，DUW-ALK 模型能够提高主动学习过程中的样本利用效率。对于真实 DRIE 小样本实验数据，主动学习效果与输出响应特性密切相关。在深宽比（Aspect Ratio, AR）指标上，DUW-ALK 模型表现出较明显的收敛效率提升。而在关键尺寸损失（Critical Dimension loss, CD loss）指标上，主动学习策略相较随机采样未表现出稳定优势。遗传算法优化结果表明，基于代理模型的参数搜索能够在有限样本条件下给出候选工艺参数区域，其中 CD loss指标的推荐区域主要集中于低功率、低流量工艺条件附近，深宽比AR指标的推荐区域则集中于高深宽比样本邻域。"
+    },
+    {
+      "paragraph_1based": 20,
+      "text_with_math": "本文研究表明，所提出的基于代理模型的工艺参数优化框架能够在小样本条件下实现半导体晶圆制造工艺响应预测与参数优化，可为数据驱动建模、实验设计优化和工艺参数推荐提供有效支撑，对降低实验成本、缩短工艺开发周期以及提升晶圆制造过程智能化水平具有一定的工程应用价值。"
+    },
+    {
+      "paragraph_1based": 28,
+      "text_with_math": "To address these issues, this study focuses on the deep reactive ion etching (DRIE) process and establishes a process response prediction and parameter optimization framework based on Kriging surrogate modeling, active learning, and genetic algorithms. First, a CFD-based etching simulation dataset and a real DRIE experimental dataset are constructed. An ARD-Matérn Kriging model with automatic relevance determination is then used to establish predictive models between process parameters and etching responses. The basic predictive performance of the model is evaluated using leave-one-out cross-validation, root mean square error, mean absolute error, mean absolute percentage error, and the coefficient of determination. On this basis, a Distance-Uncertainty Weighted Active Learning Kriging model (DUW-ALK) is proposed, which jointly uses model predictive uncertainty and spatial distance information of candidate samples to guide sample selection. The proposed strategy is compared with random sampling, uncertainty sampling, and query-by-committee sampling. Finally, the trained surrogate model is combined with a genetic algorithm to search for candidate process parameter combinations within the experimental design space, providing reference for subsequent local experimental verification and process window exploration."
+    },
+    {
+      "paragraph_1based": 30,
+      "text_with_math": "The experimental results show that, on the CFD simulation dataset with relatively sufficient sample coverage and low input dimensionality, the DUW-ALK model improves sample utilization efficiency during the active learning process. For the real small-sample DRIE experimental dataset, the effectiveness of active learning is closely related to the characteristics of the output response. For the aspect ratio (AR) indicators, the DUW-ALK model exhibits a clear improvement in convergence efficiency. In contrast, for the CD loss indicators, active learning strategies do not show a stable advantage over random sampling, mainly because the response variation is relatively smooth and more strongly affected by measurement errors and local morphology variations. The genetic algorithm optimization results indicate that surrogate-model-based parameter search can identify candidate process regions under limited-sample conditions. Specifically, the recommended region for the CD loss indicators is mainly located near low-power and low-flow process conditions, whereas the recommended region for the AR indicators is concentrated near the high-aspect-ratio sample region."
+    },
+    {
+      "paragraph_1based": 32,
+      "text_with_math": "This study demonstrates that the proposed agent-based process parameter optimization framework can predict the response of semiconductor wafer manufacturing processes and optimize process parameters under conditions of limited data. It provides effective support for data-driven modeling, experimental design optimization, and process parameter recommendations, and holds significant engineering value for reducing experimental costs, shortening process development cycles, and enhancing the level of intelligence in wafer manufacturing processes."
+    },
+    {
+      "paragraph_1based": 49,
+      "text_with_math": "克里金模型起源于地理统计学的空间插值理论，1989年Sacks等人将其引入计算机实验设计领域，奠定了其在工程代理建模中的基础地位[9]。作为一种基于高斯过程的概率插值方法，克里金模型不仅能够实现高精度的函数近似，还能同时输出预测均值和预测不确定性，这一特性使其成为高成本、小样本工程建模的首选方法。"
+    },
+    {
+      "paragraph_1based": 50,
+      "text_with_math": "早期克里金模型多采用各向同性核函数，假设所有输入变量对响应的影响程度相同。随着工程问题复杂度的提升，学者们引入了自动相关性确定（ARD）机制和各向异性Matérn核函数，发展出HyperKriging模型，能够为不同输入维度分配独立的长度尺度超参数，显著提升了对多参数耦合问题的刻画能力[10]。Santner等人系统阐述了克里金模型的理论框架和工程应用方法，推动了其在航空航天、汽车、机械等领域的广泛应用[11]。"
+    },
+    {
+      "paragraph_1based": 51,
+      "text_with_math": "在半导体制造领域，克里金模型已逐步应用于刻蚀、沉积、光刻等关键工艺的建模。吕利叶等[12]在代理模型技术综述中指出，克里金模型在小样本条件下的插值能力和不确定性估计特性，使其特别适合半导体刻蚀这类实验成本高、参数耦合强的研究对象。然而，现有克里金模型在半导体刻蚀中的应用仍存在明显不足："
+    },
+    {
+      "paragraph_1based": 52,
+      "text_with_math": "多数研究基于仿真数据开展验证，对真实实验数据中的噪声、测量误差和工艺波动考虑不足。针对刻蚀工艺多响应特性的研究较少，现有模型多为单输出独立建模，未能充分利用不同响应之间的相关性。在极小样本（≤30 组）、高维输入（≥4 维）条件下，模型超参数估计容易失稳，泛化能力显著下降。"
+    },
+    {
+      "paragraph_1based": 53,
+      "text_with_math": "上述不足直接限制了克里金模型在真实DRIE刻蚀工艺开发中的应用，也是本文第3章重点研究的问题：通过构建真实DRIE刻蚀实验数据集，系统评估 ARD-Matérn 克里金模型在小样本条件下的预测性能，明确其适用边界和局限性。"
+    },
+    {
+      "paragraph_1based": 54,
+      "text_with_math": "参数预测方法研究现状"
+    },
+    {
+      "paragraph_1based": 55,
+      "text_with_math": "刻蚀工艺参数预测方法的发展大致经历了物理机理仿真、统计实验设计、数据驱动机器学习三个阶段，核心目标是建立工艺参数与刻蚀响应之间的准确映射关系。早期刻蚀工艺预测主要依赖物理机理仿真方法。Kushner等人开发了混合等离子体仿真模型，能够模拟等离子体输运、离子能量分布和表面反应过程[13]。杨明强等[14]结合计算流体力学（CFD）方法对等离子体刻蚀过程进行了数值模拟，分析了反应物输运、离子能量分布等因素对刻蚀结果的影响。这类方法能够揭示刻蚀过程的微观物理机制，但需要大量难以精确测量的边界条件和反应动力学参数，计算成本极高，且难以准确描述纳米尺度下复杂的等离子体-表面相互作用[15]，无法满足快速工艺开发的需求。统计实验设计方法如正交实验、响应面法和田口方法，通过系统的实验设计减少样本数量，建立工艺参数与响应之间的经验模型。这类方法实现简单、工程实用性强，但本质上是基于多项式的全局拟合，对强非线性关系的刻画能力有限，在小样本条件下容易出现过拟合或欠拟合。随着数据驱动技术的发展，机器学习方法逐渐成为刻蚀工艺预测的主流方向。Kim等[16]将反向传播神经网络与遗传算法相结合，用于感应耦合等离子体刻蚀速率预测。Maltsev等[17]将贝叶斯优化方法用于高深宽比刻蚀工艺的参数寻优，实现了有限实验次数下的自动参数搜索。然而，普通机器学习模型在小样本条件下泛化能力不足，且无法量化预测不确定性，难以指导后续实验的优先级排序。为进一步提高样本利用效率，主动学习克里金框架应运而生。与传统固定样本建模不同，主动学习能够根据模型当前状态选择最有信息量的样本进行补充，从而在有限实验预算下获得更高的建模精度。目前主流的主动学习采样策略包括："
+    },
+    {
+      "paragraph_1based": 59,
+      "text_with_math": "Meng等[19]和Zhan等[20]分别提出了并行主动学习克里金策略，用于结构可靠性分析和时变可靠性问题，显著减少了极限状态函数评估所需的样本数量。然而，现有主动学习研究主要集中在结构可靠性分析领域，在半导体刻蚀工艺中的应用仍存在明显空白：现有采样策略多针对特定问题设计，未考虑刻蚀工艺不同响应的特性差异（如CD loss响应平缓、深宽比AR存在局部高值区域）。在高维稀疏样本空间中，单纯基于不确定性的采样容易导致样本聚集，降低对整体设计空间的覆盖能力。缺乏对不同采样策略在刻蚀工艺中的适用性和收敛表现的系统对比分析。"
+    },
+    {
+      "paragraph_1based": 60,
+      "text_with_math": "针对上述问题，本文第4章提出了距离-不确定性加权主动学习克里金模型（DUW-ALK），通过融合预测不确定性和样本空间距离信息，解决高维稀疏空间中的采样效率问题，并系统对比不同采样策略在CD loss 和深宽比AR指标上的表现，明确其适用边界。"
+    },
+    {
+      "paragraph_1based": 61,
+      "text_with_math": "参数优化方法研究现状"
+    },
+    {
+      "paragraph_1based": 62,
+      "text_with_math": "刻蚀工艺参数优化的核心目标是在给定工艺约束下，找到使刻蚀质量指标最优的参数组合。传统梯度下降法、枚举法和单纯形法存在易陷入局部最优、对初始点敏感、无法处理不可导目标函数等缺陷，难以应用于强非线性、多峰的DRIE刻蚀工艺优化。近年来，以进化算法、群智能算法、贝叶斯优化为代表的智能优化方法得到广泛应用，形成了\"代理模型 + 智能优化\"的主流技术框架，显著降低了工艺开发的实验成本与周期。"
+    },
+    {
+      "paragraph_1based": 64,
+      "text_with_math": "将代理模型与智能优化算法结合，是当前刻蚀工艺优化的主流技术路线[12]。该框架首先利用少量实验样本训练低成本代理模型，替代昂贵的真实实验进行快速评估，然后通过智能算法在代理模型构建的响应面上搜索最优参数组合，最后对推荐结果进行实验验证。不同组合适用于不同场景：响应面模型+梯度类算法适合低维、弱非线性问题；克里金模型 + 进化算法适合小样本、高维、强非线性问题，是目前应用最广泛的组合[11]。神经网络 + 粒子群算法适合大样本、实时性要求高的场景。"
+    },
+    {
+      "paragraph_1based": 65,
+      "text_with_math": "基于上述研究现状，本文以深反应离子刻蚀工艺参数优化为研究对象，提出一种融合克里金代理模型与主动学习策略的小样本建模方法。本文选取刻蚀Coil功率、Platen功率、SF₆流量和钝化压力等典型工艺参数作为输入变量，以CD Loss和深宽比AR等指标作为输出响应，构建真实刻蚀实验数据集。在此基础上，比较随机采样、不确定性采样、查询委员会采样以及距离-不确定性融合采样等主动学习策略的建模效果，并结合遗传算法进行候选工艺参数推荐。通过该研究，期望为高成本、小样本条件下的半导体刻蚀工艺智能建模与参数优化提供一种可行的技术路径。"
+    },
+    {
+      "paragraph_1based": 66,
+      "text_with_math": "论文内容安排"
+    },
+    {
+      "paragraph_1based": 67,
+      "text_with_math": "本文共有六章，以半导体晶圆制造中的深反应离子刻蚀工艺参数优化为研究背景，利用克里金代理模型、主动学习策略和遗传算法对小样本刻蚀实验数据进行建模与优化。"
+    },
+    {
+      "paragraph_1based": 68,
+      "text_with_math": "第1章：绪论。本章介绍半导体刻蚀工艺参数优化的研究背景与工程意义，分析深反应离子刻蚀工艺中参数耦合强、实验成本高、样本数量有限等问题，梳理国内外在刻蚀工艺仿真、代理模型、克里金模型、主动学习和工艺参数优化方面的研究现状，并在此基础上明确本文的研究内容和技术路线。"
+    },
+    {
+      "paragraph_1based": 69,
+      "text_with_math": "第2章：半导体晶圆制造过程及模型理论基础。本章首先介绍半导体晶圆制造的基本流程，说明刻蚀工艺在晶圆加工中的作用及深反应离子刻蚀的基本特点。随后介绍克里金代理模型、高斯过程回归、ARD-Matérn 核函数、模型评价指标和留一法交叉验证。在此基础上，进一步阐述主动学习的基本思想，介绍不确定性采样、查询委员会采样、TestAUC 评价方法等内容，为后续代理建模和主动学习实验提供理论基础。"
+    },
+    {
+      "paragraph_1based": 70,
+      "text_with_math": "第3章：基于基础克里金模型的半导体刻蚀参数预测方法。本章分别以 CFD 刻蚀仿真数据和真实 DRIE 刻蚀实验数据为研究对象，开展基础代理模型预测分析。对于 CFD 仿真数据，构建腔室气压、射频功率与刻蚀速率之间的代理模型，并与多项式最小二乘响应面、移动最小二乘法等方法进行对比。对于真实 DRIE 实验数据，选取刻蚀 Coil 功率、Platen 功率、SF6 流量和钝化压力作为输入变量，以 CD loss 指标和深宽比 AR 指标作为输出响应，建立 ARD-Matérn 克里金模型，并通过留一交叉验证评价基础模型的预测能力。"
+    },
+    {
+      "paragraph_1based": 71,
+      "text_with_math": "第4章：基于 DUW-ALK 模型的半导体刻蚀参数预测方法。本章在基础克里金模型的基础上引入主动学习机制，构建距离—不确定性加权主动学习克里金模型，即 DUW-ALK 模型。该模型同时利用克里金模型的预测不确定性和候选样本的空间距离信息进行样本选择。本章首先在 CFD 仿真数据上验证 DUW-ALK 模型的采样效率，随后在真实 DRIE 刻蚀数据上分别对 CD loss 指标和深宽比 AR 指标进行主动学习实验，并与随机采样、不确定性采样和查询委员会采样进行对比，分析不同采样策略的收敛特性、适用条件和局限性。"
+    },
+    {
+      "paragraph_1based": 72,
+      "text_with_math": "第5章：基于遗传算法的半导体刻蚀参数优化方法。本章在训练后的代理模型基础上引入遗传算法，在已有实验设计空间内搜索候选工艺参数组合。对于 CD loss 指标，优化方向设定为最小化。对于深宽比 AR 指标，优化方向设定为最大化。通过遗传算法得到不同指标对应的候选参数推荐结果，并结合实验数据分析推荐区域的工程含义。该章重点说明代理模型优化结果属于候选工艺区域推荐，最终工艺窗口仍需通过后续实验验证和形貌表征进一步确认。"
+    },
+    {
+      "paragraph_1based": 73,
+      "text_with_math": "第6章：结论与展望。本章总结全文主要研究工作和结论，归纳克里金代理模型、DUW-ALK 主动学习模型和遗传算法在小样本刻蚀工艺建模与参数优化中的作用。随后分析当前研究在样本规模、模型泛化能力、实验验证和多指标评价方面存在的不足，并对后续真实实验补充、多输出建模、多目标优化和闭环工艺优化等研究方向进行展望。"
+    },
+    {
+      "paragraph_1based": 77,
+      "text_with_math": "半导体晶圆制造过程及模型理论基础"
+    },
+    {
+      "paragraph_1based": 78,
+      "text_with_math": "本章首先将介绍半导体晶圆制造的基本流程，说明刻蚀工艺在晶圆加工中的作用。随后介绍克里金代理模型、ARD-Matérn核函数、模型评价指标和留一法交叉验证方法。最后阐述主动学习的基本概念以及本文所采用的不确定性采样、距离—不确定性加权融合采样和查询委员会采样方法。上述内容为后续基于仿真数据和真实DRIE刻蚀实验数据开展代理模型建模、主动学习采样和工艺参数优化提供理论基础。"
+    },
+    {
+      "paragraph_1based": 79,
+      "text_with_math": "半导体晶圆制造过程概述"
+    },
+    {
+      "paragraph_1based": 80,
+      "text_with_math": "半导体晶圆制造是集成电路、微机电系统和先进传感器器件制备的核心环节。典型的半导体晶圆制造流程通常包括晶圆制备、薄膜沉积、光刻、刻蚀、掺杂、金属互连、检测与封装等步骤。其中，光刻和刻蚀共同决定了器件微结构图形能否准确转移至晶圆材料中，是影响器件尺寸精度、结构形貌和最终性能的重要工艺环节。"
+    },
+    {
+      "paragraph_1based": 84,
+      "text_with_math": "克里金代理模型"
+    },
+    {
+      "paragraph_1based": 85,
+      "text_with_math": "克里金模型作为地理统计学衍生的经典空间插值方法，是工程代理建模领域应用最广泛的技术之一[9]。近年来在半导体制造等高成本、小样本工程场景中得到了快速发展。其核心思想是利用已知采样点的空间自相关特性，通过求解最优无偏权重系数，实现对未知空间点的高精度插值预测。通用插值形式可表示为："
+    },
+    {
+      "paragraph_1based": 86,
+      "text_with_math": "zx0=i=1nλizxi#2-1"
+    },
+    {
+      "paragraph_1based": 88,
+      "text_with_math": "式中，zx0——待预测点x0处的响应估计值；zxi——第i个已知采样点的观测值；λi——对应采样点的权重系数。"
+    },
+    {
+      "paragraph_1based": 89,
+      "text_with_math": "权重系数的求解遵循两个核心准则：一是最小化估计误差的方差，二是保证估计值为无偏估计，即估计值的数学期望等于真实值的期望。"
+    },
+    {
+      "paragraph_1based": 90,
+      "text_with_math": "半方差函数（又称变差函数）是克里金建模的核心，用于定量刻画空间属性的自相关性随两点间距离的衰减规律[11]。通过计算所有采样点对的距离与对应半方差值，绘制经验半方差散点图，再拟合高斯、指数、Matérn等理论半方差模型，即可建立任意两点间空间相关性的数学表达，其定义式为："
+    },
+    {
+      "paragraph_1based": 92,
+      "text_with_math": " γh=12Ezx+h-zx2#（2-2）"
+    },
+    {
+      "paragraph_1based": 96,
+      "text_with_math": "协方差核函数和各向异性表征"
+    },
+    {
+      "paragraph_1based": 97,
+      "text_with_math": "在HyperKriging的框架下，两点xi与xj之间的空间拓扑关系由协方差函数刻画。Rxi,xj为平衡响应面的平滑度与局部细节捕捉能力，本文选用 Matérn-5/2 核函数[24]，其数学形式为："
+    },
+    {
+      "paragraph_1based": 98,
+      "text_with_math": "Rxi,xj=σf21+5d+53d2exp-5d#2-3"
+    },
+    {
+      "paragraph_1based": 99,
+      "text_with_math": "式中，Rxi,xj —— 输入点xi与 xj之间的协方差函数值；σf2 —— 过程方差，用于表示响应函数的整体变化幅度；d —— 经过超参数加权后的广义欧几里得距离；exp —— 指数函数。"
+    },
+    {
+      "paragraph_1based": 102,
+      "text_with_math": "式中：dxi,xj —— 输入点xi与xj之间的各向异性距离；m —— 输入变量维度；θk—— 第 k 个输入维度对应的相关尺度超参数；xi,k —— 第 i 个样本在第 k 个输入维度上的取值；xj,k —— 第 j 个样本在第 k 个输入维度上的取值。"
+    },
+    {
+      "paragraph_1based": 103,
+      "text_with_math": "每一维度的θk决定了该工艺参数在相应维度上的影响权重与空间相关性范围：θk值越大，表明该工艺参数对刻蚀指标（如 CD Loss）的影响越剧烈，空间相关性随距离衰减越快。"
+    },
+    {
+      "paragraph_1based": 104,
+      "text_with_math": "HyperKriging的性能高度依赖超参数θ的估计精度。本文通过最大化边际对数似然（Marginal log-likelihood, MLL）来求解最优超参数集。其目标定义函数为："
+    },
+    {
+      "paragraph_1based": 105,
+      "text_with_math": "lnpyX,θ=-12yTK-1y-12lnK-n2ln2π#2-5"
+    },
+    {
+      "paragraph_1based": 106,
+      "text_with_math": "式中：lnpyX,θ —— 在输入样本 X 和超参数θ条件下观测响应 y 的边际似然；y —— 训练样本输出响应向量；X —— 训练样本输入矩阵；θ —— 核函数超参数集合；K —— 由核函数计算得到的协方差矩阵；K-1 —— 协方差矩阵 K 的逆矩阵；|K| —— 协方差矩阵 K 的行列式；n —— 训练样本数量。"
+    },
+    {
+      "paragraph_1based": 107,
+      "text_with_math": "上式第一项反映模型对训练数据的拟合程度，第二项用于惩罚模型复杂度，第三项为归一化常数。通过最大化边际对数似然函数，可以在数据拟合能力和模型复杂度之间取得平衡，从而获得较优的超参数组合。"
+    },
+    {
+      "paragraph_1based": 108,
+      "text_with_math": "在本文研究中，刻蚀工艺输入参数包括 Coil 功率、Platen 功率、SF6 流量和钝化压力等。不同参数对 CD Loss 和深宽比 AR 的影响机制并不完全相同，因此采用带有各向异性超参数的 HyperKriging 模型，有助于提高模型对多维工艺参数空间的刻画能力。对于小样本刻蚀实验数据，该方法不仅能够给出预测均值，还能够提供预测不确定性，为后续主动学习采样和遗传算法参数优化提供模型基础。"
+    },
+    {
+      "paragraph_1based": 109,
+      "text_with_math": "代理模型评价指标"
+    },
+    {
+      "paragraph_1based": 139,
+      "text_with_math": "为了进一步比较不同主动学习方法的作用效果。本文引入了查询委员会采样（Query-by-Committee, QBC）作为对比策略。查询委员会采样方法通过多个模型之间的预测分歧来衡量候选样本的信息量[18]。其基本思想是：若多个具有不同结构假设的模型在同一候选点处给出的预测结果差异较大时，则说明该区域的响应规律尚未被充分确定，该候选点具有较高的补充价值。"
+    },
+    {
+      "paragraph_1based": 140,
+      "text_with_math": "本文采用三类不同核函数的高斯过程模型组成查询委员会，分别为 ARD-Matérn 5/2 核模型、Matérn 3/2核模型和RBF核模型。其中，ARD-Matérn 5/2核模型与本文主代理模型保持一致，Matérn 3/2核模型具有相对较弱的平滑性假设，RBF 核模型则具有较强的平滑性假设。通过引入不同核函数的模型，可以从模型结构差异角度估计候选区域的不确定性[29]。"
+    },
+    {
+      "paragraph_1based": 141,
+      "text_with_math": "对于候选点 x，设三个委员会成员模型给出的预测均值分别为 μ1x、μ2x和 μ3x，则QQBC采集函数定义为："
+    },
+    {
+      "paragraph_1based": 142,
+      "text_with_math": "QQBCx=Varμ1x,μ2x,μ3x#2-11"
+    },
+    {
+      "paragraph_1based": 148,
+      "text_with_math": "在程序实现中，TestAUC采用梯形积分方法计算，并与随机采样策略的TestAUC进行比较。若某一种主动学习策略相较随机采样的AUC提升为正，说明该策略在平均意义上具有更快的误差收敛速度。若AUC提升为负，则说明该策略在当前数据和目标响应条件下的收敛效率低于随机采样。需要说明的是，TestAUC主要用于评价采样策略在主动学习过程中的收敛效率，而不是单独衡量代理模型的最终预测精度。"
+    },
+    {
+      "paragraph_1based": 149,
+      "text_with_math": "在极小样本条件下，TestAUC指标仍需结合重复实验结果谨慎解释。由于测试集样本数量有限，单个测试样本的预测误差变化可能引起RMSE曲线波动。为降低随机划分初始训练集和测试集带来的偶然性，本文对每种采样策略进行20次重复实验，并保存每个随机种子下的最终RMSE、TestAUC、测试集索引和样本选择顺序。在结果分析中，本文不仅报告均值和标准差，还结合配对 t 检验和Wilcoxon符号秩检验判断不同策略之间的差异是否具有统计支持。"
+    },
+    {
+      "paragraph_1based": 150,
+      "text_with_math": "此外，本文还记录训练集内部的LOOCV-RMSE曲线，用于辅助分析模型在训练样本内部的稳定性。需要注意的是，训练集内部LOOCV-RMSE与独立测试集RMSE并不总是保持一致。主动学习策略往往倾向于选择模型当前较难预测或不确定性较高的样本，这可能在短期内增加训练集内部交叉验证误差。因此，LOOCV-RMSE更适合作为辅助评价指标，不宜单独作为判断主动学习策略优劣的依据。"
+    },
+    {
+      "paragraph_1based": 151,
+      "text_with_math": "基于上述主动学习框架，本文将在后续章节分别以CFD仿真数据和真实DRIE刻蚀实验数据为对象，对DUW-ALK模型与随机采样、不确定性采样和QBC采样进行对比分析，从而评价不同采样策略在半导体刻蚀参数预测任务中的适用性。"
+    },
+    {
+      "paragraph_1based": 152,
+      "text_with_math": "本章小结"
+    },
+    {
+      "paragraph_1based": 153,
+      "text_with_math": "本章主要介绍了半导体晶圆的制造过程及相关模型理论基础。"
+    },
+    {
+      "paragraph_1based": 154,
+      "text_with_math": "（1）对半导体晶圆制造的基本流程进行了概述，阐明了刻蚀工艺在图形转移和微结构加工中的作用，并分析了DRIE工艺中Coil 功率、Platen 功率、SF6流量和钝化压力等关键参数对刻蚀结果的影响，指出DRIE工艺具有多参数耦合、非线性强和实验成本高等特点。"
+    },
+    {
+      "paragraph_1based": 155,
+      "text_with_math": "（2）介绍了克里金代理模型的基本原理，说明了ARD-Matérn核函数在表征不同输入参数影响程度方面的作用。同时，对RMSE、MAE、MAPE、R²以及留一法交叉验证等模型评价方法进行了说明，为评价代理模型预测性能提供了理论依据。"
+    },
+    {
+      "paragraph_1based": 156,
+      "text_with_math": "（3）介绍了主动学习的基本思想及其在小样本建模中的作用，并说明了不确定性采样、查询委员会采样和 TestAUC 等主动学习策略与评价方法。通过上述内容，本章对半导体刻蚀工艺背景、克里金代理建模方法、模型评价指标和主动学习方法进行了系统梳理。"
+    },
+    {
+      "paragraph_1based": 157,
+      "text_with_math": "基于基础克里金模型的半导体刻蚀参数预测方法"
+    },
+    {
+      "paragraph_1based": 161,
+      "text_with_math": "本研究选取基于 CFD 技术的等离子体刻蚀仿真数据[14]，用于模型验证工作。其中，等离子体腔室的放电过程借助 CFD-ACE + 软件完成数值模拟，通过该模拟可获取半导体晶圆表面特定位置的离子通量分布、能量分布、入射角度分布及中性粒子通量分布等核心参数。在微观刻蚀过程的模拟中，CFD-TOPO 模块会接收 CFD-ACE + 的计算结果，并采用水平集方法对刻蚀表面的演化过程进行实时追踪，进而得到刻蚀表面随时间动态变化的微观形貌特征。"
+    },
+    {
+      "paragraph_1based": 162,
+      "text_with_math": "本次仿真设定的输入变量为二维参数，分别是腔室气压与射频功率，仿真输出目标为刻蚀速率。其中，腔室气压与射频功率分别设置7个水平，具体为（10, 15, 20, 25, 30, 35, 40）mTorr 和（1500, 2000, 2500, 3000, 3500, 4000, 4500）W，样本点选取采用全因子试验设计方案，共计49组。"
+    },
+    {
+      "paragraph_1based": 163,
+      "text_with_math": "代理模型的选取与比较"
+    },
+    {
+      "paragraph_1based": 164,
+      "text_with_math": "为全面评估不同代理建模方法在刻蚀速率预测任务上的性能，本节选取三类具有代表性的代理模型进行系统比较：克里金模型（HK）、多项式最小二乘响应面（LSR）以及移动最小二乘法（MLSM）[30]。此外，以各向同性简单克里金（SK）作为克里金族方法的退化基线，参与 LOO 交叉验证对比。"
+    },
+    {
+      "paragraph_1based": 168,
+      "text_with_math": "该核函数对所有输入维度采用统一的相关尺度参数，因而存在假设不同工艺参数对响应变化的影响程度相同。简单克里金模型结构较为简洁，实现较为方便，但其对不同输入维度的区分能力有限。因此，本文将其作为基础对比模型，用于说明各向同性核函数在刻蚀工艺代理建模中的表现。"
+    },
+    {
+      "paragraph_1based": 169,
+      "text_with_math": "HyperKriging（HK）：HyperKriging是本文主要采用的克里金代理模型。该模型在高斯过程回归框架下引入自动相关确定机制，并采用 Matérn-5/2 核函数为不同输入维度分配独立的长度尺度超参数。与各向同性简单克里金模型相比，HyperKriging 能够根据不同输入变量的差异，刻画各工艺参数对刻蚀的影响程度。"
+    },
+    {
+      "paragraph_1based": 170,
+      "text_with_math": "在本文研究中，HyperKriging 通过各向异性距离度量描述样本点之间的相关关系，并利用最大边际对数似然方法估计核函数超参数。ARD 机制使模型能够在一定程度上识别不同工艺参数的重要性差异，因此更适合用于刻蚀工艺中多参数耦合和小样本建模问题。"
+    },
+    {
+      "paragraph_1based": 171,
+      "text_with_math": "需要说明的是，克里金模型具有插值特性。在训练样本点处，模型预测值通常能够与观测值高度一致。因此，样本内拟合指标可能表现为 R² 接近 1、RMSE 接近 0。该结果主要反映模型对已知样本的插值能力，并不能直接代表模型对未知样本的泛化性能。为了更客观地评价模型预测能力，本文采用留一法交叉验证对模型进行评价。"
+    },
+    {
+      "paragraph_1based": 178,
+      "text_with_math": "wix0=exp-x0-xi2/h2#3-3"
+    },
+    {
+      "paragraph_1based": 179,
+      "text_with_math": "式中：wix0 —— 第 i 个样本点相对于待预测点x0的权重；x0—— 待预测点；xi —— 第 i 个训练样本点； h —— 带宽参数；exp —— 指数函数。"
+    },
+    {
+      "paragraph_1based": 180,
+      "text_with_math": "当样本点距离预测点较近时，其权重较大。当样本点距离预测点较远时，其权重迅速衰减。"
+    },
+    {
+      "paragraph_1based": 181,
+      "text_with_math": "在给定权重矩阵的条件下，局部多项式系数通过加权最小二乘法估计，其表达式为："
+    },
+    {
+      "paragraph_1based": 182,
+      "text_with_math": "ax0=PTWx0P-1PTWx0y#3-4"
+    },
+    {
+      "paragraph_1based": 183,
+      "text_with_math": "式中：ax0 —— 待预测点x0处的局部多项式系数向量；P —— 局部多项式基函数设计矩阵；PT—— 设计矩阵 P 的转置矩阵；Wx0 —— 以待预测点 x0 为中心构造的权重矩阵；y —— 样本输出响应向量；n —— 训练样本数量。"
+    },
+    {
+      "paragraph_1based": 184,
+      "text_with_math": "预测值可表示为："
+    },
+    {
+      "paragraph_1based": 185,
+      "text_with_math": "yx0=pTx0ax0#3-5"
+    },
+    {
+      "paragraph_1based": 186,
+      "text_with_math": "式中：yx0 —— 待预测点x0处的响应预测值；p(x_0) —— 待预测点 x0 处的多项式基函数向量；pTx0 —— px0 的转置向量；ax0 —— 待预测点 x0处的局部多项式系数向量。"
+    },
+    {
+      "paragraph_1based": 187,
+      "text_with_math": "本文采用二阶多项式基函数建立移动最小二乘模型，并通过留一法交叉验证在归一化输入空间中选取带宽参数。经比较，本文选取 h=0.3 作为移动最小二乘模型的带宽参数。"
+    },
+    {
+      "paragraph_1based": 188,
+      "text_with_math": "实验验证及分析"
+    },
+    {
+      "paragraph_1based": 189,
+      "text_with_math": "图 3-1  各个代理模型的拟合结果比较"
+    },
+    {
+      "paragraph_1based": 190,
+      "text_with_math": "图3-1给出了 LSR 三阶多项式模型、MLSM 模型与 HK 克里金模型在全量49个仿真样本上的样本内拟合散布图及残差分布直方图。其中，上行子图为预测值与真实值的散布图，下行子图为对应残差分布直方图。三种模型的样本内拟合指标汇总见表3-1。"
+    },
+    {
+      "paragraph_1based": 191,
+      "text_with_math": "表3-1 仿真数据集各代理模型样本内拟合指标"
+    },
+    {
+      "paragraph_1based": 192,
+      "text_with_math": "由图3-1和表3-1可以看出，不同代理模型在样本内拟合表现上存在明显差异。"
+    },
+    {
+      "paragraph_1based": 196,
+      "text_with_math": "需要指出的是，由于克里金模型具有精确插值特性，样本内拟合指标容易出现虚高现象，因此不能仅依据样本内指标对不同代理模型进行横向比较。为获得更加客观的模型泛化能力评价，本文进一步采用留一法交叉验证进行对比分析。"
+    },
+    {
+      "paragraph_1based": 197,
+      "text_with_math": "留一法交叉验证的基本流程为：对于 n=49 个仿真样本，依次去除第 i 个样本，使用其余48个样本重新训练模型，并预测被剔除样本的响应值。重复该过程49次后，汇总所有预测结果，计算 R²、RMSE、MAE 与 MAPE 等评价指标。各模型留一法交叉验证结果见表3-2。"
+    },
+    {
+      "paragraph_1based": 198,
+      "text_with_math": "表3-2 仿真数据集各代理模型留一法交叉验证精度比较"
+    },
+    {
+      "paragraph_1based": 199,
+      "text_with_math": "对比表3-1和表3-2可知，不同模型在样本内拟合与留一法交叉验证相比存在明显差异。"
+    },
+    {
+      "paragraph_1based": 200,
+      "text_with_math": "克里金模型的样本内拟合结果与留一法交叉验证结果之间存在较大差异，表明插值特性会导致样本内评价指标虚高。HK 模型的样本内 R² 为 1.0000，而留一法交叉验证 R² 降至 0.774，两者相差 0.226。相比之下，MLSM 的 R² 降幅为 0.082，LSR 三阶多项式模型的 R² 降幅为 0.032。该结果说明，对于克里金模型，样本内拟合指标不能有效反映模型对未知样本的预测能力，留一法交叉验证结果更适合作为模型泛化性能的评价依据。"
+    },
+    {
+      "paragraph_1based": 201,
+      "text_with_math": "简单克里金模型的泛化能力相对较弱，其主要原因在于各向同性核函数对不同输入变量采用统一长度尺度。由表3-2可见，简单克里金模型的留一法交叉验证 R² 仅为 -0.042，MAPE 为 12.97%，在各模型中表现最弱。简单克里金采用各向同性 RBF 核函数，默认气压与功率两个输入变量具有相同的相关尺度和影响权重。然而，在等离子体刻蚀过程中，功率对刻蚀速率的驱动作用通常强于腔室气压。统一长度尺度假设限制了模型对不同变量影响差异的表达能力。引入 ARD 机制后，HK 模型的留一法交叉验证的MAPE 降至 5.50%，相较简单克里金模型明显降低，说明各向异性长度尺度有助于提高刻蚀工艺代理模型的预测性能。"
+    },
+    {
+      "paragraph_1based": 202,
+      "text_with_math": "在49组全因子均匀仿真样本条件下，MLSM 模型表现最优，LSR 三阶多项式模型次之，HK 模型居中。MLSM 的留一法交叉验证 R² 为 0.907，RMSE 为 4.253 nm/min，MAPE 为 3.34%，在各项指标上均表现较好。其优势主要来源于局部加权建模机制，即针对每个预测点构造距离加权的局部多项式模型，从而能够更好地适应响应面的局部曲率变化。对于功率 2500～3500 W 附近的刻蚀速率峰值区域，MLSM 相较全局模型具有更强的局部拟合能力。LSR 三阶多项式模型的 MAPE 为 3.47%，与 MLSM 差距较小，说明在样本密度较高且分布均匀的全因子设计条件下，高阶全局多项式也能够较好近似非线性响应面。"
+    },
+    {
+      "paragraph_1based": 203,
+      "text_with_math": "需要强调的是，上述结论具有明确的适用边界。MLSM 与高阶 LSR 的性能优势依赖于样本在参数空间中的均匀覆盖。在真实刻蚀实验中，受实验成本和设备资源限制，有效样本数量较少，且样本分布往往不如仿真全因子设计均匀。在这种条件下，全局多项式模型可能面临过拟合风险，移动最小二乘法在稀疏区域的局部权重矩阵也可能趋于不稳定。相比之下，克里金模型能够结合空间相关性假设进行概率建模，并提供预测不确定性估计，因此更适合作为小样本、不均匀实验数据条件下的核心代理模型。基于这一原因，本文后续研究以克里金模型为主要代理建模方法，并结合主动学习机制进一步提高有限样本条件下的建模效率。"
+    },
+    {
+      "paragraph_1based": 204,
+      "text_with_math": "基于基础克里金模型的真实DRIE参数预测方法"
+    },
+    {
+      "paragraph_1based": 205,
+      "text_with_math": "DRIE实验设计及真实数据集构建"
+    },
+    {
+      "paragraph_1based": 216,
+      "text_with_math": "在完成DRIE工艺实验设计与数据获取后，首先需要明确基础代理模型在真实小样本数据上的预测能力。本文的真实刻蚀实验共设计25组工艺参数组合，输入变量包括刻蚀Coil功率、刻蚀13.56 MHz Platen功率、刻蚀SF6流量和钝化压力。由于第25组样本的输出指标不完整，建模阶段将其剔除，最终得到24组有效样本。输出响应包括6组CD loss指标和6组深宽比AR指标，分别用于表征刻蚀后的尺寸保持能力与高深宽比结构形成能力。"
+    },
+    {
+      "paragraph_1based": 217,
+      "text_with_math": "DRIE刻蚀数据具有样本数量少、输入维度较高和响应波动较明显等特点。与CFD仿真数据相比，真实实验数据并非规则全因子分布，样本在输入空间中的覆盖程度有限。在此条件下，高阶多项式响应面容易受到样本数量限制而产生过拟合，移动最小二乘法在局部样本稀疏区域也可能出现权重矩阵不稳定的问题。因此，本文在真实DRIE数据建模中选取带自动相关确定机制的Matérn-5/2克里金模型作为主代理模型。"
+    },
+    {
+      "paragraph_1based": 218,
+      "text_with_math": "该模型能够为不同输入维度分配独立长度尺度，从而刻画不同工艺参数对刻蚀的影响程度。同时，克里金模型不仅能够给出预测均值，还能够输出预测标准差，为后续主动学习采样提供不确定性信息。因此，ARD-Matérn克里金模型既适合作为真实小样本数据条件下的基础预测模型，也能够与第4章的主动学习策略自然衔接。"
+    },
+    {
+      "paragraph_1based": 219,
+      "text_with_math": "本文对12个输出响应分别建立独立的ARD-Matérn克里金模型，并采用留一法交叉验证（LOOCV）评价其基础泛化性能。LOOCV能够在小样本条件下充分利用有限数据，避免单次训练集与测试集划分造成评价结果过度依赖随机性，因此适合作为真实DRIE刻蚀数据基础代理模型的评价方法。"
+    },
+    {
+      "paragraph_1based": 220,
+      "text_with_math": "实验验证及分析"
+    },
+    {
+      "paragraph_1based": 221,
+      "text_with_math": "为评价ARD-Matérn克里金模型在真实DRIE刻蚀数据上的基础预测能力，本文对6组CD loss指标和6组深宽比AR指标分别建立独立代理模型，并采用留一法交叉验证（Leave-One-Out Cross-Validation，LOOCV）进行泛化性能评价。LOOCV每次选取1个样本作为验证样本，其余样本用于模型训练，重复进行直至所有样本均被验证一次。该方法能够在小样本条件下充分利用有限数据，适合用于评价真实DRIE实验数据上的基础建模效果。"
+    },
+    {
+      "paragraph_1based": 222,
+      "text_with_math": "表3-3 真实刻蚀数据ARD-Matérn克里金模型LOOCV结果"
+    },
+    {
+      "paragraph_1based": 223,
+      "text_with_math": "表3-3给出了真实DRIE刻蚀数据中ARD-Matérn克里金模型的LOOCV评价结果。可以看出，对真实DRIE刻蚀数据集，ARD-Matérn克里金模型的预测能力明显降低。对于CD loss指标，5-5 CD loss和9-9 CD loss的R²为正，分别为0.1165和0.1807，说明模型对这两个指标仅具有较低的预测能力。8-12 CD loss的R²接近0，表明模型预测效果与均值预测接近，无明显的线性相关关系。其余的CD loss指标的R²为负，说明在当前样本规模下模型泛化能力仍然有限。从误差指标看，CD loss指标的MAPE主要分布在14.86%至22.33%之间，表明模型能够给出一定量级上的预测结果，但预测精度尚不足以直接支撑高可靠工艺决策。"
+    },
+    {
+      "paragraph_1based": 224,
+      "text_with_math": "对于深宽比AR指标，6组结果的R²均为负，且数值约为-1.15，说明ARD-Matérn克里金模型在当前样本条件下难以稳定预测AR响应变化。虽然AR指标的MAPE约为7%左右，表面上相对较低，但这是由于AR本身数值量级较大，不能单独据此判断模型泛化能力较好。结合R²的结果可知，AR指标中存在局部高响应样本，使响应分布具有较强非均匀性，单一克里金模型难以在24组样本条件下充分刻画其全局变化规律。"
+    },
+    {
+      "paragraph_1based": 225,
+      "text_with_math": "造成上述现象的原因主要包括三个方面。第一，真实DRIE数据的输入维度为4，而有效样本数仅为24组，样本在高维工艺空间中的覆盖程度有限，导致核函数长度尺度等超参数估计容易受到单个样本影响。第二，真实刻蚀实验受到设备状态、测量误差、局部形貌变化和工艺波动等因素影响，数据噪声水平高于CFD仿真数据。第三，AR指标中存在局部高响应区域，使响应面呈现更强的非线性和非均匀特征，进一步增加了代理建模难度。"
+    },
+    {
+      "paragraph_1based": 226,
+      "text_with_math": "需要指出的是，LOOCV结果较低并不意味着克里金模型没有研究价值，而是说明真实DRIE刻蚀数据具有典型的小样本、高维输入和复杂响应特征。在这种条件下，仅依靠一次性固定训练集建模难以获得稳定预测结果。因此，后续有必要进一步引入主动学习机制，从样本选择顺序和样本利用效率角度分析模型性能是否能够得到改善。"
+    },
+    {
+      "paragraph_1based": 230,
+      "text_with_math": "（2）在多种代理模型的比较中，克里金模型相较于其他模型表现出更强的非线性表征能力，能够更准确地刻画刻蚀速率随输入参数变化的趋势，同时保留较好的平滑性和插值能力。"
+    },
+    {
+      "paragraph_1based": 231,
+      "text_with_math": "（3）对于真实DRIE刻蚀数据，由于有效样本数量有限、输入变量维度较高，且实验数据中存在设备波动、测量误差及局部异常高响应样本，ARD-Matérn克里金模型的预测能力明显下降。尤其在深宽比AR指标上，模型难以稳定刻画局部高响应区域，泛化性能受到较大限制。"
+    },
+    {
+      "paragraph_1based": 232,
+      "text_with_math": "（4）从CD loss和深宽比AR两类指标的结果可以看出，不同响应变量的建模难度存在明显差异。CD loss指标虽然在部分工况下能够获得一定预测能力，但整体精度仍有限。AR指标则呈现出更强的非均匀性和局部突变特征，进一步增加了代理建模难度。"
+    },
+    {
+      "paragraph_1based": 233,
+      "text_with_math": "基于DUW-ALK模型的半导体刻蚀参数预测方法"
+    },
+    {
+      "paragraph_1based": 234,
+      "text_with_math": "第3章基于基础克里金模型对CFD仿真数据和真实DRIE刻蚀数据进行了预测分析。结果表明，在样本数量相对充分、输入维度较低的CFD数据上，ARD-Matérn克里金模型能够获得较稳定的预测能力。而在真实DRIE刻蚀数据中，由于样本数量有限、输入维度较高且响应波动较明显，代理模型的泛化性能受到一定限制。因此，仅依赖固定训练集建立代理模型，难以充分发挥有限实验样本的价值。"
+    },
+    {
+      "paragraph_1based": 235,
+      "text_with_math": "为提高小样本条件下的样本利用效率，本文在克里金模型基础上引入主动学习机制，构建距离—不确定性加权主动学习克里金模型（Distance-Uncertainty Weighted Active Learning Kriging，DUW-ALK）。本章首先介绍DUW-ALK模型的构建方法与主动学习机制，然后分别在CFD仿真数据和真实DRIE刻蚀数据上展开实验验证，并与随机采样、不确定性采样和查询委员会采样进行对比，分析不同采样策略在半导体刻蚀参数预测任务中的效果和适用边界。"
+    },
+    {
+      "paragraph_1based": 236,
+      "text_with_math": "DUW-ALK模型"
+    },
+    {
+      "paragraph_1based": 237,
+      "text_with_math": "DUW-ALK模型是在每一轮主动学习迭代中，先利用当前训练集建立ARD-Matérn克里金模型，然后在候选样本池中计算各候选点的预测不确定性和空间距离信息，最后根据采集函数选择信息量较高的样本加入训练集。随着迭代的进行，训练集逐步扩充，模型不断更新，其测试误差随训练样本数量增加而变化。"
+    },
+    {
+      "paragraph_1based": 238,
+      "text_with_math": "传统不确定性采样通常只依据克里金模型的预测标准差选择样本，即优先选择模型最不确定的候选点。该方法能够探索模型认知不足的区域，但未直接考虑候选点与已有训练样本之间的空间分布关系。当候选样本在局部区域较为密集时，仅依据预测标准差可能导致新增样本集中在相近区域，从而降低对整体设计空间的覆盖能力。因此，DUW-ALK模型在预测不确定性的基础上进一步引入空间距离因素，用候选点到当前训练集的最小距离衡量其空间新颖性。"
+    },
+    {
+      "paragraph_1based": 239,
+      "text_with_math": "设当前已标注训练集为 DL，未标注候选样本集为DU。对于候选点x，其到当前训练集中已有样本点的最小距离定义为："
+    },
+    {
+      "paragraph_1based": 240,
+      "text_with_math": "dminx=minxi∈DLx-xi#4-1"
+    },
+    {
+      "paragraph_1based": 242,
+      "text_with_math": "dminx 越大，说明该候选点越远离已有训练样本，能够补充输入空间中尚未充分覆盖的区域。反之，若dminx较小，则说明该候选点与已有样本较为接近，其新增信息可能相对有限。"
+    },
+    {
+      "paragraph_1based": 243,
+      "text_with_math": "为同时兼顾模型不确定性和样本空间覆盖性，DUW-ALK模型先分别对预测标准差和最小距离进行归一化处理，再通过加权几何平均构造采集函数："
+    },
+    {
+      "paragraph_1based": 244,
+      "text_with_math": "Qx=σx+0.011-wtdx+0.01wt#4-2"
+    },
+    {
+      "paragraph_1based": 245,
+      "text_with_math": "式中，Qx——候选点x的采集函数值；σx——归一化后的预测标准差；dx——归一化后的最小距离；wt ——第t次主动学习迭代时的距离权重。"
+    },
+    {
+      "paragraph_1based": 246,
+      "text_with_math": "式中加入0.01是为了避免归一化值为0时采集函数值失效，从而提高数值计算的稳定性。"
+    },
+    {
+      "paragraph_1based": 247,
+      "text_with_math": "距离权重 wt采用随迭代次数逐渐衰减的形式，其定义为："
+    },
+    {
+      "paragraph_1based": 248,
+      "text_with_math": "wt=α0max1-ηtT,0.05#4-3"
+    },
+    {
+      "paragraph_1based": 249,
+      "text_with_math": "本文实验中取："
+    },
+    {
+      "paragraph_1based": 250,
+      "text_with_math": "α0=0.20,η=0.60, T=10#4-4"
+    },
+    {
+      "paragraph_1based": 251,
+      "text_with_math": "式中，α0——初始距离权重系数；η——权重衰减系数；T——主动学习总迭代次数。"
+    },
+    {
+      "paragraph_1based": 252,
+      "text_with_math": "下限0.05用于保证迭代后期距离项仍保留较小影响，避免采样策略完全退化为单纯不确定性采样。在主动学习初期，训练样本数量较少，模型对输入空间掌握不足，因此采样策略需要更加重视空间覆盖性；随着训练样本逐步增加，模型对响应面的估计逐渐趋于稳定，采样重点逐渐由全局探索转向高不确定区域的局部精化。"
+    },
+    {
+      "paragraph_1based": 253,
+      "text_with_math": "从模型机制上看，DUW-ALK模型兼顾了探索性和利用性。预测标准差项用于引导模型关注当前预测不确定性较高的区域，空间距离项用于鼓励模型补充远离已有训练样本的候选点。二者通过动态权重进行融合，使模型在主动学习初期更重视输入空间覆盖，在后期更重视模型不确定性较高区域的精细化补充。"
+    },
+    {
+      "paragraph_1based": 254,
+      "text_with_math": "需要说明的是，在本研究的算法中保留了硬截断惩罚、连续软衰减惩罚和加权融合三种距离项处理方式。硬截断惩罚通过排斥半径直接降低近邻候选点的采集函数值，连续软衰减惩罚则以平滑函数形式削弱近邻候选点得分。考虑到真实DRIE刻蚀数据具有高维、小样本和候选空间稀疏等特点，本文主实验采用加权融合形式，即式（4-2）所示的weighted模式。后续所称DUW-ALK模型均指该距离—不确定性加权融合形式。"
+    },
+    {
+      "paragraph_1based": 255,
+      "text_with_math": "DUW-ALK模型的主动学习流程如图4-1所示。首先，将原始实验样本划分为独立测试集、初始训练集和候选池；其次，基于当前训练集训练ARD-Matérn克里金模型；然后，在候选池中计算每个候选样本的预测标准差和最小空间距离，并根据式（4-2）计算采集函数值。随后，选择采集函数值最大的候选样本加入训练集，同时从候选池中删除该样本。最后，重新训练模型并记录测试集RMSE随训练样本数量变化的收敛曲线。上述过程重复进行，直至达到设定的主动学习迭代次数。为降低初始样本划分带来的偶然性，本文对各采样策略均进行多次重复实验，并统计RMSE均值、标准差和TestAUC等指标。"
+    },
+    {
+      "paragraph_1based": 257,
+      "text_with_math": "图 4-1  DUW-ALK主动学习流程图"
+    },
+    {
+      "paragraph_1based": 258,
+      "text_with_math": "基于DUW-ALK模型的刻蚀仿真参数预测方法"
+    },
+    {
+      "paragraph_1based": 259,
+      "text_with_math": "对比模型"
+    },
+    {
+      "paragraph_1based": 260,
+      "text_with_math": "为验证DUW-ALK模型在样本数量相对充分条件下的有效性，本文首先在49组CFD仿真刻蚀数据上开展主动学习实验。该数据集的输入变量分别为腔室气压和射频功率，输出变量为刻蚀速率。与真实DRIE刻蚀数据相比，CFD数据输入维度较低，样本分布较均匀，HyperKriging模型的LOOCV的R²达到0.774，能够为主动学习提供相对可靠的不确定性估计。"
+    },
+    {
+      "paragraph_1based": 261,
+      "text_with_math": "本节比较四种采样策略：随机采样、不确定性采样、查询委员会采样和DUW-ALK模型。随机采样不依赖模型判断，作为基线方法，不确定性采样选择预测标准差最大的候选点，查询委员会采样通过多个高斯过程模型之间的预测分歧衡量候选样本的信息量，DUW-ALK模型则同时考虑预测不确定性和样本空间距离。"
+    },
+    {
+      "paragraph_1based": 262,
+      "text_with_math": "CFD主动学习实验设置为：测试集样本数为12，初始训练集样本数为5，候选池样本数为32，主动学习迭代次数为20，每种策略重复20次。"
+    },
+    {
+      "paragraph_1based": 263,
+      "text_with_math": "实验验证及分析"
+    },
+    {
+      "paragraph_1based": 264,
+      "text_with_math": "CFD仿真数据集的主动学习结果如表4-1所示。"
+    },
+    {
+      "paragraph_1based": 265,
+      "text_with_math": "表4-1 CFD仿真数据主动学习策略对比"
+    },
+    {
+      "paragraph_1based": 266,
+      "text_with_math": "由表4-2可知，对于CFD数据集，DUW-ALK模型的最终RMSE为6.9635 nm/min，低于随机采样的7.9559 nm/min。从TestAUC指标看，DUW-ALK模型相较随机采样提升13.10%，不确定性采样提升7.01%，QBC采样为-0.61%。该结果表明，在样本数量相对充分、基础代理模型预测能力较稳定的条件下，主动学习策略能够利用模型不确定性和空间距离信息提高样本利用效率。"
+    },
+    {
+      "paragraph_1based": 268,
+      "text_with_math": "图 4-2  CFD仿真数据主动学习收敛曲线"
+    },
+    {
+      "paragraph_1based": 269,
+      "text_with_math": "如图4-2所示，本文比较了DUW-ALK模型、不确定性采样、查询委员会采样（QBC）和随机采样四种策略在CFD数据上的收敛行为。图中横坐标为训练样本数，纵坐标为测试集RMSE，实线表示20次重复实验的平均结果，阴影区域表示 ±1σ 的波动范围，虚线表示基于全量CFD数据进行LOOCV得到的RMSE参考值6.23 nm/min。该图不仅反映了不同策略的最终预测误差，也展示了样本逐步加入过程中各策略的收敛速度和稳定性差异。"
+    },
+    {
+      "paragraph_1based": 270,
+      "text_with_math": "从整体趋势来看，四种策略的测试集RMSE均随训练样本数增加而逐步下降，说明随着样本量扩充，代理模型对刻蚀速率响应规律的学习能力不断增强。在初始训练样本数为5时，各策略的平均RMSE基本一致，表明不同采样策略具有相同的初始比较基础。随着训练样本数增加，DUW-ALK模型的误差下降速度较快，在前期阶段即表现出低于随机采样和QBC采样的RMSE。这说明在模型尚未充分收敛时，同时考虑预测不确定性和样本空间分布，有助于优先选择更具信息量的候选样本，从而加快模型学习过程。"
+    },
+    {
+      "paragraph_1based": 271,
+      "text_with_math": "随着训练样本数的增加，DUW-ALK模型总体保持较低的平均RMSE。不确定性采样也表现出一定的误差下降能力，但整体误差水平高于DUW-ALK模型。QBC采样的波动相对明显，说明其结果受初始样本划分影响较大。随机采样下降速度较慢，在多数训练样本数区间内落后于基于模型信息的主动采样策略。该结果表明，在CFD这一低维且响应关系相对清晰的数据场景下，单纯随机补点难以充分提高采样效率，而主动学习策略能够更有效地利用候选样本信息。"
+    },
+    {
+      "paragraph_1based": 272,
+      "text_with_math": "当训练样本数进一步增加时，不同策略之间的差异逐渐缩小，但DUW-ALK模型仍取得最低的最终RMSE。由表4-2可知，DUW-ALK模型最终RMSE为6.9635 nm/min，低于不确定性采样的7.2056 nm/min、QBC采样的7.2921 nm/min和随机采样的7.9559 nm/min。同时，DUW-ALK模型的最终误差最接近全量LOOCV参考水平，说明其在有限采样预算下能够更接近使用全体样本时的模型预测能力。"
+    },
+    {
+      "paragraph_1based": 273,
+      "text_with_math": "从全过程收敛效率来看，DUW-ALK模型的TestAUC为169.61，相比随机采样的195.16降低13.10%；不确定性采样的TestAUC为181.48，相比随机采样提升7.01%；QBC采样的TestAUC为196.36，略高于随机采样。由于TestAUC越小表示整个主动学习过程中平均误差越低，因此该结果说明DUW-ALK模型的优势不仅体现在最终误差上，也体现在全过程的样本利用效率上。"
+    },
+    {
+      "paragraph_1based": 274,
+      "text_with_math": "需要注意的是，从图4-2中的阴影区域可以看出，不同策略在20次重复实验下仍存在一定波动，尤其是QBC采样和随机采样在部分区间的标准差较大。这说明主动学习性能不仅受采样准则影响，也与初始训练集划分和候选样本分布有关。因此，本文对CFD结果的解释主要基于多次重复实验下的平均趋势，而不将其表述为在所有随机划分下均绝对优于其他策略。"
+    },
+    {
+      "paragraph_1based": 275,
+      "text_with_math": "综合来看，CFD实验结果表明，在样本数量相对充分、输入维度较低且基础代理模型具有较好预测能力的条件下，DUW-ALK模型能够有效利用预测不确定性和空间距离信息，提高样本选择效率并加快模型收敛。该结果也为后续真实DRIE刻蚀数据分析提供了参照：若同一主动学习策略在真实数据上的效果不稳定，则更可能与真实数据样本规模较小、输入维度较高、响应噪声较强以及不确定性估计可靠性下降有关，而不能简单归因于采样策略本身无效。"
+    },
+    {
+      "paragraph_1based": 276,
+      "text_with_math": "基于主动学习改进克里金模型的真实DRIE参数预测方法"
+    },
+    {
+      "paragraph_1based": 277,
+      "text_with_math": "CFD仿真数据实验表明，在样本数量相对充分、输入维度较低且基础代理模型较稳定的条件下，DUW-ALK模型能够提高主动学习过程中的样本利用效率。然而，真实DRIE刻蚀实验与CFD仿真数据存在明显差异：一方面，真实实验样本数量较少，输入变量维度更高；另一方面，真实刻蚀过程受到设备状态、测量误差、局部形貌变化和工艺波动等因素影响，响应数据的不确定性更强。因此，有必要进一步在真实DRIE刻蚀数据上分析DUW-ALK模型的适用性。"
+    },
+    {
+      "paragraph_1based": 278,
+      "text_with_math": "本章以24组真实DRIE刻蚀有效样本为对象，分别对CD loss指标和深宽比AR指标开展主动学习实验。通过与随机采样、不确定性采样和查询委员会采样进行对比，分析DUW-ALK模型在真实小样本刻蚀数据中的收敛效率和适用边界。"
+    },
+    {
+      "paragraph_1based": 279,
+      "text_with_math": "对比模型与实验设置"
+    },
+    {
+      "paragraph_1based": 280,
+      "text_with_math": "真实 DRIE 刻蚀数据来源于 25 组工艺参数组合实验。由于第 25 组样本输出指标不完整，建模阶段将其剔除，最终得到 24 组有效样本。输入变量包括刻蚀 Coil 功率、13.56 MHz Platen 功率、SF6 流量和钝化压力。输出响应包括 6 个 CD  loss 指标和 6 个深宽比 AR 指标。其中，CD  loss 指标用于表征刻蚀后的尺寸保持能力，深宽比 AR 指标用于表征高深宽比结构的形成能力。"
+    },
+    {
+      "paragraph_1based": 281,
+      "text_with_math": "真实数据主动学习实验以带 ARD 机制的 Matérn-5/2 克里金模型作为基础代理模型，并在此基础上构建本文提出的 DUW-ALK 模型。基础克里金模型用于输出候选样本的预测均值和预测标准差，DUW-ALK 则进一步引入候选样本到当前训练集的空间距离信息，通过距离—不确定性加权采集函数选择新增样本，从而提高有限样本条件下的采样效率。"
+    },
+    {
+      "paragraph_1based": 282,
+      "text_with_math": "每次主动学习实验中，独立测试集样本数为 7，初始训练集样本数为 3，候选池样本数为 14，主动学习迭代次数为 10。为降低初始训练集和测试集划分带来的偶然性，每种采样策略重复 20 次，并统计测试集 RMSE 均值、标准差和 TestAUC 等指标。"
+    },
+    {
+      "paragraph_1based": 283,
+      "text_with_math": "本文比较以下四种采样策略。随机采样从候选池中随机选择样本加入训练集，不依赖模型预测结果，用作基线方法。不确定性采样选择 ARD-Matérn 克里金模型预测标准差最大的候选样本，体现基于模型不确定性的主动学习思想。QBC 采样采用不同核函数的高斯过程模型组成委员会，基于多个模型预测均值之间的分歧选择候选样本。DUW-ALK 在预测标准差基础上引入候选点到当前训练集的最小空间距离，通过距离—不确定性加权采集函数选择样本，以兼顾高不确定区域采样和输入空间覆盖性。"
+    },
+    {
+      "paragraph_1based": 284,
+      "text_with_math": "前文 LOOCV 结果表明，真实 DRIE 刻蚀数据上的基础克里金模型泛化能力有限。因此，本节不将主动学习简单表述为必然提高最终预测精度的方法，而重点分析不同采样策略在有限样本预算下能否改善模型学习过程中的收敛效率。"
+    },
+    {
+      "paragraph_1based": 285,
+      "text_with_math": "CD loss指标实验验证与分析"
+    },
+    {
+      "paragraph_1based": 286,
+      "text_with_math": "CD loss 指标用于表征刻蚀后结构尺寸相对设计尺寸的损失程度，是评价侧壁保护能力和尺寸保持能力的重要指标。与刻蚀速率等输出相比，CD loss 更容易受到局部侧壁形貌、测试位置差异以及测量误差的影响，因此其响应变化通常更加平缓，样本间的可分辨性也相对较弱。在当前真实刻蚀实验中，可用于建模的样本总数仅为 24 组，这使得主动学习策略在 CD loss 指标上的表现更容易受到小样本波动的影响。为此，本文分别从最终预测误差和全过程采样效率两个角度，对不同主动学习策略在 6 个 CD loss 指标的表现进行分析。"
+    },
+    {
+      "paragraph_1based": 287,
+      "text_with_math": "如图 4-3 所示，本文比较了DUW-ALK、不确定性采样、查询委员会采样（QBC）和随机采样在 6 个 CD loss 指标上的最终测试集 RMSE。可以看出，不同指标的最优策略并不一致，说明在 CD loss 这一类平缓响应指标上，主动学习方法尚未表现出稳定统一的优势。对于 3-3 CD loss，随机采样的最终 RMSE 为 0.1774 μm，略高于不确定性采样的0.1679 μm、QBC的0.1705 μm和DUW-ALK的 0.1729 μm，此时主动学习策略具有一定正向收益，但幅度有限。对于 3-5 CD loss，不确定性采样和 QBC 的最终 RMSE 分别为 0.1791 μm和 0.1794 μm，略优于随机采样的0.1868 μm，DUW-ALK为 0.1832 μm，也仅表现出小幅改善。上述结果说明，在部分低量级CD loss目标上，主动学习能够带来一定程度的精度提升，但这种提升整体较弱，尚不足以形成明显优势。"
+    },
+    {
+      "paragraph_1based": 289,
+      "text_with_math": "图 4-3  不同主动学习策略在CD loss目标上的RMSE 对比"
+    },
+    {
+      "paragraph_1based": 290,
+      "text_with_math": "对于中高量级 CD loss 指标，图 4-3 所呈现出的现象更加复杂。在 5-5 CD loss 上，QBC 采样的最终 RMSE 为 0.2250 μm，为四种策略中最低，优于随机采样的 0.2275 μm，而 DUW-ALK 和不确定性采样分别为 0.2445 μm和 0.2409 μm，反而高于随机采样。在 7-7 CD loss上，随机采样的最终 RMSE 为 0.2666 μm，低于 DUW-ALK 的 0.2982 μm和不确定性采样的 0.2971 μm；QBC 采样为 0.2750 μm，虽接近随机采样，但仍未形成明显优势。在 8-12 CD loss上，随机采样的最终 RMSE 最低，为 0.2612 μm，而 DUW-ALK、不确定性采样和 QBC 采样分别为 0.2936 μm、0.2835 μm 和 0.2731 μm，均未优于随机采样。在 9-9 CD loss 上，QBC 采样的最终 RMSE 为 0.2735 μm，低于随机采样的 0.2790 μm，而不确定性采样达到 0.3249 μm，为四种策略中最高，说明其在该指标上的波动和误差相对更大。"
+    },
+    {
+      "paragraph_1based": 291,
+      "text_with_math": "总体而言，图 4-3 表明不同主动学习策略在不同 CD loss 指标上的最终表现存在明显分化，并未出现某一种策略在多数指标上持续占优的现象。除柱状高度所对应的平均最终 RMSE 外，图中的误差棒还反映了不同策略在重复实验中的波动范围。多数 CD loss 指标的误差棒较为明显，且不同策略之间存在较大重叠。这说明各策略间的差异在不少情况下处于同一波动量级之内，即使某一策略的平均 RMSE 略低，也未必代表其在不同随机划分或重复实验下具有稳定优势。"
+    },
+    {
+      "paragraph_1based": 292,
+      "text_with_math": "表4-3 真实刻蚀数据CD loss指标AUC提升结果"
+    },
+    {
+      "paragraph_1based": 293,
+      "text_with_math": "表 4-3 进一步给出了不同的主动学习策略相较随机采样的 TestAUC 提升结果。由于 TestAUC 反映的是主动学习整个采样过程中的平均误差水平，因此能够从全过程角度评价样本利用效率。从表中可以看出，DUW-ALK 在6 个 CD loss 指标上的 TestAUC 提升分别为 -3.54%、-0.70%、-3.80%、-4.56%、-7.15% 和 -7.28%，平均约为 -4.50%。不确定性采样的 TestAUC 提升分别为 -4.36%、0.97%、-2.23%、-1.65%、-1.90% 和 -5.71%，平均约为 -2.48%。QBC 采样分别为 1.98%、2.84%、2.74%、-0.30%、1.03% 和 -2.36%，平均约为 0.99%。该结果说明，从全过程采样效率的角度看，DUW-ALK 与不确定性采样整体上未优于随机采样，而 QBC 采样虽然在部分指标上取得小幅提升，但平均提升幅度仍然有限。"
+    },
+    {
+      "paragraph_1based": 294,
+      "text_with_math": "将图 4-3 与表 4-3 结合起来可以得到更完整的结论。从最终的 RMSE 来看，不同 CD loss 指标的最优策略并不固定，随机采样在部分指标上甚至优于主动学习策略。另一方面，从 TestAUC 看，主动学习在整个采样过程中的平均效率提升也并不稳定。该现象并非仅由单一采样策略参数设置导致，而是与当前数据规模、响应特性和模型不确定性估计可靠性共同相关。换言之，在当前数据条件下，主动学习难以稳定识别真正高信息量的补充样本点，这说明 24 组真实样本尚不足以支撑主动学习策略在 CD loss 指标上持续、稳定地优于随机采样。"
+    },
+    {
+      "paragraph_1based": 295,
+      "text_with_math": "造成这一现象的原因可能主要包括以下几个原因。首先，CD  loss 指标的响应面整体较为平缓，不同工艺点之间的响应差异相对较小，导致基于高斯过程预测方差的不确定性信息难以有效区分高信息量样本和普通样本。其次，当前真实数据样本规模较小，而输入维度和输出指标数量相对较多，导致代理模型本身的方差估计存在不稳定性，从而削弱了主动学习的判别能力。再次，DUW-ALK 引入了距离项以鼓励空间覆盖，但对于响应变化平缓的 CD loss 指标而言，远离已知样本的候选点并不必然对应更高的信息增益，因此空间距离项未必能够带来测试误差的有效下降。最后，CD loss 指标本身可能受局部侧壁形貌、测量一致性和实验噪声影响较大，这些因素进一步削弱了模型对候选点价值的可靠判断。"
+    },
+    {
+      "paragraph_1based": 296,
+      "text_with_math": "因此，本文将 CD loss 指标上的结果解释为主动学习方法在极小样本、平缓响应指标上的适用边界，而不简单将其视为方法本身失效。对于后续 CD loss 控制问题，更可行的改进方向包括补充基础实验样本、提高测量一致性与重复性、引入物理先验约束，或采用多输出联合建模方法增强模型稳定性。在提升基础代理模型精度之后，主动学习方法在 CD loss 建模与优化中的作用仍有进一步发挥空间。"
+    },
+    {
+      "paragraph_1based": 297,
+      "text_with_math": "深宽比AR指标实验验证与分析"
+    },
+    {
+      "paragraph_1based": 298,
+      "text_with_math": "深宽比 AR 指标反映了刻蚀深度与开口尺寸之间的比例关系，是评价高深宽比结构刻蚀能力的重要指标。与 CD loss 指标相比，深宽比 AR 指标不仅受结构横向尺寸变化影响，还与刻蚀深度和局部刻蚀速率密切相关，因此对工艺参数变化更加敏感。在当前真实刻蚀数据中，深宽比 AR 输出响应表现出更强的局部变化特征，尤其第 24 组样本在多个深宽比 AR 指标上具有较高响应值，使得深宽比 AR 输出响应呈现一定的局部高响应特征。"
+    },
+    {
+      "paragraph_1based": 299,
+      "text_with_math": "为比较不同采样策略在深宽比 AR 指标上的最终预测性能，本文统计了 6 个深宽比 AR 指标下各策略的最终测试集 RMSE，结果如图 4-4 所示。由图 4-4 可以看出，与 CD loss 指标相比，主动学习策略在深宽比 AR 指标上的最终预测误差表现出更明显的优势。对于 6 个深宽比 AR 指标，DUW-ALK 的最终 RMSE 均低于随机采样。其中，3-3 AR 指标上，DUW-ALK 的最终 RMSE 为 2.2260，低于随机采样的 3.2932。3-5 AR 指标上，DUW-ALK 为 2.1037，明显低于随机采样的3.3407。在 5-5、7-7、8-12 和 9-9 AR 指标上，DUW-ALK 的最终 RMSE 分别为 1.5553、1.1853、1.0730 和 1.0745，也均低于对应的随机采样结果。该结果表明，在深宽比 AR 这类响应变化更加明显的指标上，主动学习策略能够在有限样本条件下获得更低的最终预测误差。"
+    },
+    {
+      "paragraph_1based": 301,
+      "text_with_math": "图 4-4  不同主动学习策略在深宽比AR指标的最终RMSE对比"
+    },
+    {
+      "paragraph_1based": 302,
+      "text_with_math": "从不同主动学习策略之间的比较来看，DUW-ALK 和不确定性采样整体表现较好，但二者优势侧重点略有不同。在3-5 AR、7-7 AR 和8-12 AR指标上，DUW-ALK取得最低最终 RMSE。在3-3 AR、5-5 AR和9-9 AR指标上，不确定性采样的最终 RMSE 略低于 DUW-ALK。这说明，在部分深宽比 AR 指标中，单纯依据预测标准差选择样本也能够有效捕捉模型不确定区域。然而，从整体稳定性看，DUW-ALK 在所有深宽比 AR 指标上均优于随机采样，而 QBC 采样在部分指标上波动较大，例如3-5 AR和7-7 AR的最终 RMSE 分别达到3.7195和2.0569，明显高于 DUW-ALK。这表明，在当前极小样本条件下，由多个模型分歧构成的QBC指标并不总能稳定反映候选样本的信息量。"
+    },
+    {
+      "paragraph_1based": 303,
+      "text_with_math": "需要注意的是，图 4-4 中不同策略的误差棒仍然较长，尤其对于 3-3 AR 和 3-5 AR 指标，不同重复实验之间存在较大波动。这说明真实刻蚀数据的样本数量仍然偏少，模型结果会受到初始训练集划分、测试集划分以及局部高响应样本是否被较早选中的影响。因此，本文不将深宽比 AR 指标的结果解释为主动学习在每一次随机划分中都必然优于随机采样，而是认为在多次重复实验的平均意义下，主动学习策略对深宽比 AR 指标具有更好的最终预测性能。"
+    },
+    {
+      "paragraph_1based": 304,
+      "text_with_math": "最终 RMSE 只能反映最后一个采样步的预测误差，不能完整评价主动学习过程中的收敛效率。为了进一步比较不同策略在整个样本补充过程中的表现，本文采用 TestAUC 指标对 6 个深宽比 AR 指标进行统计，结果如表 4-4 所示。"
+    },
+    {
+      "paragraph_1based": 305,
+      "text_with_math": "表4-4 真实刻蚀数据深宽比AR目标AUC提升结果"
+    },
+    {
+      "paragraph_1based": 306,
+      "text_with_math": "由表 4-4 可见，深宽比 AR 指标上主动学习策略表现出较为一致的正向提升。DUW-ALK 在 6 个深宽比 AR 指标上的 TestAUC 提升均为正值，提升范围约为 23% 至 30%，平均提升约为 26.52%。不确定性采样在 6 个指标上的平均提升约为 21.40%。QBC 采样平均提升约为 7.49%。该结果说明，DUW-ALK 不仅能够在最终阶段取得较低的 RMSE，而且在整个主动学习过程中也能更快降低测试误差，具有更高的样本利用效率。"
+    },
+    {
+      "paragraph_1based": 307,
+      "text_with_math": "结合图 4-4 和表 4-4 可以看出，深宽比 AR 指标与 CD loss 指标呈现出明显不同的主动学习表现。CD loss 指标响应变化相对平缓，不同策略的最终 RMSE 和 TestAUC 差异均不稳定；而深宽比 AR 指标中存在更明显的局部高变化区域，模型不确定性更容易与高信息量样本相对应，因此主动学习策略能够更早识别并利用对模型训练更有价值的样本。随机采样虽然具有无偏探索的特点，但在有限迭代次数内无法保证及时选中局部高响应区域附近的样本，因此其收敛效率相对较低。"
+    },
+    {
+      "paragraph_1based": 308,
+      "text_with_math": "DUW-ALK 相较普通不确定性采样的优势主要来自空间距离项的引入。单纯不确定性采样能够捕捉预测方差较大的候选点，但在候选点分布不均或局部区域不确定性持续偏高时，可能出现采样点相对集中的问题。距离—不确定性融合采样在保留不确定性驱动的同时，引入候选点与已有训练样本之间的空间距离信息，从而提高设计空间覆盖能力。对于深宽比 AR 指标这种存在局部高响应特征的情况，较好的空间覆盖有助于模型更早接触到关键响应区域，因此能够取得更高的平均 TestAUC 提升。"
+    },
+    {
+      "paragraph_1based": 309,
+      "text_with_math": "不过，高深宽比并不必然代表最佳刻蚀工艺。对于实际工艺优化而言，深宽比提升还需要与 CD loss 指标、侧壁垂直性、底部粗糙度、刻蚀均匀性以及工艺稳定性等指标共同判断。因此，本文将深宽比 AR 指标上的主动学习结果理解为：在有限真实样本条件下，基于克里金模型的不确定性估计和距离约束能够有效提高对高变化响应指标的建模效率，但最终工艺优选仍需结合多指标评价和后续实验验证。"
+    },
+    {
+      "paragraph_1based": 310,
+      "text_with_math": "不同采样策略的作用机制与适用边界"
+    },
+    {
+      "paragraph_1based": 313,
+      "text_with_math": "QBC 采样通过多个代理模型之间的预测分歧衡量候选样本的信息量。与单一模型的不确定性采样相比，QBC 能够在一定程度上降低单一核函数假设对采样结果的影响。当委员会成员之间能够形成有意义的预测差异时，模型分歧较大的区域通常对应当前样本支撑不足或响应变化较复杂的区域，因此具有较高的补充采样价值。但 QBC 的有效性同样依赖基础模型的稳定性。若样本数量过少、模型整体预测能力不足，则不同模型之间的分歧可能包含较多随机成分，导致采样优势受到限制。"
+    },
+    {
+      "paragraph_1based": 314,
+      "text_with_math": "DUW-ALK 在预测不确定性的基础上进一步引入样本空间距离信息。该策略的设计目的在于避免新增样本过度集中于局部区域，使采样过程同时兼顾模型不确定性和设计空间覆盖性。与硬截断排斥半径相比，本文采用连续加权方式参与采集函数计算，而不是简单地将排斥半径以内的候选点强制降权。该设置更适合真实刻蚀数据的高维稀疏特征。在 24 组有效样本、4 维输入变量的条件下，候选点之间的空间距离普遍较大，硬截断惩罚可能难以充分触发。连续加权方式则能够在每一次选点中保留距离信息对采样排序的影响。"
+    },
+    {
+      "paragraph_1based": 315,
+      "text_with_math": "从 CD loss 指标和深宽比 AR 指标的结果差异可以看出，主动学习策略的有效性与响应特性密切相关。对于 CD loss 这类变化范围相对较窄、响应较平缓且可能受测量噪声影响较明显的指标，随机采样已经能够提供一定的空间覆盖性，不确定性或距离引导采样未必能够带来稳定增益。相比之下，深宽比 AR 指标在当前数据中呈现更明显的局部高响应特征，基于不确定性和距离信息的主动学习策略更容易识别具有较高信息量的候选样本，因此能够提高有限样本条件下的收敛效率。由此可见，本文并不认为某一种采样策略在所有输出指标上均具有绝对优势。不同主动学习策略的效果取决于样本规模、输入空间稀疏性以及响应面的变化结构。"
+    },
+    {
+      "paragraph_1based": 316,
+      "text_with_math": "结果可靠性与工程解释"
+    },
+    {
+      "paragraph_1based": 317,
+      "text_with_math": "真实刻蚀实验的有效样本数仅为 24 组，且每次主动学习实验中独立测试集样本数为 7，因此单个测试样本的预测误差变化可能对 RMSE 曲线产生较明显影响。为降低随机划分带来的偶然性，本文对每种采样策略均进行了 20 次重复实验，并报告均值和标准差。因此，在解释主动学习结果时，需要综合考虑平均趋势和误差波动，而不能仅依据单次实验曲线或单一指标作出过度判断。"
+    },
+    {
+      "paragraph_1based": 321,
+      "text_with_math": "本章小结"
+    },
+    {
+      "paragraph_1based": 322,
+      "text_with_math": "本章在基础克里金模型的基础上，引入距离—不确定性加权主动学习策略，构建DUW-ALK模型，并分别在CFD仿真数据和真实DRIE数据上开展验证与对比研究，得到如下结论："
+    },
+    {
+      "paragraph_1based": 323,
+      "text_with_math": "（1）DUW-ALK模型在传统不确定性采样的基础上进一步引入样本空间距离信息，通过综合考虑预测不确定性与设计空间覆盖性，使主动学习在选点过程中兼顾空间覆盖性与高信息样本，从而提高有限样本条件下的采样效率。"
+    },
+    {
+      "paragraph_1based": 324,
+      "text_with_math": "（2）在CFD仿真数据上，由于样本分布相对充分、响应面规律较稳定，主动学习策略总体表现优于随机采样。其中，DUW-ALK在收敛速度和整体样本利用效率方面具有较好表现，说明所提出方法在低维、相对理想数据场景下是有效的。"
+    },
+    {
+      "paragraph_1based": 325,
+      "text_with_math": "（3）在真实DRIE数据集上，不同主动学习策略的性能表现出明显的指标依赖性。对于CD loss指标，DUW-ALK相较随机采样并未表现出稳定优势，说明在响应较平缓、噪声影响较明显或基础模型不够稳定的情况下，主动学习策略的增益有限。"
+    },
+    {
+      "paragraph_1based": 326,
+      "text_with_math": "（4）对于深宽比AR指标，DUW-ALK及其他基于模型信息的主动学习策略相较随机采样表现出更明显的样本效率优势。这表明，当响应变量存在局部高响应区域或较强非线性特征时，基于不确定性和距离信息的采样方法更容易识别高信息量样本，从而提升模型的收敛效率。"
+    },
+    {
+      "paragraph_1based": 327,
+      "text_with_math": "（5）通过对不同采样策略机制的分析可以看出，随机采样具有较强的鲁棒性，不确定性采样依赖模型方差估计的准确性，QBC采样依赖模型间分歧信息，而DUW-ALK则进一步强化了设计空间覆盖能力。因此，并不存在一种对所有指标都绝对最优的主动学习策略，其有效性受到样本规模、输入维度、响应面结构以及数据噪声水平等多种因素影响。"
+    },
+    {
+      "paragraph_1based": 328,
+      "text_with_math": "基于遗传算法的半导体刻蚀参数优化方法"
+    },
+    {
+      "paragraph_1based": 329,
+      "text_with_math": "前述章节基于 DUW-ALK 模型对半导体刻蚀小样本数据进行了代理建模与主动学习分析。结果表明，在样本数量有限的条件下，DUW-ALK 能够利用克里金模型的预测不确定性和样本空间距离信息，提高部分输出响应的样本利用效率。为了进一步发挥代理模型在工艺参数寻优中的作用，本章在训练后的 DUW-ALK 模型基础上，引入遗传算法对半导体刻蚀工艺参数进行候选优化推荐。"
+    },
+    {
+      "paragraph_1based": 330,
+      "text_with_math": "与直接进行大量真实刻蚀实验进行参数搜索相比，代理模型能够在较低计算成本下快速预测不同工艺参数组合对应的刻蚀响应。遗传算法则具有较强的全局搜索能力，适用于非线性、多峰和不可导目标函数的优化问题。因此，将 DUW-ALK 模型与遗传算法相结合，可以在已有实验数据支撑的参数范围内搜索潜在优良工艺区域，为后续实验设计和局部工艺窗口探索提供参考。"
+    },
+    {
+      "paragraph_1based": 331,
+      "text_with_math": "需要说明的是，本章所得优化结果是基于当前样本和代理模型预测得到的候选参数组合，并不直接等同于真实刻蚀实验中的全局最优工艺点。由于真实 DRIE 刻蚀实验样本数量有限，且代理模型在部分 CD loss 指标上的优化能力仍然受限，因此优化结果应理解为后续实验验证的候选方案，而不是最终工艺。"
+    },
+    {
+      "paragraph_1based": 332,
+      "text_with_math": "遗传算法及参数设置"
+    },
+    {
+      "paragraph_1based": 356,
+      "text_with_math": "（1）建立了基于克里金模型的刻蚀工艺参数预测方法，并在CFD仿真数据和真实DRIE实验数据上进行了验证。结果表明，在CFD仿真数据中，克里金模型能够较好刻画工艺参数与刻蚀速率之间的非线性关系。在留一法交叉验证中克里金模型的R²为 0.774，RMSE 为6.641nm/min，具有一定的预测能力。而在真实DRIE小样本数据中，CD loss指标的预测结果波动较大，深宽比AR指标的R²均为负值，说明在高维小样本和实验噪声条件下，基础克里金模型的泛化能力受到明显限制。"
+    },
+    {
+      "paragraph_1based": 357,
+      "text_with_math": "（2）构建了距离-不确定性加权主动学习克里金模型 DUW-ALK，并与随机采样、不确定性采样和查询委员会采样进行了对比。结果表明，在CFD仿真数据中，DUW-ALK相较随机采样的AUC提升为13.10%，说明其能够提高有限样本条件下的采样效率。在真实 DRIE 数据中，主动学习效果与响应变量特性密切相关：对于CD loss指标，DUW-ALK未表现出稳定优势。对于深宽比AR指标，DUW-ALK的AUC提升约为23.38%至29.51%，说明该方法更适合识别具有局部高响应特征的刻蚀指标。"
+    },
+    {
+      "paragraph_1based": 358,
+      "text_with_math": "（3）将训练后的克里金代理模型与遗传算法相结合，实现了DRIE刻蚀工艺候选参数区域推荐。结果表明，CD loss指标最小化对应的推荐区域主要集中在Coil功率约840W、Platen功率约35W、SF6流量约115sccm、钝化压力约8mTorr 附近；深宽比 AR 最大化对应的推荐区域主要集中在 Coil 功率约 920 W、Platen 功率约40W、SF6流量约145sccm、钝化压力约10mTorr 附近。两类指标对应的推荐区域存在明显差异，说明降低CD loss与提高深宽比AR之间存在一定工艺权衡，本文优化结果可作为后续实验验证的候选工艺区域，而非最终生产参数。"
+    },
+    {
+      "paragraph_1based": 359,
+      "text_with_math": "不足与展望"
+    }
+  ],
+  "thesis_relevant_tables": [
+    {
+      "table_1based": 5,
+      "rows": [
+        [
+          "目标变量",
+          "RMSE",
+          "MAE",
+          "MAPE/%",
+          "R²"
+        ],
+        [
+          "3-3 CD loss",
+          "0.1735",
+          "0.1360",
+          "14.86",
+          "-0.1549"
+        ],
+        [
+          "3-5 CD loss",
+          "0.1871",
+          "0.1437",
+          "14.86",
+          "-0.1409"
+        ],
+        [
+          "5-5 CD loss",
+          "0.2161",
+          "0.1603",
+          "16.34",
+          "0.1165"
+        ],
+        [
+          "7-7 CD loss",
+          "0.3008",
+          "0.2366",
+          "22.33",
+          "-0.2464"
+        ],
+        [
+          "8-12 CD loss",
+          "0.2726",
+          "0.2110",
+          "18.08",
+          "0.0038"
+        ],
+        [
+          "9-9 CD loss",
+          "0.2517",
+          "0.1879",
+          "16.13",
+          "0.1807"
+        ],
+        [
+          "3-3 AR",
+          "3.9014",
+          "1.6846",
+          "7.06",
+          "-1.1375"
+        ],
+        [
+          "3-5 AR",
+          "3.9557",
+          "1.7236",
+          "7.20",
+          "-1.1537"
+        ],
+        [
+          "5-5 AR",
+          "2.7446",
+          "1.1823",
+          "7.20",
+          "-1.1491"
+        ],
+        [
+          "7-7 AR",
+          "2.1825",
+          "0.9414",
+          "7.35",
+          "-1.1534"
+        ],
+        [
+          "8-12 AR",
+          "1.9879",
+          "0.8510",
+          "7.33",
+          "-1.1537"
+        ],
+        [
+          "9-9 AR",
+          "1.8295",
+          "0.7904",
+          "7.46",
+          "-1.1547"
+        ]
+      ]
+    },
+    {
+      "table_1based": 6,
+      "rows": [
+        [
+          "策略",
+          "最终RMSE",
+          "RMSE标准差",
+          "AUC",
+          "AUC提升vs随机"
+        ],
+        [
+          "DUW-ALK模型",
+          "6.9635",
+          "1.3968",
+          "169.61",
+          "13.10%"
+        ],
+        [
+          "不确定性采样",
+          "7.2056",
+          "1.5464",
+          "181.48",
+          "7.01%"
+        ],
+        [
+          "查询委员会采样（QBC）",
+          "7.2921",
+          "2.1386",
+          "196.36",
+          "-0.61%"
+        ],
+        [
+          "随机采样",
+          "7.9559",
+          "1.8855",
+          "195.16",
+          "0.00%"
+        ]
+      ]
+    },
+    {
+      "table_1based": 7,
+      "rows": [
+        [
+          "目标",
+          "DUW-ALK提升/%",
+          "不确定性采样提升/%",
+          "QBC提升/%"
+        ],
+        [
+          "3-3 CD loss",
+          "-3.54%",
+          "-4.36%",
+          "1.98%"
+        ],
+        [
+          "3-5 CD loss",
+          "-0.70%",
+          "0.97%",
+          "2.84%"
+        ],
+        [
+          "5-5 CD loss",
+          "-3.80%",
+          "-2.23%",
+          "2.74%"
+        ],
+        [
+          "7-7 CD loss",
+          "-4.56%",
+          "-1.65%",
+          "-0.30%"
+        ],
+        [
+          "8-12 CD loss",
+          "-7.15%",
+          "-1.90%",
+          "1.03%"
+        ],
+        [
+          "9-9 CD loss",
+          "-7.28%",
+          "-5.71%",
+          "-2.36%"
+        ]
+      ]
+    },
+    {
+      "table_1based": 8,
+      "rows": [
+        [
+          "目标",
+          "DUW-ALK提升/%",
+          "不确定性采样提升/%",
+          "QBC提升/%"
+        ],
+        [
+          "3-3 AR",
+          "28.04%",
+          "25.46%",
+          "14.52%"
+        ],
+        [
+          "3-5 AR",
+          "23.38%",
+          "15.71%",
+          "1.47%"
+        ],
+        [
+          "5-5 AR",
+          "25.58%",
+          "20.80%",
+          "12.07%"
+        ],
+        [
+          "7-7 AR",
+          "27.95%",
+          "24.39%",
+          "8.67%"
+        ],
+        [
+          "8-12 AR",
+          "24.63%",
+          "15.26%",
+          "0.47%"
+        ],
+        [
+          "9-9 AR",
+          "29.51%",
+          "26.77%",
+          "7.76%"
+        ]
+      ]
+    }
+  ],
+  "unverified": [
+    "The original CFD dissertation and original solver outputs were not available/read; readme attribution is unverified.",
+    "Legacy source code was statically read, not executed; historical result values have not been reproduced."
+  ]
+}

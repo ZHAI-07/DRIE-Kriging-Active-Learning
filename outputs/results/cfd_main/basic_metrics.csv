@@ -1,0 +1,4 @@
+﻿model,target,structure,metric,n_predictions,rmse,mae,r2,coverage95,mean_interval_width
+GPR,CFD response,CFD,simulated response,49,4.61987893887946,3.5687015445518737,0.8906888199289742,0.9591836734693877,17.947067574825148
+Ridge,CFD response,CFD,simulated response,49,14.889825049216828,12.3325959223983,-0.13548808685656888,,
+Mean,CFD response,CFD,simulated response,49,14.2643881035518,11.875238095238098,-0.04210069444444464,,

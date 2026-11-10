@@ -1,0 +1,13 @@
+{
+  "hidden_label_poisoning_invariance": "passed",
+  "models": [
+    "IndependentGP",
+    "IsotropicGP"
+  ],
+  "paired_configurations": 8,
+  "seeds_per_configuration": 30,
+  "strategy_replays": 960,
+  "curves": 11520,
+  "selections": 2880,
+  "budget_and_initial_equality_checks": "passed"
+}

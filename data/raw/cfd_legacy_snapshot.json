@@ -1,0 +1,369 @@
+{
+  "columns": [
+    "experiment_id",
+    "pressure",
+    "power",
+    "legacy_cfd_response"
+  ],
+  "rows": [
+    [
+      1,
+      10,
+      1500,
+      73.03
+    ],
+    [
+      2,
+      10,
+      2000,
+      81.23
+    ],
+    [
+      3,
+      10,
+      2500,
+      91.75
+    ],
+    [
+      4,
+      10,
+      3000,
+      98.6
+    ],
+    [
+      5,
+      10,
+      3500,
+      100.89
+    ],
+    [
+      6,
+      10,
+      4000,
+      92.06
+    ],
+    [
+      7,
+      10,
+      4500,
+      87.74
+    ],
+    [
+      8,
+      15,
+      1500,
+      82.45
+    ],
+    [
+      9,
+      15,
+      2000,
+      94.12
+    ],
+    [
+      10,
+      15,
+      2500,
+      106.06
+    ],
+    [
+      11,
+      15,
+      3000,
+      120.51
+    ],
+    [
+      12,
+      15,
+      3500,
+      99.31
+    ],
+    [
+      13,
+      15,
+      4000,
+      93.31
+    ],
+    [
+      14,
+      15,
+      4500,
+      93.75
+    ],
+    [
+      15,
+      20,
+      1500,
+      83.57
+    ],
+    [
+      16,
+      20,
+      2000,
+      95.24
+    ],
+    [
+      17,
+      20,
+      2500,
+      107.78
+    ],
+    [
+      18,
+      20,
+      3000,
+      110.52
+    ],
+    [
+      19,
+      20,
+      3500,
+      110.4
+    ],
+    [
+      20,
+      20,
+      4000,
+      100.35
+    ],
+    [
+      21,
+      20,
+      4500,
+      84.86
+    ],
+    [
+      22,
+      25,
+      1500,
+      76.46
+    ],
+    [
+      23,
+      25,
+      2000,
+      99.31
+    ],
+    [
+      24,
+      25,
+      2500,
+      109.06
+    ],
+    [
+      25,
+      25,
+      3000,
+      116.6
+    ],
+    [
+      26,
+      25,
+      3500,
+      114.4
+    ],
+    [
+      27,
+      25,
+      4000,
+      103.93
+    ],
+    [
+      28,
+      25,
+      4500,
+      91.28
+    ],
+    [
+      29,
+      30,
+      1500,
+      74.19
+    ],
+    [
+      30,
+      30,
+      2000,
+      98.8
+    ],
+    [
+      31,
+      30,
+      2500,
+      102.51
+    ],
+    [
+      32,
+      30,
+      3000,
+      116.36
+    ],
+    [
+      33,
+      30,
+      3500,
+      112.77
+    ],
+    [
+      34,
+      30,
+      4000,
+      102.68
+    ],
+    [
+      35,
+      30,
+      4500,
+      83.72
+    ],
+    [
+      36,
+      35,
+      1500,
+      74.13
+    ],
+    [
+      37,
+      35,
+      2000,
+      99.15
+    ],
+    [
+      38,
+      35,
+      2500,
+      117.21
+    ],
+    [
+      39,
+      35,
+      3000,
+      114.85
+    ],
+    [
+      40,
+      35,
+      3500,
+      108.61
+    ],
+    [
+      41,
+      35,
+      4000,
+      92.01
+    ],
+    [
+      42,
+      35,
+      4500,
+      72.86
+    ],
+    [
+      43,
+      40,
+      1500,
+      71.66
+    ],
+    [
+      44,
+      40,
+      2000,
+      96.53
+    ],
+    [
+      45,
+      40,
+      2500,
+      115.2
+    ],
+    [
+      46,
+      40,
+      3000,
+      111.03
+    ],
+    [
+      47,
+      40,
+      3500,
+      105.51
+    ],
+    [
+      48,
+      40,
+      4000,
+      87.88
+    ],
+    [
+      49,
+      40,
+      4500,
+      68.09
+    ]
+  ],
+  "provenance": {
+    "kind": "historical_simulation_dataset",
+    "not_physical_ground_truth": true,
+    "workbook": "Z:\\ZHAI\\Undergraduate\\毕业设计\\开题报告\\全因子设计仿真数据.xlsx",
+    "sheet": "Sheet1",
+    "range": "A2:D50",
+    "original_headers": [
+      "序号",
+      "气压(mT)",
+      "功率(W)",
+      "真实值"
+    ],
+    "workbook_sha256": "d6daf98ffda76b9de50cfeb220edf9b72dc80dfe8b4a82a59c88266bf4c93000",
+    "legacy_code": "Z:\\ZHAI\\Undergraduate\\毕业设计\\.py\\5.14\\main_cfd.py",
+    "legacy_code_sha256": "83a67e9635e93919d4771786f2881566a464d2fc7a0a208965294c9886ef303e",
+    "legacy_code_rows_match_workbook": false,
+    "legacy_code_value_differences": [
+      {
+        "excel_row": 46,
+        "excel_column": 4,
+        "workbook_value": 115.2,
+        "code_value": 101.57,
+        "difference": 13.63000000000001
+      },
+      {
+        "excel_row": 47,
+        "excel_column": 4,
+        "workbook_value": 111.03,
+        "code_value": 105.61,
+        "difference": 5.420000000000002
+      },
+      {
+        "excel_row": 48,
+        "excel_column": 4,
+        "workbook_value": 105.51,
+        "code_value": 102.77,
+        "difference": 2.740000000000009
+      },
+      {
+        "excel_row": 49,
+        "excel_column": 4,
+        "workbook_value": 87.88,
+        "code_value": 98.93,
+        "difference": -11.050000000000011
+      },
+      {
+        "excel_row": 50,
+        "excel_column": 4,
+        "workbook_value": 68.09,
+        "code_value": 95.09,
+        "difference": -27.0
+      }
+    ],
+    "source_readme": "Z:\\ZHAI\\Undergraduate\\毕业设计\\【资料提交】本科毕设-姓名-题目\\【资料提交】本科毕设-姓名-题目\\附件\\1.数据及代码\\data\\readme.txt",
+    "source_readme_text": "全因子实验是复现文章：杨明强.基于CFD的等离子体刻蚀数值模拟与参数优化[D].大连理工大学,2014.用于第一阶段验证克里金模型的有效性\n第三次实验数据是DRIE工艺试验\n",
+    "claimed_literature_source_verified": false,
+    "physical_response_name_in_code": "etch rate",
+    "physical_response_unit_in_code": "nm/min",
+    "response_name_and_unit_independently_verified": false,
+    "input_units_as_workbook": {
+      "pressure": "mT",
+      "power": "W"
+    },
+    "note": "The workbook labels output only as 真实值. This inherited label does not establish real measurements. Use legacy CFD response or explicitly qualify the historical code's etch-rate unit. No physical validation or primary-thesis data tracing performed."
+  }
+}

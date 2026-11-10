@@ -1,0 +1,170 @@
+{
+  "dataset": "real",
+  "source": "Z:\\ZHAI\\Undergraduate\\毕业设计\\AI赋能的芯片三维集成\\data\\raw\\user_confirmed_table_2026-11-09.json",
+  "source_sha256": "0f90c90551b4d2924ef3bb4117ce78784ce313daf369e7ba29c60244a59041d6",
+  "source_provenance": {
+    "kind": "user_pasted_table",
+    "date": "2026-11-09",
+    "authority": "用户明确指定：Excel数据只以此次粘贴表格为准",
+    "precision": "输出保留用户表格显示的4位小数精度；JSON数字不保留末尾零。未从旧Excel补入更高精度或第25组。",
+    "normalization": "只移除HTML空白实体和排版空白，不修改数值。",
+    "legacy_materials_role": "仅作历史背景或在明确说明后核查，不替换当前数值"
+  },
+  "numerical_values_sha256": "b8ba8bb306f7a1d2734d1583e824e6ce295c6f6c0a7d4d3e70f7642072687b1a",
+  "units": {
+    "features": [
+      "W",
+      "W",
+      "sccm",
+      "mTorr"
+    ],
+    "CD Loss": "micrometre",
+    "AR": "dimensionless",
+    "source": "User confirmed units on 2026-11-09; input snapshot remains unchanged"
+  },
+  "experiment_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "X_shape": [
+    24,
+    4
+  ],
+  "Y_shape": [
+    24,
+    12
+  ],
+  "target_names": [
+    "3-3 CD Loss",
+    "3-3 AR",
+    "3-5 CD Loss",
+    "3-5 AR",
+    "5-5 CD Loss",
+    "5-5 AR",
+    "7-7 CD Loss",
+    "7-7 AR",
+    "8-12 CD Loss",
+    "8-12 AR",
+    "9-9 CD Loss",
+    "9-9 AR"
+  ],
+  "configuration": {
+    "dataset": "real",
+    "experiment": {
+      "n_test": 7,
+      "n_initial": 3,
+      "budget": 10,
+      "repeats": 30,
+      "seed_start": 20261109,
+      "duw_base": 0.2,
+      "duw_decay": 0.6,
+      "penalty_mode": "weighted"
+    },
+    "gp": {
+      "kernel": "matern52",
+      "alpha": 0.001,
+      "restarts": 0,
+      "maxiter": 60
+    },
+    "notes": [
+      "Historical 7-test/3-initial/10-acquisition schedule; 30 paired seeds instead of legacy 20.",
+      "This remains the comprehensive shared-query 12-response adaptation, not a claim to numerically reproduce every old per-target run.",
+      "Source blocking and training-only input scaling intentionally replace riskier historical assumptions."
+    ],
+    "exclude_ids": [],
+    "cfd_variant": "excel"
+  },
+  "gp_configuration": {
+    "kernel": "matern52",
+    "alpha": 0.001,
+    "noise_initial": 0.001,
+    "noise_bounds": [
+      1e-06,
+      0.1
+    ],
+    "length_bounds": [
+      0.01,
+      10.0
+    ],
+    "constant_bounds": [
+      0.001,
+      1000.0
+    ],
+    "restarts": 0,
+    "maxiter": 60,
+    "optimize": true
+  },
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.2",
+    "pandas": "3.0.0",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0"
+  },
+  "evaluation_unit": "process experiment; 2/13 kept on the same train/test side because of shared measurement-source evidence",
+  "acquisition_unit": "one recipe ID reveals all available target responses at once",
+  "duw_reproduction_scope": "legacy weighted score exactly; multiresponse standardized-SD averaging and common query sequence are this project's adaptation",
+  "test_auc_definition": "trapezoidal integral of held-out RMSE over acquisition step, includes step 0; lower is better; not ROC-AUC",
+  "macro_scale": "fixed per-target SD from each repeat's initial training labels; never recomputed from test or pool labels",
+  "fit_scale": "current revealed training labels only; input scaler fixed at initial training values during AL",
+  "noise": "WhiteKernel observation-predictive uncertainty plus fixed alpha training diagonal regularization; intervals are model-conditional",
+  "source_duplicate_caveat": "2/13 blocked across evaluation sides, but counted as separate recipe IDs in the initial/pool acquisition budget; exclude-each sensitivity needed",
+  "statistical_scope": "paired random-split Monte Carlo on one finite dataset, not independent physical replication",
+  "status": "complete",
+  "command": [
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\AI赋能的芯片三维集成\\.venv\\Scripts\\python.exe",
+    "Z:\\ZHAI\\Undergraduate\\毕业设计\\AI赋能的芯片三维集成\\run_research.py",
+    "--config",
+    "configs/real_historical_schedule.json",
+    "--run-name",
+    "real_historical_schedule",
+    "--workers",
+    "4",
+    "--repeats",
+    "30"
+  ],
+  "run_name": "real_historical_schedule",
+  "stages_requested": [
+    "basic",
+    "al",
+    "optimization"
+  ],
+  "code_sha256": {
+    "code\\research\\__init__.py": "d03bd67a97aada01f6f2ec0fdcb9495f324bc3407458303986aab5a1aee92e51",
+    "code\\research\\core.py": "e3e20c309ffd58d6ab229c37b6a0e230e783998ebe4e963cc2957ccf273d360c",
+    "code\\research\\data.py": "3d9384e8b3b3e4a644885ab36b444dfea9628d35bab47809a28e1d5db4d7ce82",
+    "code\\research\\experiments.py": "b959c2d71fd2fecbbd95df90b9cd716ca2b323d1fef99b26067e5ffa28515bed",
+    "code\\research\\optimization.py": "9648f2dfbd22ec413bf79de402acf0c35b9972a9485c27fb22ea83f817240103",
+    "run_research.py": "ab78fa00559f7eb5c197293e78e0dbd1c0c03e44c72e334abbea1076b733071a"
+  },
+  "stages_completed": [
+    "basic",
+    "al",
+    "optimization"
+  ],
+  "elapsed_seconds": 113.69565250002779,
+  "source_unchanged": true
+}

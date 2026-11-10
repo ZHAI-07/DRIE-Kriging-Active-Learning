@@ -1,0 +1,936 @@
+{
+  "status": "passed",
+  "scope": "Windows full numerical reproduction; user-reported Linux deviations were not independently rerun here. No claim of byte-identical artifacts or statistical equivalence.",
+  "entry_sha256": "6882db30da5f93580315dea325328600466849d170bf7c08b74a7139d20e7cf7",
+  "source_unchanged": true,
+  "runs": [
+    {
+      "reference": "real_main",
+      "reproduced": "v4_repro_real_main",
+      "status": "passed",
+      "execution": "Actually recomputed all 30 seeds with optimized GP, full 12 responses, budget8, four strategies; basic/AL/optimization stages completed.",
+      "elapsed_seconds": 82.31748770002741,
+      "versions": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "numpy": "2.4.2",
+        "pandas": "3.0.0",
+        "scipy": "1.17.0",
+        "sklearn": "1.8.0"
+      },
+      "portable": [
+        {
+          "file": "al_curves.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 16200,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mae": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "coverage95": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_interval_width": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "curve_policy": "Finite metric diagnostics only; portable acceptance is based on exact queries and per-row AUC"
+        },
+        {
+          "file": "al_auc.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 1800,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "normalized_test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_curve_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "auc_relative_tolerance": 0.03,
+          "auc_max_relative_difference": 0.0,
+          "accepted_auc_columns": [
+            "test_auc",
+            "normalized_test_auc"
+          ]
+        },
+        {
+          "file": "al_selections.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 960,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "experiment_id": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "query_identities": "identical",
+          "query_mismatches": 0
+        }
+      ],
+      "strict_numerical": [
+        {
+          "file": "al_curves.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 16200,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mae": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "coverage95": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_interval_width": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "strict_absolute_tolerance": 1e-08
+        },
+        {
+          "file": "al_auc.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 1800,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "normalized_test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_curve_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "strict_absolute_tolerance": 1e-08
+        },
+        {
+          "file": "al_selections.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 960,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "experiment_id": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "query_identities": "identical",
+          "query_mismatches": 0
+        }
+      ],
+      "paired_macro_diagnostics": [
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": -8.519974328747455,
+            "median_delta_auc": -0.8486059689579015,
+            "wins": 21,
+            "losses": 9,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -8.519974328747455,
+            "median_delta_auc": -0.8486059689579015,
+            "wins": 21,
+            "losses": 9,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": 0.16875059584990965,
+            "median_delta_auc": 0.0,
+            "wins": 9,
+            "losses": 11,
+            "ties": 10
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.16875059584990965,
+            "median_delta_auc": 0.0,
+            "wins": 9,
+            "losses": 11,
+            "ties": 10
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": 0.8786578320978513,
+            "median_delta_auc": -0.1213431211315843,
+            "wins": 18,
+            "losses": 12,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.8786578320978513,
+            "median_delta_auc": -0.1213431211315843,
+            "wins": 18,
+            "losses": 12,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": -0.012733045302098156,
+            "median_delta_auc": -0.08077015610252425,
+            "wins": 17,
+            "losses": 13,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.012733045302098156,
+            "median_delta_auc": -0.08077015610252425,
+            "wins": 17,
+            "losses": 13,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": -0.04991746128986385,
+            "median_delta_auc": 0.0,
+            "wins": 14,
+            "losses": 6,
+            "ties": 10
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.04991746128986385,
+            "median_delta_auc": 0.0,
+            "wins": 14,
+            "losses": 6,
+            "ties": 10
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": -0.0115444490122657,
+            "median_delta_auc": -0.010203165509864887,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.0115444490122657,
+            "median_delta_auc": -0.010203165509864887,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": -3.4752516203652806,
+            "median_delta_auc": -0.26293656580754643,
+            "wins": 21,
+            "losses": 9,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -3.4752516203652806,
+            "median_delta_auc": -0.26293656580754643,
+            "wins": 21,
+            "losses": 9,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": 0.005824389044877061,
+            "median_delta_auc": 0.0,
+            "wins": 7,
+            "losses": 13,
+            "ties": 10
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.005824389044877061,
+            "median_delta_auc": 0.0,
+            "wins": 7,
+            "losses": 13,
+            "ties": 10
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": 0.3719215887673706,
+            "median_delta_auc": 0.001603544061200779,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.3719215887673706,
+            "median_delta_auc": 0.001603544061200779,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        }
+      ],
+      "metadata_sha256": "103dbe8d8ae350626ccbe939b2241e7d9ab817f3901bd750d3522aa279f54262"
+    },
+    {
+      "reference": "real_drop24",
+      "reproduced": "v4_repro_real_drop24",
+      "status": "passed",
+      "execution": "Actually recomputed all 30 seeds with optimized GP, full 12 responses, budget8, four strategies; basic/AL/optimization stages completed.",
+      "elapsed_seconds": 84.03142529993784,
+      "versions": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "numpy": "2.4.2",
+        "pandas": "3.0.0",
+        "scipy": "1.17.0",
+        "sklearn": "1.8.0"
+      },
+      "portable": [
+        {
+          "file": "al_curves.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 16200,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mae": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "coverage95": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_interval_width": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "curve_policy": "Finite metric diagnostics only; portable acceptance is based on exact queries and per-row AUC"
+        },
+        {
+          "file": "al_auc.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 1800,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "normalized_test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_curve_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "auc_relative_tolerance": 0.03,
+          "auc_max_relative_difference": 0.0,
+          "accepted_auc_columns": [
+            "test_auc",
+            "normalized_test_auc"
+          ]
+        },
+        {
+          "file": "al_selections.csv",
+          "status": "passed",
+          "mode": "portable",
+          "rows": 960,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "experiment_id": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "query_identities": "identical",
+          "query_mismatches": 0
+        }
+      ],
+      "strict_numerical": [
+        {
+          "file": "al_curves.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 16200,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mae": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "coverage95": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_interval_width": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "strict_absolute_tolerance": 1e-08
+        },
+        {
+          "file": "al_auc.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 1800,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "normalized_test_auc": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "mean_curve_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_rmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            },
+            "final_nrmse": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "strict_absolute_tolerance": 1e-08
+        },
+        {
+          "file": "al_selections.csv",
+          "status": "passed",
+          "mode": "strict",
+          "rows": 960,
+          "row_identities": "identical",
+          "structural_columns": "identical",
+          "max_numeric_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "relative_denominator": "max(abs(reference), epsilon)",
+          "relative_denominator_epsilon": 1e-12,
+          "columns": {
+            "experiment_id": {
+              "max_absolute_difference": 0.0,
+              "max_relative_difference": 0.0,
+              "p95_relative_difference": 0.0,
+              "p99_relative_difference": 0.0,
+              "rows_above_strict_atol": 0
+            }
+          },
+          "query_identities": "identical",
+          "query_mismatches": 0
+        }
+      ],
+      "paired_macro_diagnostics": [
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": -0.048323068351231145,
+            "median_delta_auc": -0.10546351346078087,
+            "wins": 17,
+            "losses": 13,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.048323068351231145,
+            "median_delta_auc": -0.10546351346078087,
+            "wins": 17,
+            "losses": 13,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": -0.09362558117966063,
+            "median_delta_auc": 0.0,
+            "wins": 11,
+            "losses": 12,
+            "ties": 7
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.09362558117966063,
+            "median_delta_auc": 0.0,
+            "wins": 11,
+            "losses": 12,
+            "ties": 7
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": 0.10099154219893555,
+            "median_delta_auc": 0.027233429939558462,
+            "wins": 14,
+            "losses": 16,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.10099154219893555,
+            "median_delta_auc": 0.027233429939558462,
+            "wins": 14,
+            "losses": 16,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": -0.004754305621517455,
+            "median_delta_auc": -0.004335615124251513,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.004754305621517455,
+            "median_delta_auc": -0.004335615124251513,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": 0.001518010855235552,
+            "median_delta_auc": 0.0,
+            "wins": 9,
+            "losses": 14,
+            "ties": 7
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.001518010855235552,
+            "median_delta_auc": 0.0,
+            "wins": 9,
+            "losses": 14,
+            "ties": 7
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_cd__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": 0.028377020694116843,
+            "median_delta_auc": 0.00398712417964564,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.028377020694116843,
+            "median_delta_auc": 0.00398712417964564,
+            "wins": 15,
+            "losses": 15,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_random",
+          "reference": {
+            "mean_delta_auc": 0.021252289911530046,
+            "median_delta_auc": 0.016369886108869358,
+            "wins": 14,
+            "losses": 16,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.021252289911530046,
+            "median_delta_auc": 0.016369886108869358,
+            "wins": 14,
+            "losses": 16,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_uncertainty",
+          "reference": {
+            "mean_delta_auc": -0.026226864923175355,
+            "median_delta_auc": 0.0,
+            "wins": 13,
+            "losses": 10,
+            "ties": 7
+          },
+          "reproduced": {
+            "mean_delta_auc": -0.026226864923175355,
+            "median_delta_auc": 0.0,
+            "wins": 13,
+            "losses": 10,
+            "ties": 7
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        },
+        {
+          "target": "__macro_ar__",
+          "comparison": "duw_minus_maximin",
+          "reference": {
+            "mean_delta_auc": 0.0013094504553430308,
+            "median_delta_auc": 0.020962984633052795,
+            "wins": 12,
+            "losses": 18,
+            "ties": 0
+          },
+          "reproduced": {
+            "mean_delta_auc": 0.0013094504553430308,
+            "median_delta_auc": 0.020962984633052795,
+            "wins": 12,
+            "losses": 18,
+            "ties": 0
+          },
+          "mean_delta_change": 0.0,
+          "win_loss_counts_unchanged": true,
+          "scope": "Diagnostic only: passing numerical tolerance does not establish scientific equivalence"
+        }
+      ],
+      "metadata_sha256": "702be356773e3a52b0c2007fe1f4284e688d013f1df5d0ab8ac79b48a56d0461"
+    }
+  ],
+  "new_tests": "9 new tests and 4 subtests passed",
+  "linux_difference_context": "User reports locked-library Linux full reruns with identical selections and curve differences 0.013-0.015; portable acceptance now evaluates selections exactly and every AUC relative error <=0.03.",
+  "comparison_test_sha256": "fb092e475b452da56206db06fa5c6a70b19fc62b4436bbaa5a165b1b7a7a24cb",
+  "cli_validation": "submission_validation.json: --recompute-original --reuse-completed --run-prefix v4_repro --comparison-mode portable completed; both comparison groups and all standard checks pass."
+}

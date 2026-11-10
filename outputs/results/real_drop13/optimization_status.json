@@ -1,0 +1,146 @@
+{
+  "status": "continuous_recipe_recommendation_not_supported",
+  "predictive_screen_passed": false,
+  "response_checks": [
+    {
+      "target": "3-3 CD Loss",
+      "gpr_rmse": 0.188543300557288,
+      "mean_rmse": 0.17037404159550473,
+      "gpr_r2": -0.33852248038566923,
+      "coverage95": 0.6956521739130435,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": false
+    },
+    {
+      "target": "3-3 AR",
+      "gpr_rmse": 3.23487546126548,
+      "mean_rmse": 2.8440083395252653,
+      "gpr_r2": -0.4140465623608074,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "3-5 CD Loss",
+      "gpr_rmse": 0.1723962500155837,
+      "mean_rmse": 0.1850099142976661,
+      "gpr_r2": 0.05097875229816273,
+      "coverage95": 0.782608695652174,
+      "beats_mean": true,
+      "positive_r2": true,
+      "coverage_screen": true
+    },
+    {
+      "target": "3-5 AR",
+      "gpr_rmse": 3.303766133000061,
+      "mean_rmse": 2.8737401909142783,
+      "gpr_r2": -0.4445543966256862,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "5-5 CD Loss",
+      "gpr_rmse": 0.23981554469123903,
+      "mean_rmse": 0.24090446179085973,
+      "gpr_r2": -0.08311677932119022,
+      "coverage95": 0.782608695652174,
+      "beats_mean": true,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "5-5 AR",
+      "gpr_rmse": 2.289260896749828,
+      "mean_rmse": 1.9954617229110925,
+      "gpr_r2": -0.43851398201769043,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "7-7 CD Loss",
+      "gpr_rmse": 0.3064863461130893,
+      "mean_rmse": 0.2842281450344988,
+      "gpr_r2": -0.2708620527489485,
+      "coverage95": 0.782608695652174,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "7-7 AR",
+      "gpr_rmse": 1.8160721684799255,
+      "mean_rmse": 1.585140148351986,
+      "gpr_r2": -0.43463421522819035,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "8-12 CD Loss",
+      "gpr_rmse": 0.2937262619483142,
+      "mean_rmse": 0.2874996873875411,
+      "gpr_r2": -0.14083047379216862,
+      "coverage95": 0.782608695652174,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "8-12 AR",
+      "gpr_rmse": 1.6487393730886357,
+      "mean_rmse": 1.443819679295969,
+      "gpr_r2": -0.42524135406134644,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    },
+    {
+      "target": "9-9 CD Loss",
+      "gpr_rmse": 0.2731209194484848,
+      "mean_rmse": 0.29338847015772046,
+      "gpr_r2": 0.05281642825827049,
+      "coverage95": 0.8260869565217391,
+      "beats_mean": true,
+      "positive_r2": true,
+      "coverage_screen": true
+    },
+    {
+      "target": "9-9 AR",
+      "gpr_rmse": 1.519126135364611,
+      "mean_rmse": 1.3282894221392196,
+      "gpr_r2": -0.42959346120040776,
+      "coverage95": 0.8695652173913043,
+      "beats_mean": false,
+      "positive_r2": false,
+      "coverage_screen": true
+    }
+  ],
+  "screen_definition": "Predeclared conservative screen: every response beats its training-mean baseline, has pooled fold-out R2 > 0, and empirical 95% interval coverage >= 0.75. This heuristic screen is not proof of engineering validity.",
+  "observed_pareto_ids": [
+    1,
+    3,
+    5,
+    12,
+    17,
+    19,
+    20,
+    23,
+    24
+  ],
+  "pareto_definition": "Minimize all six CD Loss and maximize all six AR simultaneously; no undeclared averaging or weights.",
+  "constraints": [
+    "Raw-response source questions for experiments 2, 13 and 24 remain unresolved unless excluded in a named sensitivity run.",
+    "Equipment increments, fixed cycle/time settings and per-structure engineering acceptance limits need confirmation; four input units were user-confirmed.",
+    "No new physical etching experiment is available for verification."
+  ],
+  "decision": "Report measured Pareto alternatives and prediction diagnostics. Do not manufacture a continuously optimized recipe or claim physical improvement.",
+  "scope": "Measured alternatives in this finite table; not a continuous-domain optimum. Data-quality flags also apply to observed Pareto status."
+}

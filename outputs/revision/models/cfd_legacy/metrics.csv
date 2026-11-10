@@ -1,0 +1,7 @@
+﻿scenario,model,target,structure,metric,n,rmse,mae,r2,coverage95
+cfd_legacy,Mean,CFD response,CFD,simulated response,49,13.192845381904291,10.681802721088436,-0.04210069444444464,
+cfd_legacy,OLS,CFD response,CFD,simulated response,49,13.427797645709884,10.984786761442653,-0.07954889169882629,
+cfd_legacy,Ridge,CFD response,CFD,simulated response,49,13.41535806827582,10.971989012881165,-0.07754961944592265,
+cfd_legacy,ARD_Matern52,CFD response,CFD,simulated response,49,6.230487807894992,4.642822809521673,0.7675782102534535,0.8979591836734694
+cfd_legacy,Quadratic_Ridge,CFD response,CFD,simulated response,49,6.3298388049449095,4.83343250897328,0.7601067429072571,
+cfd_legacy,SVR_fixed,CFD response,CFD,simulated response,49,5.773366190732504,4.031393918746593,0.8004319796194497,

@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "scenario": "real_all24",
+      "status": "passed",
+      "held_out_predictions": 2016,
+      "original_ARD_GP_prediction_max_error": 0.0,
+      "independent_OLS_Ridge_prediction_max_error": 1.0658141036401503e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    },
+    {
+      "scenario": "real_without24",
+      "status": "passed",
+      "held_out_predictions": 1932,
+      "original_ARD_GP_prediction_max_error": 0.0,
+      "independent_OLS_Ridge_prediction_max_error": 1.0658141036401503e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    },
+    {
+      "scenario": "real_without2_24",
+      "status": "passed",
+      "held_out_predictions": 1848,
+      "original_ARD_GP_prediction_max_error": null,
+      "independent_OLS_Ridge_prediction_max_error": 1.4210854715202004e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    },
+    {
+      "scenario": "real_without13_24",
+      "status": "passed",
+      "held_out_predictions": 1848,
+      "original_ARD_GP_prediction_max_error": null,
+      "independent_OLS_Ridge_prediction_max_error": 1.7763568394002505e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    },
+    {
+      "scenario": "cfd_excel",
+      "status": "passed",
+      "held_out_predictions": 294,
+      "original_ARD_GP_prediction_max_error": 0.0,
+      "independent_OLS_Ridge_prediction_max_error": 9.947598300641403e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    },
+    {
+      "scenario": "cfd_legacy",
+      "status": "passed",
+      "held_out_predictions": 294,
+      "original_ARD_GP_prediction_max_error": 0.0,
+      "independent_OLS_Ridge_prediction_max_error": 8.526512829121202e-14,
+      "checks": [
+        "source and implementation hashes",
+        "truths reconstructed from declared snapshot/variant",
+        "exactly one held-out prediction per model/target/record",
+        "source-group separation",
+        "recomputed RMSE and R2",
+        "independent least-squares/ridge matrix solutions"
+      ]
+    }
+  ]
+}
