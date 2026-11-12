@@ -1,7 +1,16 @@
-"""Scientific-code entry point: validate or recompute without document generation.
+"""科学计算入口：验证或重计算（不生成文档）
 
-Uses the existing research workflow. No report, slide, or figure generation
-option is exposed by this entry point.
+功能：
+- 转发参数到run_submission.py的工作流
+- 输出目录重定向到outputs/coding/validation
+- 记录此入口的SHA256用于审计
+
+选项：
+--recompute-original: 重新计算两个12响应协议（30种子）
+--run-prefix: 新输出前缀（避免覆盖保存的结果）
+--workers: 并行进程数（1-4）
+--comparison-mode: portable（相对容差）或strict（绝对容差）
+--reuse-completed: 复用已完成的匹配计算
 """
 from pathlib import Path
 import argparse
@@ -15,6 +24,7 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main(argv=None):
+    """主函数：参数解析与转发"""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--recompute-original", action="store_true", help="Refit both 12-response protocols with all 30 seeds")
     parser.add_argument("--run-prefix", default="coding_reproduced", help="New output prefix for recomputation")
@@ -23,12 +33,16 @@ def main(argv=None):
     parser.add_argument("--auc-rtol", type=float, default=workflow.DEFAULT_AUC_RTOL)
     parser.add_argument("--reuse-completed", action="store_true", help="Reuse matching completed prefix results during recomputation")
     args = parser.parse_args(argv)
+    
+    # 构建转发参数列表
     forwarded = ["--run-prefix", args.run_prefix, "--workers", str(args.workers),
                  "--comparison-mode", args.comparison_mode, "--auc-rtol", str(args.auc_rtol)]
     if args.recompute_original:
         forwarded.append("--recompute-original")
     if args.reuse_completed:
         forwarded.append("--reuse-completed")
+    
+    # 临时替换sys.argv和输出目录，调用workflow
     previous_args, previous_output = sys.argv, workflow.OUT
     output = ROOT / "outputs/coding/validation"
     try:
@@ -37,8 +51,8 @@ def main(argv=None):
         workflow.main()
     finally:
         workflow.OUT, sys.argv = previous_output, previous_args
-    # Annotate only the run that returned successfully, never an older record
-    # after an argument error or another failure before execution started.
+    
+    # 为成功返回的记录添加此入口的标注
     record_path = output / "submission_validation.json"
     if record_path.exists():
         record = json.loads(record_path.read_text(encoding="utf-8"))
