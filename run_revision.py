@@ -1,14 +1,19 @@
-"""Validate saved v2 research results by default; recomputation is opt-in.
+"""验证已保存的v2研究结果（默认模式）；重计算为可选项
 
-Examples:
-  python run_revision.py
-  python run_revision.py --recompute --workers 4
-  python run_revision.py --figures --documents
+功能：
+- 默认：执行数值/来源检查，刷新验证记录（不重新训练模型）
+- --recompute: 重新运行审查证据、关联、模型比较和早期预算AL
+- --figures: 从保存结果重新绘制v2图表并运行图表检查
+- --documents: 构建Markdown/DOCX（使用标准python-docx/Pillow）
 
-Default execution performs numerical/source checks and refreshes validation
-records only. It does not retrain models or create new sampling experiments.
---documents builds portable Markdown/DOCX with standard python-docx/Pillow;
-it never invokes Word, PDF export, Node, or the Codex presentation runtime.
+示例：
+  python run_revision.py                          # 默认验证
+  python run_revision.py --recompute --workers 4  # 完整重计算
+  python run_revision.py --figures --documents    # 生成图表和文档
+
+注意：
+- 默认不重新训练模型或创建新采样实验
+- 文档构建不调用Word、PDF导出、Node或Codex演示运行时
 """
 from __future__ import annotations
 
@@ -29,19 +34,22 @@ SUMMARY = ROOT / "outputs/revision/reproduction_validation.json"
 
 
 def relative(value):
-    """Portable display of project-owned paths; never list machine drive paths."""
+    """可移植路径显示：相对于项目根目录，不列出机器驱动器路径"""
     return Path(value).relative_to(ROOT).as_posix()
 
 
 def read_json(path):
+    """读取JSON文件（UTF-8 with BOM）"""
     return path.read_text(encoding="utf-8-sig")
 
 
 def digest(path):
+    """计算文件SHA256哈希"""
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def project_file(recorded):
+    """解析记录的路径，确保在项目范围内"""
     path = (ROOT / str(recorded).replace("\\", "/")).resolve()
     if not path.is_relative_to(ROOT):
         raise ValueError("A recorded source path is outside the project")
@@ -49,14 +57,23 @@ def project_file(recorded):
 
 
 def source_checks():
-    """Check the new scientific source/implementation manifests, not layout QA."""
+    """检查新科学来源/实现清单（非布局QA）
+    
+    验证：
+    - 审查证据和关联处理的输入SHA256
+    - 早期预算AL协议的完整性
+    - 6个v2模型场景的完整性和代码哈希
+    """
     checks = []
     def check(path, expected, manifest):
+        """检查单个文件的哈希是否匹配"""
         if not path.is_file():
             raise FileNotFoundError(f"Missing source: {relative(path)}")
         if digest(path) != expected:
             raise RuntimeError(f"Changed source: {relative(path)} (declared by {manifest})")
         checks.append({"manifest": manifest, "path": relative(path), "status": "matched"})
+    
+    # 审查证据和关联处理
     evidence = [
         ("outputs/revision/evidence/review_evidence_summary.json", "source_sha256", "code/revision/review_evidence.py"),
         ("outputs/revision/evidence/process_associations_metadata.json", "input_sha256", "code/revision/process_associations.py"),
@@ -66,12 +83,16 @@ def source_checks():
         for source, expected in meta[key].items():
             check(project_file(source), expected, name)
         check(ROOT / script, meta["script_sha256"], name)
+    
+    # 早期预算AL协议
     name = "outputs/revision/early_al/protocol.json"
     meta = json.loads(read_json(ROOT / name))
     if meta.get("status") != "complete":
         raise RuntimeError("Early-budget AL execution is incomplete")
     for source, expected in meta["source_sha256"].items():
         check(project_file(source), expected, name)
+    
+    # 6个v2模型场景
     model_paths = sorted((ROOT / "outputs/revision/models").glob("*/run_metadata.json"))
     if len(model_paths) != 6:
         raise RuntimeError("Expected six completed v2 model scenarios")
@@ -85,6 +106,7 @@ def source_checks():
 
 
 def run_script(script, arguments, environment, commands):
+    """运行子脚本并记录输出（简洁进度，完整诊断）"""
     if not (ROOT / script).is_file():
         raise FileNotFoundError(f"Missing script: {script}")
     display = [Path(sys.executable).name, "-B", script, *arguments]
@@ -93,8 +115,7 @@ def run_script(script, arguments, environment, commands):
     result = subprocess.run([sys.executable, "-B", script, *arguments], cwd=ROOT,
                             env=environment, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             text=True, encoding="utf-8", errors="replace")
-    # Child scripts retain their own diagnostics; this entry keeps console
-    # progress concise and makes copied commands independent of this host.
+    # 子脚本保留自己的诊断；此条目保持控制台进度简洁
     output = result.stdout.replace(str(ROOT), ".").replace(ROOT.as_posix(), ".")
     commands.append({"command": display, "exit_code": result.returncode,
                      "elapsed_seconds": round(time.perf_counter()-started, 3),
@@ -106,6 +127,7 @@ def run_script(script, arguments, environment, commands):
 
 
 def main():
+    """主函数：参数解析、环境配置、执行流程"""
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--recompute", action="store_true", help="Explicitly rerun review evidence, associations, model comparisons and early-budget AL before validation")
     parser.add_argument("--workers", type=int, default=4, help="Worker count for --recompute model/AL runs (default: 4)")
