@@ -311,11 +311,15 @@ def summarize_active_learning(curves, out, bootstrap_repeats=10000):
                          "mean_curve_rmse": auc/span if span else float(part.rmse.iloc[-1]),
                          "final_rmse": float(part.rmse.iloc[-1]),
                          "final_nrmse": float(part.nrmse.iloc[-1])})
+    
     auc = pd.DataFrame(auc_rows)
+    # 跨种子汇总统计
     summary = auc.groupby(["strategy", "target", "structure", "metric"], sort=False).agg(
         n_repeats=("seed", "count"), mean_test_auc=("test_auc", "mean"),
         sd_test_auc=("test_auc", "std"), mean_final_rmse=("final_rmse", "mean"),
         sd_final_rmse=("final_rmse", "std"), mean_final_nrmse=("final_nrmse", "mean")).reset_index()
+    
+    # 配对差异检验（bootstrap置信区间）
     paired = []
     rng = np.random.default_rng(20261109)
     for (target, structure, metric), part in auc.groupby(["target", "structure", "metric"], sort=False):
@@ -323,8 +327,10 @@ def summarize_active_learning(curves, out, bootstrap_repeats=10000):
         for strategy in ("uncertainty", "maximin", "duw"):
             pair = table[["random", strategy]].dropna()
             baseline = pair["random"].to_numpy()
-            differences = pair[strategy].to_numpy() - baseline
+            differences = pair[strategy].to_numpy() - baseline  # 负值表示改进
             n = len(pair)
+            
+            # Bootstrap重采样
             draws = rng.integers(0, n, size=(bootstrap_repeats, n))
             low, high = np.quantile(differences[draws].mean(axis=1), [.025, .975])
             relative = np.divide(-differences, baseline, out=np.full(n, np.nan), where=abs(baseline)>1e-12)*100
@@ -335,6 +341,7 @@ def summarize_active_learning(curves, out, bootstrap_repeats=10000):
                            "mean_relative_improvement_percent": np.nanmean(relative),
                            "fraction_seeds_better": np.mean(differences < 0),
                            "interval_scope": "Monte Carlo split/selection variability conditional on this fixed dataset; not independent physical experiments"})
+    
     frame_csv(auc, Path(out)/"al_auc.csv")
     frame_csv(summary, Path(out)/"al_summary.csv")
     frame_csv(pd.DataFrame(paired), Path(out)/"al_paired.csv")
@@ -342,8 +349,20 @@ def summarize_active_learning(curves, out, bootstrap_repeats=10000):
 
 
 def run_active_learning(dataset, out, experiment_config, gp_config, workers=1):
+    """执行主动学习实验（支持多进程并行）
+    
+    流程：
+    1. 生成签名（数据+配置+代码哈希）
+    2. 并行/串行执行所有种子
+    3. 检查预算和配对约束
+    4. 汇总结果
+    
+    并行：workers>1时使用ProcessPoolExecutor（最多4进程）
+    """
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
+    
+    # 计算运行签名（数据+配置+代码）
     identity = {"data_hash": dataset.source_sha256, "ids": dataset.ids.tolist(),
                 "numerical_values_sha256": hashlib.sha256(dataset.Y.tobytes()).hexdigest(),
                 "experiment": experiment_config, "gp": asdict(gp_config),
@@ -351,14 +370,18 @@ def run_active_learning(dataset, out, experiment_config, gp_config, workers=1):
                 "core_code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                                       for p in Path(__file__).parent.glob("*.py")}}
     signature = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+    
     seeds = list(range(experiment_config["seed_start"],
                        experiment_config["seed_start"]+experiment_config["repeats"]))
     results = []
+    
+    # 串行执行
     if workers == 1:
         for seed in seeds:
             result = _seed_job(dataset, seed, experiment_config, asdict(gp_config), out, signature)
             results.append(result)
             print(f"seed {seed}: {result['fit_count']} distinct fits, {result['elapsed_seconds']:.1f}s", flush=True)
+    # 并行执行
     else:
         with ProcessPoolExecutor(max_workers=min(4, workers)) as executor:
             futures = {executor.submit(_seed_job, dataset, seed, experiment_config,
@@ -367,15 +390,18 @@ def run_active_learning(dataset, out, experiment_config, gp_config, workers=1):
                 result = future.result()
                 results.append(result)
                 print(f"seed {result['seed']}: {result['fit_count']} distinct fits, {result['elapsed_seconds']:.1f}s", flush=True)
+    
     results.sort(key=lambda r: r["seed"])
     curves = pd.DataFrame([row for result in results for row in result["curves"]])
     selections = pd.DataFrame([row for result in results for row in result["selections"]])
-    # Exact checks on physical experimental budgets and paired partitions.
+    
+    # 检查物理实验预算和配对完整性
     expected = experiment_config["budget"]
     if not selections.groupby(["seed", "strategy"]).size().eq(expected).all():
         raise RuntimeError("Unequal acquisition budgets")
     if not selections.groupby(["seed", "strategy"]).experiment_id.nunique().eq(expected).all():
         raise RuntimeError("An experiment was acquired twice")
+    
     frame_csv(curves, out/"al_curves.csv")
     frame_csv(selections, out/"al_selections.csv")
     write_json(out/"al_splits.json", [r["split"] for r in results])
@@ -388,6 +414,7 @@ def run_active_learning(dataset, out, experiment_config, gp_config, workers=1):
 
 
 def metadata(dataset, config, gp_config):
+    """生成运行元数据记录（单位、定义、版本、范围声明）"""
     return {"dataset": dataset.name, "source": dataset.source_path,
             "source_sha256": dataset.source_sha256, "source_provenance": dataset.provenance,
             "numerical_values_sha256": hashlib.sha256(dataset.Y.tobytes()).hexdigest(),
