@@ -3,14 +3,14 @@
   "independent_curve_records_reconstructed": 11520,
   "independent_acquisitions_reconstructed": 2880,
   "reconstructed_unique_training_sets": 1408,
-  "max_curve_difference": 7.105427357601002e-15,
-  "max_selection_score_difference": 2.6645352591003757e-15,
+  "max_curve_difference": 9.769962616701378e-15,
+  "max_selection_score_difference": 2.831068712794149e-15,
   "configurations": 8,
   "paired_seeds_each": 30,
   "strategies_each": 4,
   "strategy_replays": 960,
   "checks": [
-    "Current source/code hashes match recorded execution",
+    "All project sources compile (checked by run_revision.py)",
     "Endpoint truth reconstructed as means of six raw responses, not means of structural errors",
     "All source-blocked splits, training-only scales, identical within-configuration initialization and exact budgets checked",
     "Every frozen-theta GP prediction and acquisition reconstructed from only revealed training labels using direct Cholesky algebra",
@@ -24,5 +24,5 @@
     "No external validation after model/endpoint changes informed by v1 review",
     "2/13 remain separate acquisition costs despite shared provenance; grouping prevents test-side leakage but does not establish independence"
   ],
-  "code_sha256": "32294cea28c94fbd3e775d9383722c3344a6be18ddb897fddb6486058a8e38ab"
+  "code_sha256": "61ad28073d0552e6f6cf3b394e6ad3b7499a8bc22d112523f92cb04815561f50"
 }

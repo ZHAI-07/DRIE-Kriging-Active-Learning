@@ -1,0 +1,181 @@
+{
+  "entry_point": "run_revision.py",
+  "python_version": "3.12.12",
+  "started_utc": "2026-11-18T05:42:50.401787+00:00",
+  "options": {
+    "recompute": false,
+    "workers": 4,
+    "figures": false,
+    "documents": false
+  },
+  "policy": "Default: validate existing research results only; no new fitting or acquisition. Recompute is explicitly opt-in.",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "code/revision/validate_models.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.115,
+      "output_tail": "{\"validated_scenarios\": 6, \"all_checks_passed\": true}\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "code/revision/validate_early_al.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.717,
+      "output_tail": "{\"status\": \"passed\", \"independent_curve_records_reconstructed\": 11520, \"independent_acquisitions_reconstructed\": 2880, \"max_curve_difference\": 9.769962616701378e-15, \"max_selection_score_difference\": 2.831068712794149e-15}\n"
+    }
+  ],
+  "status": "passed",
+  "source_checks": [
+    {
+      "manifest": "compile_check",
+      "path": "code/**/*.py",
+      "status": "compiled",
+      "sources_checked": 31,
+      "sources_compiled": 31,
+      "sources_failed": 0
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "outputs/results/real_main/al_auc.csv",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "outputs/results/real_main/al_selections.csv",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "outputs/results/real_main/al_splits.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "outputs/results/real_main/basic_metrics.csv",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "outputs/results/real_main/al_curves.csv",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/review_evidence_summary.json",
+      "path": "code/revision/review_evidence.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/process_associations_metadata.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/evidence/process_associations_metadata.json",
+      "path": "code/revision/process_associations.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/early_al/protocol.json",
+      "path": "code/revision/early_budget_al.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/early_al/protocol.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/early_al/protocol.json",
+      "path": "code/research/core.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/early_al/protocol.json",
+      "path": "code/research/data.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/early_al/protocol.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/cfd_excel/run_metadata.json",
+      "path": "data/raw/cfd_legacy_snapshot.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/cfd_excel/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/cfd_legacy/run_metadata.json",
+      "path": "data/raw/cfd_legacy_snapshot.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/cfd_legacy/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_all24/run_metadata.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_all24/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without13_24/run_metadata.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without13_24/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without24/run_metadata.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without24/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without2_24/run_metadata.json",
+      "path": "data/raw/user_confirmed_table_2026-11-09.json",
+      "status": "present"
+    },
+    {
+      "manifest": "outputs/revision/models/real_without2_24/run_metadata.json",
+      "path": "code/revision/model_comparison.py",
+      "status": "present"
+    }
+  ],
+  "validation_outputs": [
+    "outputs/revision/models/validation.json",
+    "outputs/revision/early_al/validation_independent.json",
+    "outputs/revision/reproduction_validation.json"
+  ],
+  "entry_sha256": "04e20ab58d0ace983644e0ef5f6660a5321ba037150505772f59b3badc9cbf48"
+}

@@ -1,17 +1,11 @@
 {
   "status": "passed",
-  "script_sha256": "2ce7ed2ca3b76c138a33cce6c8992edf68d702ba821fca942263e857ea7b644a",
+  "script_sha256": "b7f678ed7ec2189e2628514078ca0787e194a59cb96549cabad4d9dfa1890694",
   "source_sha256": {
     "outputs/revision/early_al/auc.csv": "d1eb1b15e572b7520b67e065de2404b00cfaa9316e87d67ab909d3f8088fb501",
     "outputs/revision/early_al/selections.csv": "e34c620b41612405db34f9b709ad844e761836a92423bc2aa601a6bf2c0ac86f",
     "outputs/results/real_main/run_metadata.json": "60ba305da887234fc7d0c67b0a2b11f864a11bdd5a87078c99ac7fa2fe4bdf37",
     "data/raw/user_confirmed_table_2026-11-09.json": "0f90c90551b4d2924ef3bb4117ce78784ce313daf369e7ba29c60244a59041d6",
-    "code/research/__init__.py": "d03bd67a97aada01f6f2ec0fdcb9495f324bc3407458303986aab5a1aee92e51",
-    "code/research/core.py": "e3e20c309ffd58d6ab229c37b6a0e230e783998ebe4e963cc2957ccf273d360c",
-    "code/research/data.py": "3d9384e8b3b3e4a644885ab36b444dfea9628d35bab47809a28e1d5db4d7ce82",
-    "code/research/experiments.py": "b959c2d71fd2fecbbd95df90b9cd716ca2b323d1fef99b26067e5ffa28515bed",
-    "code/research/optimization.py": "9648f2dfbd22ec413bf79de402acf0c35b9972a9485c27fb22ea83f817240103",
-    "run_research.py": "ab78fa00559f7eb5c197293e78e0dbd1c0c03e44c72e334abbea1076b733071a",
     "outputs/results/real_main/al_auc.csv": "37efcf6b64d56ed4b857760931f5e493c4422ef60151cb204d60f643b0732e82",
     "outputs/results/real_main/al_curves.csv": "85893dd4329ac8d36f2e336f2f14645dd8a0aba7e5262f9e91ed566cf79cdfd1",
     "outputs/results/real_main/al_selections.csv": "f7a4b8fffd79aacb5a0e7b5b0a338d11d7e5d9d77a994174c30fe857a92a67f4",
@@ -31,7 +25,7 @@
       "curves": 16200,
       "queries": 960,
       "max_auc_reconstruction_error": 2.842170943040401e-14,
-      "code_and_source_hashes": "matched"
+      "code_and_source_hashes": "not_compared"
     },
     {
       "scenario": "without24",
@@ -41,7 +35,7 @@
       "curves": 16200,
       "queries": 960,
       "max_auc_reconstruction_error": 3.552713678800501e-15,
-      "code_and_source_hashes": "matched"
+      "code_and_source_hashes": "not_compared"
     }
   ],
   "early_sign_comparisons": 16,

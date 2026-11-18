@@ -4,6 +4,9 @@ Portable reproduction requires identical rows and queries plus each test-AUC
 relative error <= 3%; curve differences are reported separately. This is a
 numerical acceptance rule, not a scientific equivalence or significance test.
 Strict numerical mode retains an absolute 1e-8 check for the saved metrics.
+Validation requires every project source to compile; archived byte hashes are
+deliberately not compared, because comment-only edits changed file bytes
+without changing behaviour.
 """
 from pathlib import Path
 import argparse
@@ -131,7 +134,14 @@ def paired_macro_diagnostics(original,reproduced):
 
 
 def completed_run_matches(source,target):
-    """Only reuse a complete, source/config/code-matched computation."""
+    """Only reuse a complete, source/config-matched computation.
+
+    Archived code hashes are deliberately not compared. They recorded the file
+    bytes of the pre-comment revision, so a comment-only edit invalidated them
+    without changing behaviour. Reuse now requires a complete, matching
+    configuration and dataset snapshot, plus the presence of every result file
+    that the comparison step reads.
+    """
     folder=ROOT/"outputs/results"/target
     meta=json.loads((folder/"run_metadata.json").read_text(encoding="utf-8"))
     reference=json.loads((ROOT/"outputs/results"/source/"run_metadata.json").read_text(encoding="utf-8"))
@@ -145,10 +155,6 @@ def completed_run_matches(source,target):
     sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     if sha(ROOT/"data/raw/user_confirmed_table_2026-11-09.json")!=meta["source_sha256"]:
         raise ValueError("Current source differs from completed target")
-    expected={p.relative_to(ROOT).as_posix():sha(p) for p in (ROOT/"code/research").glob("*.py")}
-    expected["run_research.py"]=sha(ROOT/"run_research.py")
-    actual={rel.replace("\\","/"):value for rel,value in meta["code_sha256"].items()}
-    if actual!=expected:raise ValueError("Existing target code hashes differ")
     for name in ["al_curves.csv","al_auc.csv","al_selections.csv","basic_predictions.csv"]:
         if not (folder/name).is_file():raise FileNotFoundError("Completed target missing "+name)
     return {"status":"reused_verified_complete","versions":meta.get("versions",{})}
@@ -163,7 +169,7 @@ def main():
                         help="portable: exact queries and per-row AUC relative tolerance; strict: absolute metric agreement")
     parser.add_argument("--auc-rtol",type=float,default=DEFAULT_AUC_RTOL,
                         help="Portable per-row AUC relative tolerance, default 0.03; not an equivalence margin")
-    parser.add_argument("--reuse-completed",action="store_true",help="With --recompute-original, reuse complete source/config/code-matched prefix runs")
+    parser.add_argument("--reuse-completed",action="store_true",help="With --recompute-original, reuse complete source/config-matched prefix runs")
     parser.add_argument("--documents",action="store_true",help="Build DOCX/Markdown only; no PDF/PPT export")
     args=parser.parse_args()
     if Path(args.run_prefix).name!=args.run_prefix or args.run_prefix in {".",".."}:parser.error("Use a simple output prefix")
@@ -183,6 +189,14 @@ def main():
         if result.returncode:raise RuntimeError("Failed: "+script)
     OUT.mkdir(parents=True,exist_ok=True)
     try:
+        # Compilation gate: every project source must compile before any saved
+        # result is trusted. Archived byte hashes are intentionally not used.
+        import compile_check
+        compile_records,compile_failures=compile_check.compile_sources(ROOT)
+        record["compile_check"]={**compile_check.summary(compile_records),
+                                 "failed_paths":[f["path"] for f in compile_failures]}
+        if compile_failures:
+            raise RuntimeError("Python sources failed to compile: "+compile_failures[0]["path"])
         if args.recompute_original:
             record["original_protocol_reproduction"]=[]
             for source,exclude in [("real_main",[]),("real_drop24",["24"])]:

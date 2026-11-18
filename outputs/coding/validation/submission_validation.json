@@ -5,13 +5,13 @@
       "script": "run_revision.py",
       "arguments": [],
       "exit_code": 0,
-      "elapsed_seconds": 7.386014399933629
+      "elapsed_seconds": 3.993660167005146
     },
     {
       "script": "code/revision/review_v3.py",
       "arguments": [],
       "exit_code": 0,
-      "elapsed_seconds": 3.455889100092463
+      "elapsed_seconds": 1.9672452090017032
     },
     {
       "script": "-m",
@@ -22,13 +22,13 @@
         "-q"
       ],
       "exit_code": 0,
-      "elapsed_seconds": 1.6824353000847623
+      "elapsed_seconds": 0.8792883329952019
     }
   ],
   "new_physical_experiments": false,
   "environment": {
-    "python": "3.12.14",
-    "platform": "Windows-11-10.0.26200-SP0"
+    "python": "3.12.12",
+    "platform": "macOS-26.7.1-arm64-arm-64bit"
   },
   "comparison_policy": {
     "mode": "portable",
@@ -38,8 +38,14 @@
     "strict_absolute_tolerance": 1e-08,
     "scope": "Numerical reproduction acceptance only; not a scientific equivalence test or bytewise-reproduction claim"
   },
-  "entry_sha256": "6882db30da5f93580315dea325328600466849d170bf7c08b74a7139d20e7cf7",
+  "compile_check": {
+    "sources_checked": 31,
+    "sources_compiled": 31,
+    "sources_failed": 0,
+    "failed_paths": []
+  },
+  "entry_sha256": "2c8883a785bf3da01aec8f5bfe65f7b64b37c5f26adfe42bb2457d277337a16e",
   "coding_entry_point": "run_coding.py",
-  "coding_entry_sha256": "58db8925eee3e7c3f94dd0149c9fdffe7f633ea00b4fd1f311f946607d22923a",
+  "coding_entry_sha256": "b2770569b8a6f3d30162a2f16b1d836f9e8624dc26d494f0098dff8f463f83f8",
   "document_generation_requested": false
 }
