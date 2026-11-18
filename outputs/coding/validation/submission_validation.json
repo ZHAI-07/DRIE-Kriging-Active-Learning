@@ -5,13 +5,13 @@
       "script": "run_revision.py",
       "arguments": [],
       "exit_code": 0,
-      "elapsed_seconds": 4.514617749999161
+      "elapsed_seconds": 4.448313041997608
     },
     {
       "script": "code/revision/review_v3.py",
       "arguments": [],
       "exit_code": 0,
-      "elapsed_seconds": 1.967594999994617
+      "elapsed_seconds": 1.9510170839930652
     },
     {
       "script": "-m",
@@ -24,7 +24,7 @@
         "-q"
       ],
       "exit_code": 0,
-      "elapsed_seconds": 0.9913569170021219
+      "elapsed_seconds": 0.9984475420060335
     }
   ],
   "new_physical_experiments": false,
