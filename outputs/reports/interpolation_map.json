@@ -1,0 +1,205 @@
+{
+  "design": {
+    "coil_levels": [
+      840.0,
+      880.0,
+      920.0,
+      960.0,
+      1000.0
+    ],
+    "platen_levels": [
+      35.0,
+      40.0,
+      45.0
+    ],
+    "complete_factorial": true,
+    "replicated_cells": 5
+  },
+  "per_cell": [
+    {
+      "coil": 840.0,
+      "platen": 35.0,
+      "n_replicates": 1,
+      "position": "corner",
+      "neighbors": 2,
+      "cd_rel_pct": 35.94953043964695,
+      "ar_rel_pct": 3.5593680465402975
+    },
+    {
+      "coil": 880.0,
+      "platen": 40.0,
+      "n_replicates": 4,
+      "position": "interior",
+      "neighbors": 4,
+      "cd_rel_pct": 32.56655321635269,
+      "ar_rel_pct": 1.0241347458484535
+    },
+    {
+      "coil": 920.0,
+      "platen": 45.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 9.813958461728811,
+      "ar_rel_pct": 0.5248204608067857
+    },
+    {
+      "coil": 960.0,
+      "platen": 45.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 2.782052564337276,
+      "ar_rel_pct": 0.08953173295904619
+    },
+    {
+      "coil": 1000.0,
+      "platen": 40.0,
+      "n_replicates": 3,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 8.566178844787666,
+      "ar_rel_pct": 0.8120580850915166
+    },
+    {
+      "coil": 1000.0,
+      "platen": 35.0,
+      "n_replicates": 1,
+      "position": "corner",
+      "neighbors": 2,
+      "cd_rel_pct": 4.330601522448984,
+      "ar_rel_pct": 0.23660921145093794
+    },
+    {
+      "coil": 960.0,
+      "platen": 35.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 9.309666627187973,
+      "ar_rel_pct": 0.8731486631855331
+    },
+    {
+      "coil": 920.0,
+      "platen": 40.0,
+      "n_replicates": 2,
+      "position": "interior",
+      "neighbors": 4,
+      "cd_rel_pct": 27.03308176690085,
+      "ar_rel_pct": 0.6494998377041487
+    },
+    {
+      "coil": 880.0,
+      "platen": 45.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 9.111422488067323,
+      "ar_rel_pct": 0.8714865090208472
+    },
+    {
+      "coil": 840.0,
+      "platen": 45.0,
+      "n_replicates": 1,
+      "position": "corner",
+      "neighbors": 2,
+      "cd_rel_pct": 6.136124700157733,
+      "ar_rel_pct": 1.2165762800838869
+    },
+    {
+      "coil": 960.0,
+      "platen": 40.0,
+      "n_replicates": 2,
+      "position": "interior",
+      "neighbors": 4,
+      "cd_rel_pct": 23.103768691315377,
+      "ar_rel_pct": 0.7241008223077984
+    },
+    {
+      "coil": 840.0,
+      "platen": 40.0,
+      "n_replicates": 2,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 11.055425098256235,
+      "ar_rel_pct": 2.089288276252167
+    },
+    {
+      "coil": 880.0,
+      "platen": 35.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 1.6611614150776186,
+      "ar_rel_pct": 0.46691648931776086
+    },
+    {
+      "coil": 920.0,
+      "platen": 35.0,
+      "n_replicates": 1,
+      "position": "edge",
+      "neighbors": 3,
+      "cd_rel_pct": 3.1834519986704506,
+      "ar_rel_pct": 1.3907668929755774
+    },
+    {
+      "coil": 1000.0,
+      "platen": 45.0,
+      "n_replicates": 1,
+      "position": "corner",
+      "neighbors": 2,
+      "cd_rel_pct": 16.739998698059892,
+      "ar_rel_pct": 1.6436777734729315
+    }
+  ],
+  "by_position": {
+    "corner": {
+      "cells": 4,
+      "cd_rel_pct": 15.789063840078391,
+      "ar_rel_pct": 1.6640578278870133
+    },
+    "edge": {
+      "cells": 8,
+      "cd_rel_pct": 6.935414687264169,
+      "ar_rel_pct": 0.8897521387011542
+    },
+    "interior": {
+      "cells": 3,
+      "cd_rel_pct": 27.567801224856307,
+      "ar_rel_pct": 0.7992451352868001
+    }
+  },
+  "by_neighbors": {
+    "2": {
+      "cells": 4,
+      "cd_rel_pct": 15.789063840078391
+    },
+    "3": {
+      "cells": 8,
+      "cd_rel_pct": 6.935414687264169
+    },
+    "4": {
+      "cells": 3,
+      "cd_rel_pct": 27.567801224856307
+    }
+  },
+  "extrapolation_correlation": {
+    "沿 Coil 一步 (Δ40)": {
+      "distance_std": 0.7071067811865475,
+      "correlation": 0.7755561184137318
+    },
+    "沿 Platen 一步 (Δ5)": {
+      "distance_std": 1.5165750888103102,
+      "correlation": 0.38442164401229456
+    },
+    "沿 Coil 两步 (Δ80)": {
+      "distance_std": 1.414213562373095,
+      "correlation": 0.42663245415406686
+    },
+    "沿对角一步": {
+      "distance_std": 1.6733200530681511,
+      "correlation": 0.3255782325195143
+    }
+  },
+  "protocol": "leave-one-cell-out on the complete 5x3 factorial"
+}
