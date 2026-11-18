@@ -227,7 +227,7 @@ def main():
             if failures:raise RuntimeError("Reproduction failed after checking both data scenarios: "+", ".join(failures))
         run("run_revision.py")
         run("code/revision/review_v3.py")
-        run("-m",["pytest","tests/test_research_integrity.py","tests/test_reproduction_comparison.py","tests/test_evaluation_protocol.py","-q"])
+        run("-m",["pytest","tests/test_research_integrity.py","tests/test_reproduction_comparison.py","tests/test_evaluation_protocol.py","tests/test_kernel_gp.py","-q"])
         if args.documents:run("code/revision/build_documents_v4.py")
         record["status"]="passed"
     except Exception as error:

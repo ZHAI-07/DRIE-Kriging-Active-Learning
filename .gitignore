@@ -45,3 +45,10 @@ formal/README.md
 /outputs/results/*/checkpoints/
 /outputs/results/*/fit_diagnostics/
 /outputs/results/*/seed_*.json
+
+# Compiled accelerator shared libraries (rebuild with code/tools/fast_conformal.py)
+*.dylib
+*.so
+
+# C++ build intermediates
+*.o
