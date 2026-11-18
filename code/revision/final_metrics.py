@@ -264,10 +264,13 @@ def main():
         entry = {"per_target": rows, "macro": agg,
                  "fraction_of_ceiling": agg["all"]["r2"] / cei if cei else None,
                  "headroom_used_pct": (100.0 * agg["all"]["r2"] / cei) if cei else None,
-                 "seconds": time.perf_counter() - t0}
+                 # 不落盘墙钟耗时：写进结果文件会让每次重跑都产生伪 diff，
+                 # 而结果本身是确定性的（数值逐位可复现）。耗时只打到 stdout。
+                 }
         report["models"][name] = entry
         print(f"{name:30s} {agg['all']['r2']:+7.3f} {agg['all']['nrmse']:8.3f} "
-              f"{agg['cd']['rel_error_pct']:9.1f}% {agg['ar']['rel_error_pct']:9.1f}%")
+              f"{agg['cd']['rel_error_pct']:9.1f}% {agg['ar']['rel_error_pct']:9.1f}%"
+              f"   [{time.perf_counter() - t0:.2f}s]")
 
     # 自助区间只给两个主模型，控制运行时间
     print("\n簇自助置信区间（按设计格重采样，B=1000）：")
