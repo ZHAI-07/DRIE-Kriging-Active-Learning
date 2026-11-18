@@ -1,0 +1,345 @@
+{
+  "holdout_unit_of_saved_results": "record (source group)",
+  "note": "saved predictions hold out source groups, which leaves same-cell replicates in training",
+  "record_exclusion_effect": {
+    "with_24": {
+      "n_records": 24,
+      "ceiling_cd_mean": 0.8599439274037838,
+      "ceiling_ar_mean": 0.31124656518844357,
+      "ceiling_macro": 0.5855952462961137
+    },
+    "without_24": {
+      "n_records": 23,
+      "ceiling_cd_mean": 0.9001634706451299,
+      "ceiling_ar_mean": 0.8682575645851228,
+      "ceiling_macro": 0.8842105176151263
+    },
+    "record_24_detail": {
+      "cell": [
+        920.0,
+        40.0
+      ],
+      "cell_mate_ids": [
+        8,
+        22,
+        24
+      ],
+      "ar_values": [
+        20.8633,
+        20.8867,
+        34.1333
+      ],
+      "deviation_from_cell_mean": 8.838866666666668,
+      "deviation_in_global_sd": 3.312301095916315
+    }
+  },
+  "scenarios": {
+    "real_all24": {
+      "n_records": 24,
+      "cells": 15,
+      "replicated_cells": 5,
+      "cell_sizes": [
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "noise_ceiling_macro": 0.5855952462961137,
+      "noise_ceiling_per_target": {
+        "3-3 CD Loss": 0.7959560828541341,
+        "3-3 AR": 0.31264264713241363,
+        "3-5 CD Loss": 0.853529515546286,
+        "3-5 AR": 0.3034522846485682,
+        "5-5 CD Loss": 0.8670620682805388,
+        "5-5 AR": 0.3077704460546431,
+        "7-7 CD Loss": 0.8726413626409701,
+        "7-7 AR": 0.3134019583047736,
+        "8-12 CD Loss": 0.9019543744975536,
+        "8-12 AR": 0.3146293094312036,
+        "9-9 CD Loss": 0.8685201606032197,
+        "9-9 AR": 0.3155827455590595
+      },
+      "cell_leakage_exposure": 0.5833333333333334,
+      "n_predictions_checked": 2016,
+      "models": {
+        "ARD_Matern52": {
+          "macro_r2": -0.2702474379089318,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.8693847471147865,
+          "n_targets": 12
+        },
+        "Isotropic_Matern52": {
+          "macro_r2": -0.003897854728861233,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.08000384222695776,
+          "n_targets": 12
+        },
+        "Mean": {
+          "macro_r2": -0.0917956834328002,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.19868835990831057,
+          "n_targets": 12
+        },
+        "OLS": {
+          "macro_r2": 0.014255852567067873,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.1258644647386277,
+          "n_targets": 12
+        },
+        "Ridge": {
+          "macro_r2": 0.020909588488399897,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.11315998040410717,
+          "n_targets": 12
+        },
+        "UniversalKriging_iso_REML": {
+          "macro_r2": -0.03620936478584235,
+          "macro_noise_ceiling": 0.5855952462961137,
+          "r2_fraction_of_ceiling": -0.2160485386158525,
+          "n_targets": 12
+        }
+      }
+    },
+    "real_without24": {
+      "n_records": 23,
+      "cells": 15,
+      "replicated_cells": 5,
+      "cell_sizes": [
+        4,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "noise_ceiling_macro": 0.8842105176151263,
+      "noise_ceiling_per_target": {
+        "3-3 CD Loss": 0.8693584609694489,
+        "3-3 AR": 0.8223090820488238,
+        "3-5 CD Loss": 0.9124535395735012,
+        "3-5 AR": 0.8383267285992017,
+        "5-5 CD Loss": 0.8999925308277167,
+        "5-5 AR": 0.877532024264469,
+        "7-7 CD Loss": 0.9089431452720368,
+        "7-7 AR": 0.869353077857125,
+        "8-12 CD Loss": 0.9161151788759526,
+        "8-12 AR": 0.9060822849395591,
+        "9-9 CD Loss": 0.8941179683521231,
+        "9-9 AR": 0.8959421898015579
+      },
+      "cell_leakage_exposure": 0.5652173913043478,
+      "n_predictions_checked": 1932,
+      "models": {
+        "ARD_Matern52": {
+          "macro_r2": -0.17384921891787367,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": -0.20163813844686165,
+          "n_targets": 12
+        },
+        "Isotropic_Matern52": {
+          "macro_r2": 0.008649528402681272,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": 0.007238788629147075,
+          "n_targets": 12
+        },
+        "Mean": {
+          "macro_r2": -0.09893902474340771,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": -0.11203580873226461,
+          "n_targets": 12
+        },
+        "OLS": {
+          "macro_r2": 0.06159978752540499,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": 0.0647444268133751,
+          "n_targets": 12
+        },
+        "Ridge": {
+          "macro_r2": 0.07474190014714897,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": 0.07978509298669668,
+          "n_targets": 12
+        },
+        "UniversalKriging_iso_REML": {
+          "macro_r2": 0.01497802569949639,
+          "macro_noise_ceiling": 0.8842105176151263,
+          "r2_fraction_of_ceiling": 0.013134694598331614,
+          "n_targets": 12
+        }
+      }
+    },
+    "real_without2_24": {
+      "n_records": 22,
+      "cells": 15,
+      "replicated_cells": 5,
+      "cell_sizes": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "noise_ceiling_macro": 0.8980539017068786,
+      "noise_ceiling_per_target": {
+        "3-3 CD Loss": 0.8691917135387598,
+        "3-3 AR": 0.8797107424261751,
+        "3-5 CD Loss": 0.9183627172809381,
+        "3-5 AR": 0.867462156001018,
+        "5-5 CD Loss": 0.8973105937004516,
+        "5-5 AR": 0.9107668149541268,
+        "7-7 CD Loss": 0.9112911497500111,
+        "7-7 AR": 0.8840948639033637,
+        "8-12 CD Loss": 0.9178238877883795,
+        "8-12 AR": 0.9176378520802911,
+        "9-9 CD Loss": 0.8960092096794523,
+        "9-9 AR": 0.9069851193795759
+      },
+      "cell_leakage_exposure": 0.5454545454545454,
+      "n_predictions_checked": 1848,
+      "models": {
+        "ARD_Matern52": {
+          "macro_r2": -0.3056377507537212,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": -0.3424288600149452,
+          "n_targets": 12
+        },
+        "Isotropic_Matern52": {
+          "macro_r2": -0.08642820113451755,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": -0.0964018075730067,
+          "n_targets": 12
+        },
+        "Mean": {
+          "macro_r2": -0.09750566893424086,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": -0.10861869548327711,
+          "n_targets": 12
+        },
+        "OLS": {
+          "macro_r2": 0.005332119873683834,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": 0.004122205533539887,
+          "n_targets": 12
+        },
+        "Ridge": {
+          "macro_r2": 0.021681744675942995,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": 0.022416418158676576,
+          "n_targets": 12
+        },
+        "UniversalKriging_iso_REML": {
+          "macro_r2": -0.07396276785092615,
+          "macro_noise_ceiling": 0.8980539017068786,
+          "r2_fraction_of_ceiling": -0.0836836374769951,
+          "n_targets": 12
+        }
+      }
+    },
+    "real_without13_24": {
+      "n_records": 22,
+      "cells": 14,
+      "replicated_cells": 5,
+      "cell_sizes": [
+        4,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "noise_ceiling_macro": 0.8806374282427062,
+      "noise_ceiling_per_target": {
+        "3-3 CD Loss": 0.865789113118777,
+        "3-3 AR": 0.8139322672452264,
+        "3-5 CD Loss": 0.9103772042455359,
+        "3-5 AR": 0.8350406255654788,
+        "5-5 CD Loss": 0.8960737757697917,
+        "5-5 AR": 0.8731464067416537,
+        "7-7 CD Loss": 0.9066852402048164,
+        "7-7 AR": 0.8652644328072653,
+        "8-12 CD Loss": 0.9137718100614343,
+        "8-12 AR": 0.903470880259202,
+        "9-9 CD Loss": 0.8915722698140187,
+        "9-9 AR": 0.8925251130792724
+      },
+      "cell_leakage_exposure": 0.5909090909090909,
+      "n_predictions_checked": 1848,
+      "models": {
+        "ARD_Matern52": {
+          "macro_r2": -0.3659269612056147,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": -0.4182276287281113,
+          "n_targets": 12
+        },
+        "Isotropic_Matern52": {
+          "macro_r2": -0.05266424302904446,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": -0.06201626856844763,
+          "n_targets": 12
+        },
+        "Mean": {
+          "macro_r2": -0.09750566893424,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": -0.11085376687992515,
+          "n_targets": 12
+        },
+        "OLS": {
+          "macro_r2": 0.0011844395661206777,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": -0.005112303503495753,
+          "n_targets": 12
+        },
+        "Ridge": {
+          "macro_r2": 0.016174460361470955,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": 0.012191106147072993,
+          "n_targets": 12
+        },
+        "UniversalKriging_iso_REML": {
+          "macro_r2": -0.050721290362017835,
+          "macro_noise_ceiling": 0.8806374282427062,
+          "r2_fraction_of_ceiling": -0.06275146188323959,
+          "n_targets": 12
+        }
+      }
+    }
+  }
+}

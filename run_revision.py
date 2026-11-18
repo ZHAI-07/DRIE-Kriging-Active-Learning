@@ -175,7 +175,8 @@ def main():
             ]:
                 run_script(script, extra, environment, record["commands"])
         record["source_checks"] = source_checks()
-        for script in ("code/revision/validate_models.py", "code/revision/validate_early_al.py"):
+        for script in ("code/revision/validate_models.py", "code/revision/validate_early_al.py",
+                       "code/revision/protocol_report.py"):
             run_script(script, [], environment, record["commands"])
         if args.figures:
             for script in ("code/revision/plot_review.py", "code/revision/check_revision_figures.py"):
