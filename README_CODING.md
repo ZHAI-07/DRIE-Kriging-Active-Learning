@@ -28,4 +28,6 @@ python -B run_revision.py --recompute --workers 4
 
 包中另保留科研绘图源码；需要绘图时可按`requirements.lock.txt`安装相应科学绘图库，默认校验不需要它们。内部兼容入口中的文档选项不属于本科学代码仓库的使用范围。
 
-源码入口：`code/research/data.py`负责数据与来源分组，`core.py`负责GP及采集函数，`experiments.py`负责留出评价和逐轮采样；`code/revision/model_comparison.py`与`early_budget_al.py`保存对照实现。权威输入仍为24×4，六结构输出为24×12。
+源码入口：`code/research/data.py`负责数据与来源分组，`core.py`负责GP及采集函数，`experiments.py`负责留出评价和逐轮采样；`protocol.py`提供小样本评估协议（按设计格留出、噪声上限、行置换对照、伪重复检查），模型比较应统一经它报告；`code/revision/model_comparison.py`与`early_budget_al.py`保存对照实现。权威输入仍为24×4，六结构输出为24×12。
+
+小样本评估协议的口径（`code/research/protocol.py`，测试见`tests/test_evaluation_protocol.py`）：23条可用记录只占15个(Coil, Platen)设计格，5格含重复（4/3/2/2/2条），因此留出单元必须是**格**而非记录——按记录留出会让同格重复样本留在训练集，实测同一模型因此从R²+0.209虚高到+0.410。格内差异为测量噪声，可达R²上限为`1 - SS_within/SS_total`（CD 0.900、AR 0.868、全体 0.884），报告R²时应同时给出该上限。凡"加入某些输入带来提升"的结论必须附行置换对照，以区分正则化几何效应与真实信息；配对检验前必须先数独立初始设计单元，固定设计下重复记录选择不构成独立重复。运行`python -B -c "import sys;sys.path.insert(0,'code');from research.protocol import main;main()"`可打印当前数据的完整设计审计。
