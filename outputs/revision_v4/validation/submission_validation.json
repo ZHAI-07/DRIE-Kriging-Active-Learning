@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "commands": [
+    {
+      "script": "run_revision.py",
+      "arguments": [],
+      "exit_code": 0,
+      "elapsed_seconds": 4.42237733300135
+    },
+    {
+      "script": "code/revision/review_v3.py",
+      "arguments": [],
+      "exit_code": 0,
+      "elapsed_seconds": 1.9770755419885973
+    },
+    {
+      "script": "-m",
+      "arguments": [
+        "pytest",
+        "tests/test_research_integrity.py",
+        "tests/test_reproduction_comparison.py",
+        "tests/test_evaluation_protocol.py",
+        "tests/test_kernel_gp.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.9841029579984024
+    }
+  ],
+  "new_physical_experiments": false,
+  "environment": {
+    "python": "3.12.12",
+    "platform": "macOS-26.7.1-arm64-arm-64bit"
+  },
+  "comparison_policy": {
+    "mode": "portable",
+    "query_ids": "exact",
+    "auc_relative_tolerance": 0.03,
+    "relative_denominator_epsilon": 1e-12,
+    "strict_absolute_tolerance": 1e-08,
+    "scope": "Numerical reproduction acceptance only; not a scientific equivalence test or bytewise-reproduction claim"
+  },
+  "compile_check": {
+    "sources_checked": 67,
+    "sources_compiled": 67,
+    "sources_failed": 0,
+    "failed_paths": []
+  },
+  "entry_sha256": "3583e1b3df03716bc1038bce0c119250d9a5a8047f2848c727a85382b50182ac"
+}

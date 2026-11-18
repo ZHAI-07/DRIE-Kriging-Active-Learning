@@ -1,0 +1,128 @@
+[
+  {
+    "run": "real_main",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 864,
+    "curve_rows": 16200,
+    "selected_experiments_logged": 960,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "cfd_main",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 147,
+    "curve_rows": 5040,
+    "selected_experiments_logged": 2400,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "real_drop2",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 828,
+    "curve_rows": 16200,
+    "selected_experiments_logged": 960,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "real_drop13",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 828,
+    "curve_rows": 16200,
+    "selected_experiments_logged": 960,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "real_drop24",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 828,
+    "curve_rows": 16200,
+    "selected_experiments_logged": 960,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "real_historical_schedule",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 864,
+    "curve_rows": 19800,
+    "selected_experiments_logged": 1200,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  },
+  {
+    "run": "cfd_legacy_code",
+    "status": "passed",
+    "repeats": 30,
+    "basic_prediction_rows": 147,
+    "curve_rows": 5040,
+    "selected_experiments_logged": 2400,
+    "per_seed_fit_logs_present": false,
+    "verified": [
+      "sources compile and declared files exist",
+      "finite predictions",
+      "source-blocked paired partitions",
+      "equal initial errors",
+      "equal budgets and no repeated acquisition",
+      "no test IDs in fit logs (when logs are shipped)",
+      "saved outcomes match the declared data variant"
+    ]
+  }
+]

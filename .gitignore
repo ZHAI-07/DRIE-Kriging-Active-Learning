@@ -23,6 +23,15 @@ outputs/figures/
 outputs/revision/figures/
 outputs/logs/
 
+# Local design notes (dev branch only; never pushed or merged)
+Instruction.md
+
+# Lean build artifacts and dependency cache
+formal/.lake/
+
+# Internal formalisation policy (not for the remote repository)
+formal/README.md
+
 # Keep only the seven reference result suites in version control.
 # New --run-prefix computations and optimizer checkpoints stay local.
 /outputs/results/*
@@ -36,3 +45,10 @@ outputs/logs/
 /outputs/results/*/checkpoints/
 /outputs/results/*/fit_diagnostics/
 /outputs/results/*/seed_*.json
+
+# Compiled accelerator shared libraries (rebuild with code/tools/fast_conformal.py)
+*.dylib
+*.so
+
+# C++ build intermediates
+*.o
