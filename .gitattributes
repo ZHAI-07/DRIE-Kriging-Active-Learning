@@ -1,0 +1,24 @@
+# GitHub Linguist 显示配置
+#
+# 背景：本仓库的主体是 Python，但另含两类非 Python 源码——
+#   code/tools/conformal_kernel.cpp   全共形反演的 C++ 热循环
+#   formal/Formal/*.lean              数学定理的 Lean 4 形式化
+# 这两类文件本身已被 Git 跟踪、在网页上也可见，但仓库首页的语言统计条只显示
+# Python。显式声明可检测语言可以避免它们被当作"生成物/第三方代码"而漏计。
+#
+# 本文件只影响 GitHub 的显示与高亮，不参与构建，也不改变任何代码行为。
+
+# C++ 源码（加速器；对应的 .so/.dylib 已在 .gitignore 中排除）
+*.cpp  linguist-detectable=true linguist-language=C++
+*.hpp  linguist-detectable=true linguist-language=C++
+
+# Lean 4 形式化源码
+*.lean linguist-detectable=true linguist-language=Lean
+
+# Lean 构建产物目录：本该在 .gitignore 中，这里再加一层保险，
+# 万一被误提交也不计入语言统计（.lake 体积可达数 GB）
+formal/.lake/** linguist-vendored=true linguist-detectable=false
+
+# 数据快照与生成的结果文件不是源码，不参与语言统计
+data/raw/**        linguist-detectable=false
+outputs/**         linguist-detectable=false
