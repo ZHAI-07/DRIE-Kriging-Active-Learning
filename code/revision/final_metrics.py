@@ -245,7 +245,7 @@ def main():
 
     report = {"data": {"records": int(len(X)), "targets": len(names),
                        "cells": int(len(np.unique(labels))),
-                       "cd_units": "undeclared in source table",
+                       "cd_units": "um (user-confirmed)",
                        "ar_units": "dimensionless"},
               "protocol": "leave-one-cell-out on (Coil, Platen), 15 folds",
               "noise_ceiling": {"macro": ceiling["macro"],

@@ -1,0 +1,167 @@
+{
+  "units": {
+    "cd": "um (user-confirmed)",
+    "ar": "dimensionless"
+  },
+  "rationale": "P=40 重复实验之间无未记录变量（用户确认），故该行离散为不可约噪声；噪声下限 = sqrt(SS_within / N)",
+  "per_target": {
+    "3-3 CD Loss": {
+      "unit": "um",
+      "mean": 0.998304347826087,
+      "sd": 0.16316154565673985,
+      "model_rmse": 0.13273617554734055,
+      "noise_floor_rmse": 0.05897371067454242,
+      "model_over_floor": 2.250768588733889,
+      "potential_rmse_reduction_pct": 55.57073237091319,
+      "r2_ceiling": 0.8693584609694489
+    },
+    "3-3 AR": {
+      "unit": "dimensionless",
+      "mean": 20.841313043478266,
+      "sd": 0.2625704349467557,
+      "model_rmse": 0.24230381198213083,
+      "noise_floor_rmse": 0.11068236721828574,
+      "model_over_floor": 2.1891816923671654,
+      "potential_rmse_reduction_pct": 54.320831227183405,
+      "r2_ceiling": 0.8223090820488238
+    },
+    "3-5 CD Loss": {
+      "unit": "um",
+      "mean": 1.0474782608695652,
+      "sd": 0.17856045610361757,
+      "model_rmse": 0.16255517031917996,
+      "noise_floor_rmse": 0.05283291615068686,
+      "model_over_floor": 3.076778307211926,
+      "potential_rmse_reduction_pct": 67.49847079797678,
+      "r2_ceiling": 0.9124535395735012
+    },
+    "3-5 AR": {
+      "unit": "dimensionless",
+      "mean": 20.95448260869565,
+      "sd": 0.29377669669943135,
+      "model_rmse": 0.27119340311559537,
+      "noise_floor_rmse": 0.11812354070872222,
+      "model_over_floor": 2.2958455316228976,
+      "potential_rmse_reduction_pct": 56.44306264397869,
+      "r2_ceiling": 0.8383267285992018
+    },
+    "5-5 CD Loss": {
+      "unit": "um",
+      "mean": 1.0947391304347824,
+      "sd": 0.2346719666834322,
+      "model_rmse": 0.20958418015040117,
+      "noise_floor_rmse": 0.07421256314793007,
+      "model_over_floor": 2.8241064755118472,
+      "potential_rmse_reduction_pct": 64.59057019729548,
+      "r2_ceiling": 0.8999925308277167
+    },
+    "5-5 AR": {
+      "unit": "dimensionless",
+      "mean": 14.342086956521742,
+      "sd": 0.19961395634824278,
+      "model_rmse": 0.16269472774908894,
+      "noise_floor_rmse": 0.06985575199621397,
+      "model_over_floor": 2.329009753669342,
+      "potential_rmse_reduction_pct": 57.0632970332346,
+      "r2_ceiling": 0.877532024264469
+    },
+    "7-7 CD Loss": {
+      "unit": "um",
+      "mean": 1.182782608695652,
+      "sd": 0.27519281090864883,
+      "model_rmse": 0.25522621199943113,
+      "noise_floor_rmse": 0.083041159909592,
+      "model_over_floor": 3.073490450727076,
+      "potential_rmse_reduction_pct": 67.4637023920658,
+      "r2_ceiling": 0.9089431452720368
+    },
+    "7-7 AR": {
+      "unit": "dimensionless",
+      "mean": 11.177139130434783,
+      "sd": 0.1731050189891788,
+      "model_rmse": 0.15666625303951914,
+      "noise_floor_rmse": 0.06256900538431637,
+      "model_over_floor": 2.5038955322564442,
+      "potential_rmse_reduction_pct": 60.06223154610502,
+      "r2_ceiling": 0.869353077857125
+    },
+    "8-12 CD Loss": {
+      "unit": "um",
+      "mean": 1.2689782608695652,
+      "sd": 0.278027347664127,
+      "model_rmse": 0.25246328377969424,
+      "noise_floor_rmse": 0.08052471715233635,
+      "model_over_floor": 3.135227203618551,
+      "potential_rmse_reduction_pct": 68.10438494390962,
+      "r2_ceiling": 0.9161151788759526
+    },
+    "8-12 AR": {
+      "unit": "dimensionless",
+      "mean": 10.115426086956523,
+      "sd": 0.15765490165270132,
+      "model_rmse": 0.1349080973441322,
+      "noise_floor_rmse": 0.04831491690619153,
+      "model_over_floor": 2.7922659497908358,
+      "potential_rmse_reduction_pct": 64.18679244808652,
+      "r2_ceiling": 0.9060822849395591
+    },
+    "9-9 CD Loss": {
+      "unit": "um",
+      "mean": 1.2530652173913042,
+      "sd": 0.28393853837191396,
+      "model_rmse": 0.2594706360679814,
+      "noise_floor_rmse": 0.0923922355025541,
+      "model_over_floor": 2.8083597572526378,
+      "potential_rmse_reduction_pct": 64.39202643402496,
+      "r2_ceiling": 0.8941179683521231
+    },
+    "9-9 AR": {
+      "unit": "dimensionless",
+      "mean": 9.240939130434784,
+      "sd": 0.15261549507954386,
+      "model_rmse": 0.13355897178717738,
+      "noise_floor_rmse": 0.049230695473572054,
+      "model_over_floor": 2.7129206789059945,
+      "potential_rmse_reduction_pct": 63.13935723313306,
+      "r2_ceiling": 0.8959421898015579
+    }
+  },
+  "macro": {
+    "cd": {
+      "mean_um": 1.140891304347826,
+      "model_rmse_um": 0.21200594297733807,
+      "noise_floor_um": 0.07366288375627363,
+      "model_over_floor": 2.8614551305093214
+    },
+    "ar": {
+      "mean": 14.44523115942029,
+      "model_rmse": 0.18355421083627396,
+      "noise_floor": 0.07646271294788365,
+      "model_over_floor": 2.4705198564354465
+    }
+  },
+  "p40_variance_homogeneity": {
+    "levene_stat": 9.070724037951091,
+    "levene_p": 0.0045560978562804695,
+    "sd_max_over_min": 2.911867066596546,
+    "degenerate_groups_value": [
+      0.835
+    ],
+    "group_sds": [
+      0.07573308391977712,
+      0.0631374162706499,
+      0.14495689014324228,
+      0.18384776310850234,
+      0.0
+    ],
+    "bootstrap_p_under_homogeneous": 0.8362,
+    "group_sizes": [
+      4,
+      3,
+      2,
+      2,
+      2
+    ],
+    "power_note": "每组仅 2–4 个点，方差齐性检验功效极低；结论只能读作『未发现结构』，不能读作『已确认同质』"
+  }
+}
